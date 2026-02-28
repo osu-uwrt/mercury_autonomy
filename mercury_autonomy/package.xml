@@ -3,12 +3,21 @@
 <package format="3">
   <name>mercury_autonomy</name>
   <version>0.0.0</version>
-  <description>BT autonomy system for the Mercury stack </description>
-  <maintainer email="gupta.1516@osu.edu">Adi Gupta</maintainer>
+  <description>BehaviorTree-based autonomy system for the Mercury stack with local BehaviorTree.CPP library integration</description>
+  <maintainer email="gupta.1516@osu.edu">Aditya Gupta</maintainer>
   <license>Apache 2.0</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
 
+  <!-- ROS2 dependencies -->
+  <depend>rclcpp</depend>
+  <depend>rclcpp_action</depend>
+  <depend>rclcpp_components</depend>
+
+  <!-- BehaviorTree.CPP from local subtree -->
+  <depend>behaviortree_cpp</depend>
+
+  <!-- Testing dependencies -->
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_lint_common</test_depend>
 
