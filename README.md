@@ -32,3 +32,10 @@ Treat these files like any other part of the Mercury codebase.
 Commit and push changes to the mercury_autonomy repository normally.
 
 Note that during a future subtree pull, Git will attempt to merge your local changes with the upstream updates. Resolve any conflicts as you would in a standard merge.
+
+
+# BT Assistant
+
+Currently in progress, as a successor to the BT assistant present in riptide_autonomy.
+
+BT Assistant is a python script that automates the creation and registration of custom nodes.

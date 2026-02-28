@@ -21,7 +21,7 @@ BT::NodeStatus ExampleCondition::tick()
   double threshold = 0.5;
   getInput("threshold", threshold);
 
-  // TODO: Replace with actual condition logic (e.g., check a sensor value).
+  // TODO: Replace with actual condition logic (e.g., check a FOG value).
   RCLCPP_DEBUG(rosNode()->get_logger(), "ExampleCondition checking threshold: %f", threshold);
 
   // Return SUCCESS if the condition is met, FAILURE otherwise.
