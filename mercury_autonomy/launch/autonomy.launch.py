@@ -4,6 +4,7 @@ Launch file for the mercury_autonomy tree executor.
 Usage:
   ros2 launch mercury_autonomy autonomy.launch.py
   ros2 launch mercury_autonomy autonomy.launch.py robot:=mercury
+  ros2 launch mercury_autonomy autonomy.launch.py tick_rate_hz:=50.0
 """
 
 from launch import LaunchDescription
@@ -26,6 +27,12 @@ def generate_launch_description():
         description="Optional override for the tree XML search directory",
     )
 
+    tick_rate_arg = DeclareLaunchArgument(
+        "tick_rate_hz",
+        default_value="30.0",
+        description="BT tick rate in Hz (default 30.0)",
+    )
+
     # Tree executor node
     tree_executor_node = Node(
         package="mercury_autonomy",
@@ -34,6 +41,7 @@ def generate_launch_description():
         output="screen",
         parameters=[
             {"tree_directory": LaunchConfiguration("tree_directory")},
+            {"tick_rate_hz": LaunchConfiguration("tick_rate_hz")},
             {"extra_plugins": []},
             {"extra_tree_dirs": []},
         ],
@@ -48,5 +56,6 @@ def generate_launch_description():
     return LaunchDescription([
         robot_arg,
         tree_dir_arg,
+        tick_rate_arg,
         autonomy_group,
     ])

@@ -1,0 +1,229 @@
+// btstudio nodeLibrary.ts patch -- mercury_autonomy custom nodes.
+//
+// These BTNodeDefinition entries correspond to the custom BT nodes registered
+// by the mercury_autonomy package.  Append them to the nodeLibrary array in
+// btstudio's src/data/nodeLibrary.ts to make them available in the visual editor.
+//
+// Generated from mercury_autonomy node_manifest.json.
+// To regenerate:  python3 scripts/generate_node_manifest.py
+//                 Then run:  python3 scripts/manifest_to_ts.py (manual step)
+//
+// -- OR -- copy-paste the entries below into nodeLibrary.ts.
+
+import type { BTNodeDefinition } from '../types';
+
+export const mercuryAutonomyNodes: BTNodeDefinition[] = [
+  // ---------------------------------------------------------------------------
+  // Actions
+  // ---------------------------------------------------------------------------
+  {
+    id: 'mercury-call-set-bool-service',
+    type: 'CallSetBoolService',
+    category: 'action',
+    name: 'Call SetBool Service',
+    description: 'Calls a std_srvs/SetBool service asynchronously',
+    fields: [
+      { name: 'srv_name', type: 'string', valueType: 'literal', value: '', description: 'Service name to call', portDirection: 'input' },
+      { name: 'data', type: 'boolean', valueType: 'literal', value: false, description: 'Boolean value to send', portDirection: 'input' },
+      { name: 'timeout', type: 'number', valueType: 'literal', value: 3.0, description: 'Timeout in seconds', portDirection: 'input' },
+    ],
+  },
+  {
+    id: 'mercury-call-trigger-service',
+    type: 'CallTriggerService',
+    category: 'action',
+    name: 'Call Trigger Service',
+    description: 'Calls a std_srvs/Trigger service asynchronously',
+    fields: [
+      { name: 'srv_name', type: 'string', valueType: 'literal', value: '', description: 'Service name to call', portDirection: 'input' },
+      { name: 'timeout', type: 'number', valueType: 'literal', value: 3.0, description: 'Timeout in seconds', portDirection: 'input' },
+    ],
+  },
+  {
+    id: 'mercury-get-bool-topic',
+    type: 'GetBoolTopic',
+    category: 'action',
+    name: 'Get Bool Topic',
+    description: 'Subscribes to a std_msgs/Bool topic and outputs the value',
+    fields: [
+      { name: 'topic', type: 'string', valueType: 'literal', value: '', description: 'ROS2 topic name to subscribe to', portDirection: 'input' },
+      { name: 'timeout', type: 'number', valueType: 'literal', value: 3.0, description: 'Timeout in seconds', portDirection: 'input' },
+      { name: 'value', type: 'boolean', valueType: 'variable', value: '', description: 'Received boolean value', portDirection: 'output' },
+    ],
+  },
+  {
+    id: 'mercury-get-float-topic',
+    type: 'GetFloatTopic',
+    category: 'action',
+    name: 'Get Float Topic',
+    description: 'Subscribes to a std_msgs/Float64 topic and outputs the value',
+    fields: [
+      { name: 'topic', type: 'string', valueType: 'literal', value: '', description: 'ROS2 topic name to subscribe to', portDirection: 'input' },
+      { name: 'timeout', type: 'number', valueType: 'literal', value: 3.0, description: 'Timeout in seconds', portDirection: 'input' },
+      { name: 'value', type: 'number', valueType: 'variable', value: '', description: 'Received floating-point value', portDirection: 'output' },
+    ],
+  },
+  {
+    id: 'mercury-get-imu-orientation',
+    type: 'GetImuOrientation',
+    category: 'action',
+    name: 'Get IMU Orientation',
+    description: 'Subscribes to a sensor_msgs/Imu topic and outputs RPY orientation',
+    fields: [
+      { name: 'topic', type: 'string', valueType: 'literal', value: '', description: 'IMU topic name', portDirection: 'input' },
+      { name: 'timeout', type: 'number', valueType: 'literal', value: 3.0, description: 'Timeout in seconds', portDirection: 'input' },
+      { name: 'roll', type: 'number', valueType: 'variable', value: '', description: 'Orientation roll (rad)', portDirection: 'output' },
+      { name: 'pitch', type: 'number', valueType: 'variable', value: '', description: 'Orientation pitch (rad)', portDirection: 'output' },
+      { name: 'yaw', type: 'number', valueType: 'variable', value: '', description: 'Orientation yaw (rad)', portDirection: 'output' },
+    ],
+  },
+  {
+    id: 'mercury-get-odometry',
+    type: 'GetOdometry',
+    category: 'action',
+    name: 'Get Odometry',
+    description: 'Subscribes to a nav_msgs/Odometry topic and outputs pose components',
+    fields: [
+      { name: 'topic', type: 'string', valueType: 'literal', value: '', description: 'Odometry topic name', portDirection: 'input' },
+      { name: 'timeout', type: 'number', valueType: 'literal', value: 3.0, description: 'Timeout in seconds', portDirection: 'input' },
+      { name: 'x', type: 'number', valueType: 'variable', value: '', description: 'Position X', portDirection: 'output' },
+      { name: 'y', type: 'number', valueType: 'variable', value: '', description: 'Position Y', portDirection: 'output' },
+      { name: 'z', type: 'number', valueType: 'variable', value: '', description: 'Position Z', portDirection: 'output' },
+      { name: 'roll', type: 'number', valueType: 'variable', value: '', description: 'Orientation roll (rad)', portDirection: 'output' },
+      { name: 'pitch', type: 'number', valueType: 'variable', value: '', description: 'Orientation pitch (rad)', portDirection: 'output' },
+      { name: 'yaw', type: 'number', valueType: 'variable', value: '', description: 'Orientation yaw (rad)', portDirection: 'output' },
+    ],
+  },
+  {
+    id: 'mercury-get-twist-topic',
+    type: 'GetTwistTopic',
+    category: 'action',
+    name: 'Get Twist Topic',
+    description: 'Subscribes to a geometry_msgs/Twist topic and outputs velocity components',
+    fields: [
+      { name: 'topic', type: 'string', valueType: 'literal', value: '', description: 'Twist topic name', portDirection: 'input' },
+      { name: 'timeout', type: 'number', valueType: 'literal', value: 3.0, description: 'Timeout in seconds', portDirection: 'input' },
+      { name: 'vel_x', type: 'number', valueType: 'variable', value: '', description: 'Linear velocity X', portDirection: 'output' },
+      { name: 'vel_y', type: 'number', valueType: 'variable', value: '', description: 'Linear velocity Y', portDirection: 'output' },
+      { name: 'vel_z', type: 'number', valueType: 'variable', value: '', description: 'Linear velocity Z', portDirection: 'output' },
+      { name: 'vel_roll', type: 'number', valueType: 'variable', value: '', description: 'Angular velocity X (roll rate)', portDirection: 'output' },
+      { name: 'vel_pitch', type: 'number', valueType: 'variable', value: '', description: 'Angular velocity Y (pitch rate)', portDirection: 'output' },
+      { name: 'vel_yaw', type: 'number', valueType: 'variable', value: '', description: 'Angular velocity Z (yaw rate)', portDirection: 'output' },
+    ],
+  },
+  {
+    id: 'mercury-publish-bool',
+    type: 'PublishBool',
+    category: 'action',
+    name: 'Publish Bool',
+    description: 'Publishes a std_msgs/Bool message to a topic',
+    fields: [
+      { name: 'topic', type: 'string', valueType: 'literal', value: '', description: 'ROS2 topic name to publish to', portDirection: 'input' },
+      { name: 'value', type: 'boolean', valueType: 'literal', value: true, description: 'Boolean value to publish', portDirection: 'input' },
+    ],
+  },
+  {
+    id: 'mercury-publish-twist',
+    type: 'PublishTwist',
+    category: 'action',
+    name: 'Publish Twist',
+    description: 'Publishes a geometry_msgs/Twist message to a topic',
+    fields: [
+      { name: 'topic', type: 'string', valueType: 'literal', value: '', description: 'ROS2 topic name to publish to', portDirection: 'input' },
+      { name: 'linear_x', type: 'number', valueType: 'literal', value: 0.0, description: 'Linear velocity X', portDirection: 'input' },
+      { name: 'linear_y', type: 'number', valueType: 'literal', value: 0.0, description: 'Linear velocity Y', portDirection: 'input' },
+      { name: 'linear_z', type: 'number', valueType: 'literal', value: 0.0, description: 'Linear velocity Z', portDirection: 'input' },
+      { name: 'angular_x', type: 'number', valueType: 'literal', value: 0.0, description: 'Angular velocity X', portDirection: 'input' },
+      { name: 'angular_y', type: 'number', valueType: 'literal', value: 0.0, description: 'Angular velocity Y', portDirection: 'input' },
+      { name: 'angular_z', type: 'number', valueType: 'literal', value: 0.0, description: 'Angular velocity Z', portDirection: 'input' },
+    ],
+  },
+  {
+    id: 'mercury-transform-pose',
+    type: 'TransformPose',
+    category: 'action',
+    name: 'Transform Pose',
+    description: 'Looks up a TF2 transform and applies it to an input pose',
+    fields: [
+      { name: 'from_frame', type: 'string', valueType: 'literal', value: '', description: 'Source TF frame', portDirection: 'input' },
+      { name: 'to_frame', type: 'string', valueType: 'literal', value: '', description: 'Target TF frame', portDirection: 'input' },
+      { name: 'x', type: 'number', valueType: 'literal', value: 0.0, description: 'Position X', portDirection: 'input' },
+      { name: 'y', type: 'number', valueType: 'literal', value: 0.0, description: 'Position Y', portDirection: 'input' },
+      { name: 'z', type: 'number', valueType: 'literal', value: 0.0, description: 'Position Z', portDirection: 'input' },
+      { name: 'roll', type: 'number', valueType: 'literal', value: 0.0, description: 'Orientation roll (rad)', portDirection: 'input' },
+      { name: 'pitch', type: 'number', valueType: 'literal', value: 0.0, description: 'Orientation pitch (rad)', portDirection: 'input' },
+      { name: 'yaw', type: 'number', valueType: 'literal', value: 0.0, description: 'Orientation yaw (rad)', portDirection: 'input' },
+      { name: 'timeout', type: 'number', valueType: 'literal', value: 3.0, description: 'Timeout in seconds', portDirection: 'input' },
+      { name: 'out_x', type: 'number', valueType: 'variable', value: '', description: 'Transformed X', portDirection: 'output' },
+      { name: 'out_y', type: 'number', valueType: 'variable', value: '', description: 'Transformed Y', portDirection: 'output' },
+      { name: 'out_z', type: 'number', valueType: 'variable', value: '', description: 'Transformed Z', portDirection: 'output' },
+      { name: 'out_roll', type: 'number', valueType: 'variable', value: '', description: 'Transformed roll', portDirection: 'output' },
+      { name: 'out_pitch', type: 'number', valueType: 'variable', value: '', description: 'Transformed pitch', portDirection: 'output' },
+      { name: 'out_yaw', type: 'number', valueType: 'variable', value: '', description: 'Transformed yaw', portDirection: 'output' },
+    ],
+  },
+
+  // ---------------------------------------------------------------------------
+  // Conditions
+  // ---------------------------------------------------------------------------
+  {
+    id: 'mercury-approx-equal-to',
+    type: 'ApproxEqualTo',
+    category: 'condition',
+    name: 'Approx Equal To',
+    description: 'SUCCESS if |a - b| < range',
+    fields: [
+      { name: 'a', type: 'number', valueType: 'literal', value: 0, description: 'First value', portDirection: 'input' },
+      { name: 'b', type: 'number', valueType: 'literal', value: 0, description: 'Second value', portDirection: 'input' },
+      { name: 'range', type: 'number', valueType: 'literal', value: 0, description: 'Tolerance for approximate equality', portDirection: 'input' },
+    ],
+  },
+  {
+    id: 'mercury-approx-equal-to-angle',
+    type: 'ApproxEqualToAngle',
+    category: 'condition',
+    name: 'Approx Equal To Angle',
+    description: 'Checks if two angles are approximately equal (normalizes to [-pi, pi])',
+    fields: [
+      { name: 'a', type: 'number', valueType: 'literal', value: 0, description: 'First angle (radians)', portDirection: 'input' },
+      { name: 'b', type: 'number', valueType: 'literal', value: 0, description: 'Second angle (radians)', portDirection: 'input' },
+      { name: 'range', type: 'number', valueType: 'literal', value: 0, description: 'Tolerance (radians)', portDirection: 'input' },
+    ],
+  },
+  {
+    id: 'mercury-compare-nums',
+    type: 'CompareNums',
+    category: 'condition',
+    name: 'Compare Nums',
+    description: 'Numeric comparison using >, <, or == operators',
+    fields: [
+      { name: 'test', type: 'string', valueType: 'literal', value: '==', description: 'Comparison operator: >, <, or ==', portDirection: 'input' },
+      { name: 'a', type: 'number', valueType: 'literal', value: 0, description: 'Left-hand operand', portDirection: 'input' },
+      { name: 'b', type: 'number', valueType: 'literal', value: 0, description: 'Right-hand operand', portDirection: 'input' },
+    ],
+  },
+  {
+    id: 'mercury-is-true',
+    type: 'IsTrue',
+    category: 'condition',
+    name: 'Is True',
+    description: 'Returns SUCCESS if value is true, FAILURE otherwise',
+    fields: [
+      { name: 'value', type: 'boolean', valueType: 'literal', value: false, description: 'Boolean value to check', portDirection: 'input' },
+    ],
+  },
+
+  // ---------------------------------------------------------------------------
+  // Decorators
+  // ---------------------------------------------------------------------------
+  {
+    id: 'mercury-retry-until-successful-or-timeout',
+    type: 'RetryUntilSuccessfulOrTimeout',
+    category: 'decorator',
+    name: 'Retry Until Successful Or Timeout',
+    description: 'Retries child until SUCCESS or timeout elapsed',
+    fields: [
+      { name: 'timeout', type: 'number', valueType: 'literal', value: 0, description: 'Maximum time in seconds', portDirection: 'input' },
+    ],
+  },
+];

@@ -262,6 +262,17 @@ if(BUILD_TESTING)
   )
   ament_target_dependencies(test_decorator_nodes ${THIS_PACKAGE_DEPS})
   target_link_libraries(test_decorator_nodes mercury_autonomy_core)
+
+  # Publish node (PublishTwist / PublishBool) unit test
+  ament_add_gtest(test_publish_nodes test/test_publish_nodes.cpp
+    src/bt_actions/publish_twist.cpp
+    src/bt_actions/publish_bool.cpp
+  )
+  target_include_directories(test_publish_nodes PRIVATE
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+  )
+  ament_target_dependencies(test_publish_nodes ${THIS_PACKAGE_DEPS})
+  target_link_libraries(test_publish_nodes mercury_autonomy_core)
 endif()
 
 ament_package()

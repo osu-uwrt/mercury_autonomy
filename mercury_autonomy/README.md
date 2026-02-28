@@ -23,8 +23,22 @@ colcon build --packages-select behaviortree_cpp mercury_autonomy \
 ```bash
 source install/setup.bash
 ros2 launch mercury_autonomy autonomy.launch.py
-# Or with a namespace:
-ros2 launch mercury_autonomy autonomy.launch.py robot:=mercury
+# Or with a namespace and custom tick rate:
+ros2 launch mercury_autonomy autonomy.launch.py robot:=mercury tick_rate_hz:=50.0
+```
+
+### Triggering a Tree
+
+```bash
+# List available trees
+ros2 service call /mercury/autonomy/list_trees std_srvs/srv/Trigger
+
+# Execute a tree (topic-based trigger)
+ros2 topic pub --once /mercury/autonomy/execute_tree std_msgs/msg/String \
+    "data: '/path/to/tree.xml'"
+
+# Cancel a running tree
+ros2 service call /mercury/autonomy/cancel_tree std_srvs/srv/Trigger
 ```
 
 ### Running Tests

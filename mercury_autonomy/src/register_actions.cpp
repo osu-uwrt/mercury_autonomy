@@ -10,6 +10,8 @@
 #include "mercury_autonomy/bt_actions/get_odometry.hpp"
 #include "mercury_autonomy/bt_actions/get_imu_orientation.hpp"
 #include "mercury_autonomy/bt_actions/get_twist_topic.hpp"
+#include "mercury_autonomy/bt_actions/publish_twist.hpp"
+#include "mercury_autonomy/bt_actions/publish_bool.hpp"
 
 // This macro exports the registration function for the shared library plugin.
 BT_REGISTER_NODES(factory)
@@ -23,6 +25,8 @@ BT_REGISTER_NODES(factory)
   factory.registerNodeType<mercury_autonomy::GetOdometry>("GetOdometry");
   factory.registerNodeType<mercury_autonomy::GetImuOrientation>("GetImuOrientation");
   factory.registerNodeType<mercury_autonomy::GetTwistTopic>("GetTwistTopic");
+  factory.registerNodeType<mercury_autonomy::PublishTwist>("PublishTwist");
+  factory.registerNodeType<mercury_autonomy::PublishBool>("PublishBool");
 
   // Register additional action nodes below:
   // factory.registerNodeType<mercury_autonomy::MyNewAction>("MyNewAction");

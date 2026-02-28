@@ -99,12 +99,34 @@ Three concrete base classes are provided:
 
 1. Registers all plugin libraries with the BT factory at startup.
 2. Provides an `autonomy/list_trees` service to enumerate available XML files.
-3. Has an `executeTree(path)` method that loads a tree, initializes ROS
-   integration, and ticks it until completion.
-4. Publishes status updates on `autonomy/status`.
+3. Accepts tree execution requests via the `autonomy/execute_tree` topic
+   (`std_msgs/String` containing the tree file path). Execution runs on a
+   background thread so the ROS2 executor remains responsive.
+4. Supports external cancellation via the `autonomy/cancel_tree` service
+   (`std_srvs/Trigger`). On cancel the running tree is halted gracefully.
+5. Publishes status updates on `autonomy/status`.
+6. Tick rate is configurable via the `tick_rate_hz` parameter (default 30.0).
+7. Calls `MercuryBtNode::staticDeinit()` after each tree execution to release
+   shared resources (TF buffer/listener).
 
-A proper ROS2 action interface (goal/feedback/result) should be added once a
-project-specific action message type is defined.
+#### Triggering a Tree
+
+```bash
+# List available trees
+ros2 service call /mercury/autonomy/list_trees std_srvs/srv/Trigger
+
+# Execute a tree
+ros2 topic pub --once /mercury/autonomy/execute_tree std_msgs/msg/String \
+    "data: '/path/to/tree.xml'"
+
+# Cancel a running tree
+ros2 service call /mercury/autonomy/cancel_tree std_srvs/srv/Trigger
+```
+
+A proper ROS2 action interface (goal/feedback/result) should replace the topic-
+based trigger once `mercury_msgs` defines a custom action type. The cancel +
+status interfaces intentionally mirror the action server pattern so migration
+will be transparent.
 
 ### Plugin Registration
 
@@ -171,6 +193,7 @@ ros2 launch mercury_autonomy autonomy.launch.py robot:=mercury
 Arguments:
 - `robot` (default: `mercury`) -- namespace for all nodes.
 - `tree_directory` (default: empty) -- override the tree XML search directory.
+- `tick_rate_hz` (default: `30.0`) -- BT tick rate in Hz.
 
 ## Testing
 
@@ -200,6 +223,7 @@ colcon test-result --verbose
 | test_sensor_nodes.cpp     | GetOdometry / GetImuOrientation / GetTwistTopic     |
 | test_condition_nodes.cpp  | ApproxEqualToAngle / CompareNums / IsTrue           |
 | test_decorator_nodes.cpp  | RetryUntilSuccessfulOrTimeout reg. & ports          |
+| test_publish_nodes.cpp    | PublishTwist / PublishBool registration & ports      |
 
 ### Adding a new test
 
@@ -222,6 +246,8 @@ colcon test-result --verbose
 | CallSetBoolService  | Asynchronously call a SetBool service with timeout       |
 | CallTriggerService  | Asynchronously call a Trigger service with timeout       |
 | TransformPose       | Look up a TF2 transform and apply it to a pose          |
+| PublishTwist        | Publish a Twist message with configurable velocity fields|
+| PublishBool         | Publish a Bool message to a topic                        |
 
 ### Conditions
 
@@ -296,6 +322,42 @@ git subtree push --prefix=dependencies/BehaviorTreeCPP btCPP_upstream <branch>
 
 Edit files directly under `dependencies/BehaviorTreeCPP/`. Commit them normally.
 The subtree model keeps the full history in this repository.
+
+## btstudio Integration
+
+The package provides tooling to keep the visual BT editor
+[btstudio](https://github.com/osu-uwrt/btstudio) in sync with the C++ node
+definitions.
+
+### Node Manifest Generator
+
+```bash
+cd mercury_autonomy/
+python3 scripts/generate_node_manifest.py          # -> node_manifest.json
+python3 scripts/generate_node_manifest.py -o out.json  # custom path
+```
+
+The script parses `providedPorts()` from every non-example header and emits a
+JSON file matching the btstudio `BTNodeDefinition[]` schema.
+
+### PR-Ready nodeLibrary Patch
+
+`scripts/btstudio_node_patch.ts` contains a `mercuryAutonomyNodes` array that
+can be imported into btstudio's `src/data/nodeLibrary.ts`. To apply:
+
+1. Copy `btstudio_node_patch.ts` into the btstudio `src/data/` directory.
+2. In `nodeLibrary.ts`, import and spread:
+   ```ts
+   import { mercuryAutonomyNodes } from './btstudio_node_patch';
+   export const nodeLibrary: BTNodeDefinition[] = [
+     ...existingNodes,
+     ...mercuryAutonomyNodes,
+   ];
+   ```
+3. Rebuild btstudio.
+
+Re-run `generate_node_manifest.py` whenever nodes are added or ports change,
+then update the patch file accordingly.
 
 ## Environment
 
