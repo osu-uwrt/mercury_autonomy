@@ -9,9 +9,7 @@
 namespace mercury_autonomy
 {
 
-// ---------------------------------------------------------------------------
 // Plugin management
-// ---------------------------------------------------------------------------
 
 void registerPlugins(
   std::shared_ptr<BT::BehaviorTreeFactory> factory,
@@ -38,9 +36,7 @@ void initRosForTree(BT::Tree & tree, rclcpp::Node::SharedPtr ros_node)
   }
 }
 
-// ---------------------------------------------------------------------------
 // Environment helpers
-// ---------------------------------------------------------------------------
 
 std::string getEnvVar(const char * name)
 {
@@ -51,9 +47,7 @@ std::string getEnvVar(const char * name)
   return std::string(value);
 }
 
-// ---------------------------------------------------------------------------
 // Geometry helpers
-// ---------------------------------------------------------------------------
 
 geometry_msgs::msg::Pose doTransform(
   const geometry_msgs::msg::Pose & pose,
