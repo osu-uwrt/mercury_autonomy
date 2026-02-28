@@ -35,6 +35,9 @@ mercury_autonomy/              <-- Git repository root
       bt_actions/              <-- Action node implementations
       bt_conditions/           <-- Condition node implementations
       bt_decorators/           <-- Decorator node implementations
+    launch/                    <-- ROS2 launch files
+    scripts/                   <-- Development tools (bt_assistant.py)
+    test/                      <-- GTest unit and integration tests
     trees/                     <-- BT XML files run by tree_executor
 ```
 
@@ -137,6 +140,90 @@ so only the registration file needs a manual edit.
 2. Copy `src/bt_decorators/example_decorator.cpp`.
 3. Rename, update ports and `tick()`.
 4. Register in `src/register_decorators.cpp`.
+
+### Using the BT Assistant
+
+The `scripts/bt_assistant.py` tool automates the above process:
+
+```bash
+cd mercury_autonomy/
+python3 scripts/bt_assistant.py create action MoveToWaypoint
+python3 scripts/bt_assistant.py create condition IsSubmerged
+python3 scripts/bt_assistant.py create decorator RetryOnFail
+```
+
+Other commands:
+
+```bash
+python3 scripts/bt_assistant.py list    # List all nodes by type
+python3 scripts/bt_assistant.py check   # Verify header/source/registration consistency
+```
+
+## Launch
+
+The package provides a launch file at `launch/autonomy.launch.py`:
+
+```bash
+ros2 launch mercury_autonomy autonomy.launch.py
+ros2 launch mercury_autonomy autonomy.launch.py robot:=mercury
+```
+
+Arguments:
+- `robot` (default: `mercury`) -- namespace for all nodes.
+- `tree_directory` (default: empty) -- override the tree XML search directory.
+
+## Testing
+
+Tests live in `test/` and use ament_cmake_gtest.
+
+### Running tests
+
+```bash
+# Build with testing enabled
+colcon build --packages-select mercury_autonomy \
+    --cmake-args -DBUILD_TESTING=ON -DBTCPP_EXAMPLES=OFF -DBTCPP_BUILD_TOOLS=OFF
+
+# Run
+colcon test --packages-select mercury_autonomy
+colcon test-result --verbose
+```
+
+### Test files
+
+| Test                     | Description                                        |
+|--------------------------|----------------------------------------------------|
+| test_tree_executor.cpp   | TreeExecutor ROS2 node integration tests           |
+| test_approx_equal_to.cpp | ApproxEqualTo condition factory & port verification |
+| test_topic_nodes.cpp     | GetBoolTopic / GetFloatTopic registration & ports  |
+
+### Adding a new test
+
+1. Create `test/test_<name>.cpp`.
+2. Add `ament_add_gtest(...)` in the `BUILD_TESTING` section of CMakeLists.txt.
+3. Link against `mercury_autonomy_core` and any needed source files.
+
+## Custom Nodes
+
+### Actions
+
+| Node           | Description                                           |
+|----------------|-------------------------------------------------------|
+| ExampleAction  | Template action node (multi-tick lifecycle demo)      |
+| GetBoolTopic   | Subscribe to a Bool topic and output the value        |
+| GetFloatTopic  | Subscribe to a Float64 topic and output the value     |
+
+### Conditions
+
+| Node           | Description                                           |
+|----------------|-------------------------------------------------------|
+| ExampleCondition | Template condition node                             |
+| ApproxEqualTo  | Returns SUCCESS if |a - b| < range                    |
+
+### Decorators
+
+| Node             | Description                                         |
+|------------------|-----------------------------------------------------|
+| ExampleDecorator | Template decorator node                             |
 
 ## BT.CPP Subtree Management
 

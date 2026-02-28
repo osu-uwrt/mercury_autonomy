@@ -23,7 +23,8 @@ BT::NodeStatus ExampleAction::onStart()
     return BT::NodeStatus::FAILURE;
   }
 
-  RCLCPP_INFO(rosNode()->get_logger(), "ExampleAction started with target: %s",
+  RCLCPP_INFO(
+    rosNode()->get_logger(), "ExampleAction started with target: %s",
     target.value().c_str());
 
   // TODO: Begin the action (e.g., send a goal to a ROS action server).

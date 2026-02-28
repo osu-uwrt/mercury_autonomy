@@ -29,7 +29,7 @@ public:
   void init(rclcpp::Node::SharedPtr node);
 
   /// Access the ROS node handle.
-  rclcpp::Node::SharedPtr rosNode() const { return ros_node_; }
+  rclcpp::Node::SharedPtr rosNode() const {return ros_node_;}
 
   /// Access the underlying BT TreeNode (implemented by each subclass).
   virtual BT::TreeNode * treeNode() = 0;
@@ -66,7 +66,7 @@ public:
   MercuryActionNode(const std::string & name, const BT::NodeConfig & config)
   : StatefulActionNode(name, config) {}
 
-  BT::TreeNode * treeNode() override { return this; }
+  BT::TreeNode * treeNode() override {return this;}
 };
 
 /// Base class for custom BT condition nodes with ROS2 access.
@@ -76,7 +76,7 @@ public:
   MercuryConditionNode(const std::string & name, const BT::NodeConfig & config)
   : ConditionNode(name, config) {}
 
-  BT::TreeNode * treeNode() override { return this; }
+  BT::TreeNode * treeNode() override {return this;}
 };
 
 /// Base class for custom BT decorator nodes with ROS2 access.
@@ -86,7 +86,7 @@ public:
   MercuryDecoratorNode(const std::string & name, const BT::NodeConfig & config)
   : DecoratorNode(name, config) {}
 
-  BT::TreeNode * treeNode() override { return this; }
+  BT::TreeNode * treeNode() override {return this;}
 };
 
 }  // namespace mercury_autonomy

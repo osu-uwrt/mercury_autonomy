@@ -160,6 +160,14 @@ install(DIRECTORY trees/
   DESTINATION share/${PROJECT_NAME}/trees
 )
 
+install(DIRECTORY launch/
+  DESTINATION share/${PROJECT_NAME}/launch
+)
+
+install(PROGRAMS scripts/bt_assistant.py
+  DESTINATION lib/${PROJECT_NAME}
+)
+
 # ---------------------------------------------------------------------------
 # Testing
 # ---------------------------------------------------------------------------
@@ -168,6 +176,37 @@ if(BUILD_TESTING)
   set(ament_cmake_copyright_FOUND TRUE)
   set(ament_cmake_cpplint_FOUND TRUE)
   ament_lint_auto_find_test_dependencies()
+
+  find_package(ament_cmake_gtest REQUIRED)
+
+  # Tree executor integration test
+  ament_add_gtest(test_tree_executor test/test_tree_executor.cpp)
+  target_include_directories(test_tree_executor PRIVATE
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+  )
+  ament_target_dependencies(test_tree_executor ${THIS_PACKAGE_DEPS})
+  target_link_libraries(test_tree_executor mercury_autonomy_core)
+
+  # ApproxEqualTo unit test
+  ament_add_gtest(test_approx_equal_to test/test_approx_equal_to.cpp
+    src/bt_conditions/approx_equal_to.cpp
+  )
+  target_include_directories(test_approx_equal_to PRIVATE
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+  )
+  ament_target_dependencies(test_approx_equal_to ${THIS_PACKAGE_DEPS})
+  target_link_libraries(test_approx_equal_to mercury_autonomy_core)
+
+  # Topic node (GetBoolTopic / GetFloatTopic) unit test
+  ament_add_gtest(test_topic_nodes test/test_topic_nodes.cpp
+    src/bt_actions/get_bool_topic.cpp
+    src/bt_actions/get_float_topic.cpp
+  )
+  target_include_directories(test_topic_nodes PRIVATE
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+  )
+  ament_target_dependencies(test_topic_nodes ${THIS_PACKAGE_DEPS})
+  target_link_libraries(test_topic_nodes mercury_autonomy_core)
 endif()
 
 ament_package()

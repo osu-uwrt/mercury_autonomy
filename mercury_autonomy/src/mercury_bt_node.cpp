@@ -38,9 +38,9 @@ bool MercuryBtNode::lookupTransform(
   bool use_current_time)
 {
   try {
-    auto time_point = use_current_time
-      ? tf2_ros::fromRclcpp(ros_node_->get_clock()->now())
-      : tf2::TimePointZero;
+    auto time_point = use_current_time ?
+      tf2_ros::fromRclcpp(ros_node_->get_clock()->now()) :
+      tf2::TimePointZero;
     transform = tf_buffer_->lookupTransform(to_frame, from_frame, time_point);
     return true;
   } catch (const tf2::TransformException & ex) {

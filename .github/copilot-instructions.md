@@ -5,7 +5,8 @@
 This repository contains the `mercury_autonomy` package, a BehaviorTree-based
 autonomy system for OSU UWRT's Mercury robot stack. It is the successor to
 riptide_autonomy (https://github.com/osu-uwrt/riptide_autonomy), rebuilt around
-BehaviorTree.CPP v4 with significant architectural differences.
+BehaviorTree.CPP v4 with significant architectural differences. riptide_autonomy is 
+only a suggestion, make architectural deviations when logical.
 
 The defining feature of mercury_autonomy is that the BehaviorTree.CPP library
 (https://github.com/BehaviorTree/BehaviorTree.CPP) is vendored as a Git subtree
@@ -13,6 +14,9 @@ under `dependencies/BehaviorTreeCPP/`. This allows the team to modify the librar
 directly for additional features without maintaining a separate fork.
 
 There is no backwards compatibility requirement with riptide_autonomy or any older code.
+However, this must be compatible with ROS2 Humble. 
+Remember to add concise comments to code and update documentation with changes. 
+Never use emojis.
 
 ## Repository Structure
 
@@ -49,6 +53,9 @@ mercury_autonomy/
     bt_actions/              -- Action node .cpp implementations
     bt_conditions/           -- Condition node .cpp implementations
     bt_decorators/           -- Decorator node .cpp implementations
+  launch/                    -- ROS2 launch files (autonomy.launch.py)
+  scripts/                   -- Dev tools (bt_assistant.py)
+  test/                      -- GTest unit and integration tests
   trees/                     -- BT XML files (loaded by tree_executor at runtime)
 ```
 
@@ -135,6 +142,12 @@ the registration function from the shared library so BT.CPP can load it at runti
 3. Register: add `factory.registerNodeType<...>("NodeName")` in `src/register_actions.cpp`.
 4. Rebuild.
 
+Alternatively, use the BT assistant to automate steps 1-3:
+```bash
+cd mercury_autonomy/
+python3 scripts/bt_assistant.py create action <ClassName>
+```
+
 ### Adding a new BT condition node
 
 Same pattern as actions, using `MercuryConditionNode`, `tick()`, and
@@ -144,6 +157,12 @@ Same pattern as actions, using `MercuryConditionNode`, `tick()`, and
 
 Same pattern as actions, using `MercuryDecoratorNode`, `tick()`, and
 `src/register_decorators.cpp`.
+
+### Adding a new test
+
+1. Create `test/test_<name>.cpp` with GTest.
+2. Add `ament_add_gtest(...)` in CMakeLists.txt under `BUILD_TESTING`.
+3. Link against `mercury_autonomy_core` and node source files as needed.
 
 ### Modifying the BT.CPP library
 

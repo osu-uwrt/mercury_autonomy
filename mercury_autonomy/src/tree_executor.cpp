@@ -25,7 +25,6 @@ using namespace std::placeholders;
 namespace mercury_autonomy
 {
 
-// ---------------------------------------------------------------------------
 // Action definition -- uses a simple string goal / int result.
 // Until a project-specific action type is created, we encode
 // tree path as a Trigger-like request and return status via
@@ -34,7 +33,6 @@ namespace mercury_autonomy
 //
 // For now the executor exposes only the list_trees service and
 // a minimal execute_tree action (goal = tree path string, result = int).
-// ---------------------------------------------------------------------------
 
 /// The tree executor node.
 class TreeExecutor : public rclcpp::Node
@@ -73,7 +71,8 @@ public:
         RCLCPP_INFO(get_logger(), "Loading extra plugin: %s", plugin_path.c_str());
         factory_->registerFromPlugin(plugin_path);
       } catch (const BT::RuntimeError & e) {
-        RCLCPP_ERROR(get_logger(), "Failed to load plugin %s: %s",
+        RCLCPP_ERROR(
+          get_logger(), "Failed to load plugin %s: %s",
           plugin_path.c_str(), e.what());
       }
     }
@@ -86,7 +85,8 @@ public:
     // Feedback publisher (tree status as string for debugging)
     status_pub_ = create_publisher<std_msgs::msg::String>("autonomy/status", 10);
 
-    RCLCPP_INFO(get_logger(), "TreeExecutor ready. Searching trees in %zu directories.",
+    RCLCPP_INFO(
+      get_logger(), "TreeExecutor ready. Searching trees in %zu directories.",
       tree_dirs_.size());
   }
 
@@ -166,7 +166,7 @@ private:
     status_pub_->publish(msg);
   }
 
-  // --- Members ---
+  // Members
   std::shared_ptr<BT::BehaviorTreeFactory> factory_;
   std::vector<std::string> tree_dirs_;
   std::vector<std::string> extra_tree_dirs_;
@@ -179,7 +179,6 @@ private:
 
 }  // namespace mercury_autonomy
 
-// ---------------------------------------------------------------------------
 
 int main(int argc, char * argv[])
 {
