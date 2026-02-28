@@ -2,6 +2,10 @@
 """
 bt_assistant -- Automates creation and management of BT nodes for mercury_autonomy.
 
+Templates are sourced from the example node files (example_action, example_condition,
+example_decorator) so that editing those files automatically updates what new nodes
+receive. The leading comment block is replaced with a generic one for new nodes.
+
 Usage::
 
     python3 scripts/bt_assistant.py create <type> <ClassName>
@@ -30,22 +34,19 @@ NODE_TYPES = {
         "base_class": "MercuryActionNode",
         "bt_type": "bt_actions",
         "register_file": "register_actions.cpp",
-        "header_template": "action_header",
-        "source_template": "action_source",
+        "example_class": "ExampleAction",
     },
     "condition": {
         "base_class": "MercuryConditionNode",
         "bt_type": "bt_conditions",
         "register_file": "register_conditions.cpp",
-        "header_template": "condition_header",
-        "source_template": "condition_source",
+        "example_class": "ExampleCondition",
     },
     "decorator": {
         "base_class": "MercuryDecoratorNode",
         "bt_type": "bt_decorators",
         "register_file": "register_decorators.cpp",
-        "header_template": "decorator_header",
-        "source_template": "decorator_source",
+        "example_class": "ExampleDecorator",
     },
 }
 
@@ -57,193 +58,77 @@ def pascal_to_snake(name: str) -> str:
     return s.lower()
 
 
-# Templates
+def _read_example_file(node_type: str, file_kind: str) -> str:
+    """
+    Read an example template file and return its contents.
 
-TEMPLATES = {
-    "action_header": '''\
-// {class_name} -- custom BT action node.
-//
-// TODO: Add a description of what this action does.
+    :param node_type: One of 'action', 'condition', 'decorator'.
+    :param file_kind: Either 'header' or 'source'.
+    :return: File contents as a string.
+    """
+    info = NODE_TYPES[node_type]
+    bt_type = info["bt_type"]
+    example_file = pascal_to_snake(info["example_class"])
 
-#pragma once
+    if file_kind == "header":
+        path = INCLUDE_DIR / bt_type / f"{example_file}.hpp"
+    else:
+        path = SRC_DIR / bt_type / f"{example_file}.cpp"
 
-#include "mercury_autonomy/autonomy_lib.hpp"
+    if not path.exists():
+        print(f"Error: Template file not found: {path}")
+        print("  Ensure the example node files exist before creating new nodes.")
+        sys.exit(1)
 
-namespace mercury_autonomy
-{{
+    return path.read_text()
 
-class {class_name} : public MercuryActionNode
-{{
-public:
-  {class_name}(const std::string & name, const BT::NodeConfig & config)
-  : MercuryActionNode(name, config) {{}}
 
-  static BT::PortsList providedPorts()
-  {{
-    return {{
-      // TODO: Define input/output ports.
-      // BT::InputPort<std::string>("param", "Description"),
-      // BT::OutputPort<double>("result", "Description"),
-    }};
-  }}
+def _replace_leading_comment(content: str, new_comment: str, marker: str) -> str:
+    """
+    Replace everything before a marker line with a new comment block.
 
-  BT::NodeStatus onStart() override;
-  BT::NodeStatus onRunning() override;
-  void onHalted() override;
+    :param content: Full file text.
+    :param new_comment: Replacement comment text (should end with newline).
+    :param marker: Line that marks end of the comment block (e.g. '#pragma once').
+    :return: Content with the leading comment replaced.
+    """
+    idx = content.find(marker)
+    if idx == -1:
+        return new_comment + content
+    return new_comment + content[idx:]
 
-protected:
-  void rosInit() override;
-}};
 
-}}  // namespace mercury_autonomy
-''',
-    "action_source": '''\
-// {class_name} implementation.
+def _build_from_example(node_type: str, file_kind: str,
+                        class_name: str, file_name: str) -> str:
+    """
+    Build new node file content by transforming the example template.
 
-#include "mercury_autonomy/{bt_type}/{file_name}.hpp"
+    Reads the example file, replaces the leading comment with a generic one,
+    and substitutes the example class/file names with the new ones.
+    """
+    info = NODE_TYPES[node_type]
+    example_class = info["example_class"]
+    example_file = pascal_to_snake(example_class)
+    content = _read_example_file(node_type, file_kind)
 
-namespace mercury_autonomy
-{{
+    # Replace leading comment block
+    type_label = node_type  # "action", "condition", or "decorator"
+    if file_kind == "header":
+        new_comment = (
+            f"// {class_name} -- custom BT {type_label} node.\n"
+            f"//\n"
+            f"// TODO: Add a description of what this {type_label} does.\n\n"
+        )
+        content = _replace_leading_comment(content, new_comment, "#pragma once")
+    else:
+        new_comment = f"// {class_name} implementation.\n\n"
+        content = _replace_leading_comment(content, new_comment, "#include")
 
-void {class_name}::rosInit()
-{{
-  // TODO: Create publishers, subscribers, service clients, etc.
-  RCLCPP_DEBUG(rosNode()->get_logger(), "{class_name}::rosInit()");
-}}
+    # Substitute class and file names
+    content = content.replace(example_class, class_name)
+    content = content.replace(example_file, file_name)
 
-BT::NodeStatus {class_name}::onStart()
-{{
-  // TODO: Read input ports and begin action.
-  RCLCPP_INFO(rosNode()->get_logger(), "{class_name} started.");
-  return BT::NodeStatus::RUNNING;
-}}
-
-BT::NodeStatus {class_name}::onRunning()
-{{
-  // TODO: Check progress. Return RUNNING, SUCCESS, or FAILURE.
-  return BT::NodeStatus::SUCCESS;
-}}
-
-void {class_name}::onHalted()
-{{
-  // TODO: Clean up resources.
-  RCLCPP_INFO(rosNode()->get_logger(), "{class_name} halted.");
-}}
-
-}}  // namespace mercury_autonomy
-''',
-    "condition_header": '''\
-// {class_name} -- custom BT condition node.
-//
-// TODO: Add a description of what this condition checks.
-
-#pragma once
-
-#include "mercury_autonomy/autonomy_lib.hpp"
-
-namespace mercury_autonomy
-{{
-
-class {class_name} : public MercuryConditionNode
-{{
-public:
-  {class_name}(const std::string & name, const BT::NodeConfig & config)
-  : MercuryConditionNode(name, config) {{}}
-
-  static BT::PortsList providedPorts()
-  {{
-    return {{
-      // TODO: Define input/output ports.
-      // BT::InputPort<double>("value", "Description"),
-    }};
-  }}
-
-  BT::NodeStatus tick() override;
-
-protected:
-  void rosInit() override;
-}};
-
-}}  // namespace mercury_autonomy
-''',
-    "condition_source": '''\
-// {class_name} implementation.
-
-#include "mercury_autonomy/{bt_type}/{file_name}.hpp"
-
-namespace mercury_autonomy
-{{
-
-void {class_name}::rosInit()
-{{
-  // TODO: Create any ROS subscriptions needed to evaluate this condition.
-  RCLCPP_DEBUG(rosNode()->get_logger(), "{class_name}::rosInit()");
-}}
-
-BT::NodeStatus {class_name}::tick()
-{{
-  // TODO: Evaluate the condition. Return SUCCESS or FAILURE.
-  return BT::NodeStatus::SUCCESS;
-}}
-
-}}  // namespace mercury_autonomy
-''',
-    "decorator_header": '''\
-// {class_name} -- custom BT decorator node.
-//
-// TODO: Add a description of what this decorator does.
-
-#pragma once
-
-#include "mercury_autonomy/autonomy_lib.hpp"
-
-namespace mercury_autonomy
-{{
-
-class {class_name} : public MercuryDecoratorNode
-{{
-public:
-  {class_name}(const std::string & name, const BT::NodeConfig & config)
-  : MercuryDecoratorNode(name, config) {{}}
-
-  static BT::PortsList providedPorts()
-  {{
-    return {{
-      // TODO: Define input/output ports.
-    }};
-  }}
-
-  BT::NodeStatus tick() override;
-
-protected:
-  void rosInit() override;
-}};
-
-}}  // namespace mercury_autonomy
-''',
-    "decorator_source": '''\
-// {class_name} implementation.
-
-#include "mercury_autonomy/{bt_type}/{file_name}.hpp"
-
-namespace mercury_autonomy
-{{
-
-void {class_name}::rosInit()
-{{
-  RCLCPP_DEBUG(rosNode()->get_logger(), "{class_name}::rosInit()");
-}}
-
-BT::NodeStatus {class_name}::tick()
-{{
-  // TODO: Implement decorator logic. Tick child with:
-  //   auto status = child_node_->executeTick();
-  return child_node_->executeTick();
-}}
-
-}}  // namespace mercury_autonomy
-''',
-}
+    return content
 
 
 def create_node(node_type: str, class_name: str) -> None:
@@ -279,10 +164,9 @@ def create_node(node_type: str, class_name: str) -> None:
     header_dir.mkdir(parents=True, exist_ok=True)
     source_dir.mkdir(parents=True, exist_ok=True)
 
-    # Format templates
-    fmt = {"class_name": class_name, "file_name": file_name, "bt_type": bt_type}
-    header_content = TEMPLATES[info["header_template"]].format(**fmt)
-    source_content = TEMPLATES[info["source_template"]].format(**fmt)
+    # Build content from example template files
+    header_content = _build_from_example(node_type, "header", class_name, file_name)
+    source_content = _build_from_example(node_type, "source", class_name, file_name)
 
     # Write files
     header_path.write_text(header_content)

@@ -190,11 +190,16 @@ colcon test-result --verbose
 
 ### Test files
 
-| Test                     | Description                                        |
-|--------------------------|----------------------------------------------------|
-| test_tree_executor.cpp   | TreeExecutor ROS2 node integration tests           |
-| test_approx_equal_to.cpp | ApproxEqualTo condition factory & port verification |
-| test_topic_nodes.cpp     | GetBoolTopic / GetFloatTopic registration & ports  |
+| Test                      | Description                                         |
+|---------------------------|-----------------------------------------------------|
+| test_tree_executor.cpp    | TreeExecutor ROS2 node integration tests            |
+| test_approx_equal_to.cpp  | ApproxEqualTo condition factory & port verification |
+| test_topic_nodes.cpp      | GetBoolTopic / GetFloatTopic registration & ports   |
+| test_service_nodes.cpp    | CallSetBoolService / CallTriggerService reg. & ports|
+| test_transform_pose.cpp   | TransformPose registration & port verification      |
+| test_sensor_nodes.cpp     | GetOdometry / GetImuOrientation / GetTwistTopic     |
+| test_condition_nodes.cpp  | ApproxEqualToAngle / CompareNums / IsTrue           |
+| test_decorator_nodes.cpp  | RetryUntilSuccessfulOrTimeout reg. & ports          |
 
 ### Adding a new test
 
@@ -206,24 +211,69 @@ colcon test-result --verbose
 
 ### Actions
 
-| Node           | Description                                           |
-|----------------|-------------------------------------------------------|
-| ExampleAction  | Template action node (multi-tick lifecycle demo)      |
-| GetBoolTopic   | Subscribe to a Bool topic and output the value        |
-| GetFloatTopic  | Subscribe to a Float64 topic and output the value     |
+| Node                | Description                                              |
+|---------------------|----------------------------------------------------------|
+| ExampleAction       | Template action node (multi-tick lifecycle demo)         |
+| GetBoolTopic        | Subscribe to a Bool topic and output the value           |
+| GetFloatTopic       | Subscribe to a Float64 topic and output the value        |
+| GetTwistTopic       | Subscribe to a Twist topic and output velocity components|
+| GetOdometry         | Subscribe to an Odometry topic and output pose as XYZ/RPY|
+| GetImuOrientation   | Subscribe to an IMU topic and output orientation as RPY  |
+| CallSetBoolService  | Asynchronously call a SetBool service with timeout       |
+| CallTriggerService  | Asynchronously call a Trigger service with timeout       |
+| TransformPose       | Look up a TF2 transform and apply it to a pose          |
 
 ### Conditions
 
-| Node           | Description                                           |
-|----------------|-------------------------------------------------------|
-| ExampleCondition | Template condition node                             |
-| ApproxEqualTo  | Returns SUCCESS if |a - b| < range                    |
+| Node                | Description                                              |
+|---------------------|----------------------------------------------------------|
+| ExampleCondition    | Template condition node                                  |
+| ApproxEqualTo       | Returns SUCCESS if |a - b| < range                      |
+| ApproxEqualToAngle  | Angle-aware approximate comparison (wraps to [-pi, pi]) |
+| CompareNums         | Numeric comparison with configurable operator            |
+| IsTrue              | Returns SUCCESS if the input boolean is true             |
 
 ### Decorators
 
-| Node             | Description                                         |
-|------------------|-----------------------------------------------------|
-| ExampleDecorator | Template decorator node                             |
+| Node                            | Description                                   |
+|---------------------------------|-----------------------------------------------|
+| ExampleDecorator                | Template decorator node                       |
+| RetryUntilSuccessfulOrTimeout   | Retry child until SUCCESS or a timeout elapses|
+
+## Robot Namespace
+
+The system supports configurable robot namespaces via standard ROS2 mechanisms.
+
+### How it works
+
+1. The launch file uses `PushRosNamespace` with a configurable `robot` argument
+   (default: `mercury`). All nodes end up under `/<robot>/`.
+2. Topic and service names in BT XML files should use **relative names** (no
+   leading `/`). ROS2 automatically prefixes them with the node namespace.
+3. `initRosForTree()` writes the robot namespace to the blackboard as
+   `robot_ns`. BT XML trees can reference it via `{robot_ns}` for cases where
+   the namespace string is needed directly (e.g., TF frame names).
+
+### Example BT XML usage
+
+```xml
+<!-- Relative topic -- resolves to /mercury/odometry/filtered when robot=mercury -->
+<GetOdometry topic="odometry/filtered" x="{x}" y="{y}" z="{z}" />
+
+<!-- Using robot_ns for TF frame names -->
+<TransformPose from_frame="{robot_ns}/base_link"
+               to_frame="world"
+               out_x="{tx}" out_y="{ty}" out_z="{tz}" />
+```
+
+### Changing the robot namespace
+
+```bash
+ros2 launch mercury_autonomy autonomy.launch.py robot:=talos
+```
+
+All topics, services, and the `robot_ns` blackboard entry will update
+automatically.
 
 ## BT.CPP Subtree Management
 

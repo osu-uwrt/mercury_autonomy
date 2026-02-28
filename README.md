@@ -39,3 +39,4 @@ Note that during a future subtree pull, Git will attempt to merge your local cha
 Currently in progress, as a successor to the BT assistant present in riptide_autonomy.
 
 BT Assistant is a python script that automates the creation and registration of custom nodes.
+ 

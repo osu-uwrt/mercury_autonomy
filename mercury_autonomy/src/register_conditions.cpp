@@ -3,11 +3,17 @@
 
 #include "mercury_autonomy/bt_conditions/example_condition.hpp"
 #include "mercury_autonomy/bt_conditions/approx_equal_to.hpp"
+#include "mercury_autonomy/bt_conditions/approx_equal_to_angle.hpp"
+#include "mercury_autonomy/bt_conditions/compare_nums.hpp"
+#include "mercury_autonomy/bt_conditions/is_true.hpp"
 
 BT_REGISTER_NODES(factory)
 {
   factory.registerNodeType<mercury_autonomy::ExampleCondition>("ExampleCondition");
   factory.registerNodeType<mercury_autonomy::ApproxEqualTo>("ApproxEqualTo");
+  factory.registerNodeType<mercury_autonomy::ApproxEqualToAngle>("ApproxEqualToAngle");
+  factory.registerNodeType<mercury_autonomy::CompareNums>("CompareNums");
+  factory.registerNodeType<mercury_autonomy::IsTrue>("IsTrue");
 
   // Register additional condition nodes below:
   // factory.registerNodeType<mercury_autonomy::MyNewCondition>("MyNewCondition");

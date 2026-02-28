@@ -26,6 +26,20 @@ void initRosForTree(BT::Tree & tree, rclcpp::Node::SharedPtr ros_node)
   // Set up shared static resources (TF buffer, etc.)
   MercuryBtNode::staticInit(ros_node);
 
+  // Expose the robot namespace on every subtree's blackboard so BT XML
+  // authors can reference it (e.g., for TF frame names: "{robot_ns}/base_link").
+  // The namespace is the ROS node's namespace stripped of its leading slash.
+  std::string ns = ros_node->get_namespace();
+  if (!ns.empty() && ns.front() == '/') {
+    ns = ns.substr(1);
+  }
+  if (ns.empty()) {
+    ns = "mercury";  // default when no namespace is set
+  }
+  for (auto & subtree : tree.subtrees) {
+    subtree->blackboard->set("robot_ns", ns);
+  }
+
   // Hand each custom node a ROS handle so it can create pubs/subs.
   for (auto & node : tree.subtrees) {
     for (auto & tree_node : node->nodes) {

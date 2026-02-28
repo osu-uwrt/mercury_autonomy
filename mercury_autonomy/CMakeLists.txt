@@ -207,6 +207,61 @@ if(BUILD_TESTING)
   )
   ament_target_dependencies(test_topic_nodes ${THIS_PACKAGE_DEPS})
   target_link_libraries(test_topic_nodes mercury_autonomy_core)
+
+  # Service node (CallSetBoolService / CallTriggerService) unit test
+  ament_add_gtest(test_service_nodes test/test_service_nodes.cpp
+    src/bt_actions/call_set_bool_service.cpp
+    src/bt_actions/call_trigger_service.cpp
+  )
+  target_include_directories(test_service_nodes PRIVATE
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+  )
+  ament_target_dependencies(test_service_nodes ${THIS_PACKAGE_DEPS})
+  target_link_libraries(test_service_nodes mercury_autonomy_core)
+
+  # TransformPose unit test
+  ament_add_gtest(test_transform_pose test/test_transform_pose.cpp
+    src/bt_actions/transform_pose.cpp
+  )
+  target_include_directories(test_transform_pose PRIVATE
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+  )
+  ament_target_dependencies(test_transform_pose ${THIS_PACKAGE_DEPS})
+  target_link_libraries(test_transform_pose mercury_autonomy_core)
+
+  # Sensor subscriber node (GetOdometry / GetImuOrientation / GetTwistTopic) test
+  ament_add_gtest(test_sensor_nodes test/test_sensor_nodes.cpp
+    src/bt_actions/get_odometry.cpp
+    src/bt_actions/get_imu_orientation.cpp
+    src/bt_actions/get_twist_topic.cpp
+  )
+  target_include_directories(test_sensor_nodes PRIVATE
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+  )
+  ament_target_dependencies(test_sensor_nodes ${THIS_PACKAGE_DEPS})
+  target_link_libraries(test_sensor_nodes mercury_autonomy_core)
+
+  # Condition node (ApproxEqualToAngle / CompareNums / IsTrue) unit test
+  ament_add_gtest(test_condition_nodes test/test_condition_nodes.cpp
+    src/bt_conditions/approx_equal_to_angle.cpp
+    src/bt_conditions/compare_nums.cpp
+    src/bt_conditions/is_true.cpp
+  )
+  target_include_directories(test_condition_nodes PRIVATE
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+  )
+  ament_target_dependencies(test_condition_nodes ${THIS_PACKAGE_DEPS})
+  target_link_libraries(test_condition_nodes mercury_autonomy_core)
+
+  # Decorator node (RetryUntilSuccessfulOrTimeout) unit test
+  ament_add_gtest(test_decorator_nodes test/test_decorator_nodes.cpp
+    src/bt_decorators/retry_until_successful_or_timeout.cpp
+  )
+  target_include_directories(test_decorator_nodes PRIVATE
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+  )
+  ament_target_dependencies(test_decorator_nodes ${THIS_PACKAGE_DEPS})
+  target_link_libraries(test_decorator_nodes mercury_autonomy_core)
 endif()
 
 ament_package()
