@@ -3,7 +3,7 @@ BT autonomy system for the Mercury stack
 
 
 # Dependency Management: BehaviorTree.CPP
-The mercury_autonomy package vendors the BehaviorTree.CPP library using Git Subtree. This enables us to have bespoke revision of the library while allowing us to pull upstream changes for maintinance and new features.
+The mercury_autonomy package vendors the [BehaviorTree.CPP library](https://github.com/BehaviorTree/BehaviorTree.CPP) using Git Subtree. This enables us to have bespoke revision of the library while allowing us to pull upstream changes for maintinance and new features.
 
 The library source is located at: dependencies/BehaviorTreeCPP
 
