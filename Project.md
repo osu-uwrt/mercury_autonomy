@@ -14,6 +14,7 @@ library vendored as a Git subtree so the team can patch or extend it directly.
 mercury_autonomy/              <-- Git repository root
   dependencies/
     BehaviorTreeCPP/           <-- BT.CPP v4 (Git subtree, ament_cmake package)
+  dev_scripts/                 <-- Development tools (bt_assistant, btstudio generator)
   mercury_autonomy/            <-- Main ROS2 package (ament_cmake)
     CMakeLists.txt
     package.xml
@@ -36,9 +37,10 @@ mercury_autonomy/              <-- Git repository root
       bt_conditions/           <-- Condition node implementations
       bt_decorators/           <-- Decorator node implementations
     launch/                    <-- ROS2 launch files
-    scripts/                   <-- Development tools (bt_assistant.py)
     test/                      <-- GTest unit and integration tests
     trees/                     <-- BT XML files run by tree_executor
+      example_tree.xml         <-- Basic tree using ExampleAction/ExampleCondition
+      action_server_demo.xml   <-- Demo tree for verifying the action server
 ```
 
 ## Build System
@@ -48,6 +50,7 @@ The repository contains two colcon/ament_cmake packages:
 | Package             | Location                          | Description                    |
 |---------------------|-----------------------------------|--------------------------------|
 | behaviortree_cpp    | dependencies/BehaviorTreeCPP/     | BT.CPP v4 library (subtree)   |
+| mercury_msgs        | mercury_common/mercury_msgs/      | Custom actions/messages        |
 | mercury_autonomy    | mercury_autonomy/                 | Main autonomy package          |
 
 colcon discovers both automatically. mercury_autonomy declares a `<depend>` on
@@ -58,7 +61,7 @@ colcon discovers both automatically. mercury_autonomy declares a `<depend>` on
 From the workspace root (the directory containing `src/`):
 
 ```bash
-colcon build --packages-select behaviortree_cpp mercury_autonomy \
+colcon build --packages-select mercury_msgs behaviortree_cpp mercury_autonomy \
     --allow-overriding behaviortree_cpp \
     --cmake-args -DBTCPP_EXAMPLES=OFF -DBUILD_TESTING=OFF -DBTCPP_BUILD_TOOLS=OFF
 ```
@@ -99,34 +102,51 @@ Three concrete base classes are provided:
 
 1. Registers all plugin libraries with the BT factory at startup.
 2. Provides an `autonomy/list_trees` service to enumerate available XML files.
-3. Accepts tree execution requests via the `autonomy/execute_tree` topic
-   (`std_msgs/String` containing the tree file path). Execution runs on a
-   background thread so the ROS2 executor remains responsive.
-4. Supports external cancellation via the `autonomy/cancel_tree` service
-   (`std_srvs/Trigger`). On cancel the running tree is halted gracefully.
-5. Publishes status updates on `autonomy/status`.
-6. Tick rate is configurable via the `tick_rate_hz` parameter (default 30.0).
-7. Calls `MercuryBtNode::staticDeinit()` after each tree execution to release
+3. Provides an `autonomy/execute_tree` ROS2 action server
+   (`mercury_msgs/action/ExecuteTree`) for goal-driven tree execution with
+   feedback and cancellation. Execution runs on a background thread so the
+   ROS2 executor remains responsive.
+4. Publishes status updates on `autonomy/status`.
+5. Tick rate is configurable via the `tick_rate_hz` parameter (default 30.0).
+6. Calls `MercuryBtNode::staticDeinit()` after each tree execution to release
    shared resources (TF buffer/listener).
+7. Rejects concurrent goals -- only one tree can execute at a time.
+
+#### ExecuteTree Action Interface
+
+| Field                  | Type    | Description                                  |
+|------------------------|---------|----------------------------------------------|
+| **Goal**               |         |                                              |
+| tree_path              | string  | BT XML filename or absolute path             |
+| **Result**             |         |                                              |
+| result_status          | int32   | 0=SUCCESS, 1=FAILURE, 2=CANCELED, 3=ERROR    |
+| message                | string  | Human-readable outcome                       |
+| elapsed_seconds        | float64 | Total execution time                         |
+| **Feedback**           |         |                                              |
+| current_status         | string  | Current BT status (e.g., "RUNNING")          |
+| elapsed_seconds        | float64 | Time since execution started                 |
 
 #### Triggering a Tree
+
+The `tree_path` goal field accepts either an absolute path or a filename.
+Relative names are resolved by searching the configured tree directories
+(installed share path, `tree_directory` parameter, `extra_tree_dirs`).
 
 ```bash
 # List available trees
 ros2 service call /mercury/autonomy/list_trees std_srvs/srv/Trigger
 
-# Execute a tree
-ros2 topic pub --once /mercury/autonomy/execute_tree std_msgs/msg/String \
-    "data: '/path/to/tree.xml'"
+# Execute a tree by filename (resolved from tree directories)
+ros2 action send_goal --feedback /mercury/autonomy/execute_tree \
+    mercury_msgs/action/ExecuteTree "{tree_path: 'action_server_demo.xml'}"
 
-# Cancel a running tree
-ros2 service call /mercury/autonomy/cancel_tree std_srvs/srv/Trigger
+# Execute a tree by absolute path
+ros2 action send_goal --feedback /mercury/autonomy/execute_tree \
+    mercury_msgs/action/ExecuteTree "{tree_path: '/full/path/to/tree.xml'}"
+
+# Monitor execution status
+ros2 topic echo /mercury/autonomy/status
 ```
-
-A proper ROS2 action interface (goal/feedback/result) should replace the topic-
-based trigger once `mercury_msgs` defines a custom action type. The cancel +
-status interfaces intentionally mirror the action server pattern so migration
-will be transparent.
 
 ### Plugin Registration
 
@@ -165,20 +185,20 @@ so only the registration file needs a manual edit.
 
 ### Using the BT Assistant
 
-The `scripts/bt_assistant.py` tool automates the above process:
+The `dev_scripts/bt_assistant.py` tool automates the above process:
 
 ```bash
-cd mercury_autonomy/
-python3 scripts/bt_assistant.py create action MoveToWaypoint
-python3 scripts/bt_assistant.py create condition IsSubmerged
-python3 scripts/bt_assistant.py create decorator RetryOnFail
+# Run from the repository root
+python3 dev_scripts/bt_assistant.py create action MoveToWaypoint
+python3 dev_scripts/bt_assistant.py create condition IsSubmerged
+python3 dev_scripts/bt_assistant.py create decorator RetryOnFail
 ```
 
 Other commands:
 
 ```bash
-python3 scripts/bt_assistant.py list    # List all nodes by type
-python3 scripts/bt_assistant.py check   # Verify header/source/registration consistency
+python3 dev_scripts/bt_assistant.py list    # List all nodes by type
+python3 dev_scripts/bt_assistant.py check   # Verify header/source/registration consistency
 ```
 
 ## Launch
@@ -329,35 +349,37 @@ The package provides tooling to keep the visual BT editor
 [btstudio](https://github.com/osu-uwrt/btstudio) in sync with the C++ node
 definitions.
 
-### Node Manifest Generator
+### Node Definition Generator
+
+`dev_scripts/generate_btstudio_nodes.py` parses the C++ headers and emits both
+a JSON manifest and a TypeScript file that can be imported into btstudio.
 
 ```bash
-cd mercury_autonomy/
-python3 scripts/generate_node_manifest.py          # -> node_manifest.json
-python3 scripts/generate_node_manifest.py -o out.json  # custom path
+# Generate both JSON and TypeScript (default output: dev_scripts/)
+python3 dev_scripts/generate_btstudio_nodes.py
+
+# Generate only the TypeScript file
+python3 dev_scripts/generate_btstudio_nodes.py --ts-only
+
+# Custom output directory
+python3 dev_scripts/generate_btstudio_nodes.py -o /path/to/btstudio/src/data/
 ```
 
-The script parses `providedPorts()` from every non-example header and emits a
-JSON file matching the btstudio `BTNodeDefinition[]` schema.
+### Applying to btstudio
 
-### PR-Ready nodeLibrary Patch
-
-`scripts/btstudio_node_patch.ts` contains a `mercuryAutonomyNodes` array that
-can be imported into btstudio's `src/data/nodeLibrary.ts`. To apply:
-
-1. Copy `btstudio_node_patch.ts` into the btstudio `src/data/` directory.
-2. In `nodeLibrary.ts`, import and spread:
+1. Run the generator to produce `mercury_autonomy_nodes.ts`.
+2. Copy the file into the btstudio `src/data/` directory.
+3. In `nodeLibrary.ts`, import and spread:
    ```ts
-   import { mercuryAutonomyNodes } from './btstudio_node_patch';
+   import { mercuryAutonomyNodes } from './mercury_autonomy_nodes';
    export const nodeLibrary: BTNodeDefinition[] = [
      ...existingNodes,
      ...mercuryAutonomyNodes,
    ];
    ```
-3. Rebuild btstudio.
+4. Rebuild btstudio.
 
-Re-run `generate_node_manifest.py` whenever nodes are added or ports change,
-then update the patch file accordingly.
+Re-run the generator whenever nodes are added or ports change.
 
 ## Environment
 

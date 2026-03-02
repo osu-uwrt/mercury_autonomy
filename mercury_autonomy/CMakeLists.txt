@@ -24,6 +24,7 @@ find_package(tf2_ros REQUIRED)
 find_package(tf2_geometry_msgs REQUIRED)
 find_package(behaviortree_cpp REQUIRED)
 find_package(ament_index_cpp REQUIRED)
+find_package(mercury_msgs REQUIRED)
 
 set(THIS_PACKAGE_DEPS
   rclcpp
@@ -38,6 +39,7 @@ set(THIS_PACKAGE_DEPS
   tf2_geometry_msgs
   behaviortree_cpp
   ament_index_cpp
+  mercury_msgs
 )
 
 # ---------------------------------------------------------------------------
@@ -162,10 +164,6 @@ install(DIRECTORY trees/
 
 install(DIRECTORY launch/
   DESTINATION share/${PROJECT_NAME}/launch
-)
-
-install(PROGRAMS scripts/bt_assistant.py
-  DESTINATION lib/${PROJECT_NAME}
 )
 
 # ---------------------------------------------------------------------------

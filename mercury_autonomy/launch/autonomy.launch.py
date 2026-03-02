@@ -34,6 +34,10 @@ def generate_launch_description():
     )
 
     # Tree executor node
+    # Note: extra_plugins and extra_tree_dirs are string-array parameters
+    # with empty defaults declared in the C++ node. Only override them in the
+    # launch file when a non-empty value is needed; passing an empty list here
+    # causes a launch-time type error in ROS2 Humble.
     tree_executor_node = Node(
         package="mercury_autonomy",
         executable="tree_executor",
@@ -42,8 +46,6 @@ def generate_launch_description():
         parameters=[
             {"tree_directory": LaunchConfiguration("tree_directory")},
             {"tick_rate_hz": LaunchConfiguration("tick_rate_hz")},
-            {"extra_plugins": []},
-            {"extra_tree_dirs": []},
         ],
     )
 

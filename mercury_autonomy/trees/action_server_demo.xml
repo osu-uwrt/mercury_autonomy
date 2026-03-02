@@ -1,0 +1,39 @@
+<!--
+  action_server_demo.xml - Demonstration tree for testing the ROS2 action server.
+
+  This tree exercises several custom mercury_autonomy nodes and produces
+  observable ROS2 topic output so you can verify end-to-end functionality.
+
+  What it does:
+    1. Checks a numeric comparison (3.0 > 1.0, always true).
+    2. Publishes a Bool=true message to "autonomy/demo_bool" to signal the start.
+    3. Publishes a Twist with linear_x=0.5 to "autonomy/demo_cmd_vel".
+    4. Publishes a Bool=false message to "autonomy/demo_bool" to signal completion.
+
+  How to run:
+    ros2 action send_goal /mercury/autonomy/execute_tree \
+      mercury_msgs/action/ExecuteTree "{tree_path: 'action_server_demo.xml'}"
+
+  How to observe output (in separate terminals):
+    ros2 topic echo /mercury/autonomy/demo_bool
+    ros2 topic echo /mercury/autonomy/demo_cmd_vel
+-->
+<root BTCPP_format="4">
+  <BehaviorTree ID="ActionServerDemo">
+    <Sequence>
+      <!-- Gate: verify a simple numeric comparison passes -->
+      <CompareNums a="3.0" b="1.0" test="&gt;"/>
+
+      <!-- Signal that the demo sequence is starting -->
+      <PublishBool topic="autonomy/demo_bool" value="true"/>
+
+      <!-- Publish a forward velocity command -->
+      <PublishTwist topic="autonomy/demo_cmd_vel"
+                    linear_x="0.5" linear_y="0.0" linear_z="0.0"
+                    angular_x="0.0" angular_y="0.0" angular_z="0.1"/>
+
+      <!-- Signal that the demo sequence is complete -->
+      <PublishBool topic="autonomy/demo_bool" value="false"/>
+    </Sequence>
+  </BehaviorTree>
+</root>

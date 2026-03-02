@@ -13,7 +13,7 @@ See [Project.md](../Project.md) for full developer documentation.
 From the colcon workspace root:
 
 ```bash
-colcon build --packages-select behaviortree_cpp mercury_autonomy \
+colcon build --packages-select mercury_msgs behaviortree_cpp mercury_autonomy \
     --allow-overriding behaviortree_cpp \
     --cmake-args -DBTCPP_EXAMPLES=OFF -DBUILD_TESTING=OFF -DBTCPP_BUILD_TOOLS=OFF
 ```
@@ -29,16 +29,21 @@ ros2 launch mercury_autonomy autonomy.launch.py robot:=mercury tick_rate_hz:=50.
 
 ### Triggering a Tree
 
+The `tree_path` field accepts a filename (resolved against tree directories) or absolute path.
+
 ```bash
 # List available trees
 ros2 service call /mercury/autonomy/list_trees std_srvs/srv/Trigger
 
-# Execute a tree (topic-based trigger)
-ros2 topic pub --once /mercury/autonomy/execute_tree std_msgs/msg/String \
-    "data: '/path/to/tree.xml'"
+# Execute the demo tree by filename
+ros2 action send_goal --feedback /mercury/autonomy/execute_tree \
+    mercury_msgs/action/ExecuteTree "{tree_path: 'action_server_demo.xml'}"
 
-# Cancel a running tree
-ros2 service call /mercury/autonomy/cancel_tree std_srvs/srv/Trigger
+# Execute a tree by absolute path
+ros2 action send_goal --feedback /mercury/autonomy/execute_tree \
+    mercury_msgs/action/ExecuteTree "{tree_path: '/path/to/tree.xml'}"
+
+# Cancel a running tree: press Ctrl+C on the send_goal command
 ```
 
 ### Running Tests
@@ -52,16 +57,16 @@ colcon test-result --verbose
 
 ## BT Node Assistant
 
-The `scripts/bt_assistant.py` tool automates creation of new BT nodes. It
+The `dev_scripts/bt_assistant.py` tool automates creation of new BT nodes. It
 generates the header, source, and registration entry from templates.
 
 ### Creating a new node
 
 ```bash
-cd mercury_autonomy/                   # Package root (contains CMakeLists.txt)
-python3 scripts/bt_assistant.py create action MoveToWaypoint
-python3 scripts/bt_assistant.py create condition IsSubmerged
-python3 scripts/bt_assistant.py create decorator RetryOnFail
+# Run from the repository root (the directory containing dev_scripts/)
+python3 dev_scripts/bt_assistant.py create action MoveToWaypoint
+python3 dev_scripts/bt_assistant.py create condition IsSubmerged
+python3 dev_scripts/bt_assistant.py create decorator RetryOnFail
 ```
 
 This creates:
@@ -72,7 +77,7 @@ This creates:
 ### Listing existing nodes
 
 ```bash
-python3 scripts/bt_assistant.py list
+python3 dev_scripts/bt_assistant.py list
 ```
 
 ### Checking consistency
@@ -80,7 +85,14 @@ python3 scripts/bt_assistant.py list
 Verifies that all source files have matching headers and registration entries:
 
 ```bash
-python3 scripts/bt_assistant.py check
+python3 dev_scripts/bt_assistant.py check
+```
+
+## btstudio Node Generator
+
+```bash
+python3 dev_scripts/generate_btstudio_nodes.py          # JSON + TypeScript
+python3 dev_scripts/generate_btstudio_nodes.py --ts-only # TypeScript only
 ```
 
 ## Package Structure
@@ -90,7 +102,6 @@ mercury_autonomy/
   CMakeLists.txt
   package.xml
   launch/                    -- ROS2 launch files
-  scripts/                   -- Development tools (bt_assistant)
   test/                      -- GTest-based unit and integration tests
   trees/                     -- BT XML files loaded at runtime
   include/mercury_autonomy/
@@ -104,7 +115,7 @@ mercury_autonomy/
   src/
     autonomy_util.cpp        -- Plugin registration, geometry helpers
     mercury_bt_node.cpp      -- ROS-BT bridge implementation
-    tree_executor.cpp        -- Main ROS2 node (runs BT trees)
+    tree_executor.cpp        -- Main ROS2 action server (runs BT trees)
     register_actions.cpp     -- Action plugin registration
     register_conditions.cpp  -- Condition plugin registration
     register_decorators.cpp  -- Decorator plugin registration

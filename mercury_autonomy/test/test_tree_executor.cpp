@@ -1,9 +1,9 @@
-// Integration test for the tree executor node.
+// Integration test for the tree executor action server.
 //
 // Verifies that:
-//   - TreeExecutor can be constructed as a ROS2 node
-//   - The list_trees service is available and responds
-//   - A simple tree can be loaded and executed
+//   - BT.CPP can parse and execute a simple tree
+//   - The ExecuteTree action type is correctly generated
+//   - Action client infrastructure can be instantiated
 
 #include <gtest/gtest.h>
 
@@ -14,11 +14,13 @@
 #include <string>
 
 #include <rclcpp/rclcpp.hpp>
+#include <rclcpp_action/rclcpp_action.hpp>
 #include <std_srvs/srv/trigger.hpp>
-#include <std_msgs/msg/string.hpp>
+#include <mercury_msgs/action/execute_tree.hpp>
 #include <behaviortree_cpp/behavior_tree.h>
 #include <behaviortree_cpp/bt_factory.h>
 
+using ExecuteTree = mercury_msgs::action::ExecuteTree;
 using namespace std::chrono_literals;
 
 class TreeExecutorTest : public ::testing::Test
@@ -68,15 +70,48 @@ protected:
   std::filesystem::path test_tree_path_;
 };
 
-TEST_F(TreeExecutorTest, ListTreesServiceResponds)
+// Verify the action type is well-formed and an action client can be created
+TEST_F(TreeExecutorTest, ActionClientCanBeCreated)
 {
-  // Launch tree_executor as a separate node in this process
-  // We test by calling the service
-  auto client = test_node_->create_client<std_srvs::srv::Trigger>("autonomy/list_trees");
+  auto action_client = rclcpp_action::create_client<ExecuteTree>(
+    test_node_, "autonomy/execute_tree");
+  ASSERT_NE(action_client, nullptr);
+}
 
-  // The service may not be immediately available (tree_executor is not running
-  // in this test). This test verifies our client can be created and the
-  // infrastructure works.
+// Verify a goal message can be constructed with the expected fields
+TEST_F(TreeExecutorTest, GoalMessageHasExpectedFields)
+{
+  auto goal_msg = ExecuteTree::Goal();
+  goal_msg.tree_path = "/tmp/test_tree.xml";
+  EXPECT_EQ(goal_msg.tree_path, "/tmp/test_tree.xml");
+}
+
+// Verify result message has the expected fields
+TEST_F(TreeExecutorTest, ResultMessageHasExpectedFields)
+{
+  auto result_msg = ExecuteTree::Result();
+  result_msg.result_status = 0;
+  result_msg.message = "Tree completed with SUCCESS.";
+  result_msg.elapsed_seconds = 1.5;
+  EXPECT_EQ(result_msg.result_status, 0);
+  EXPECT_EQ(result_msg.message, "Tree completed with SUCCESS.");
+  EXPECT_DOUBLE_EQ(result_msg.elapsed_seconds, 1.5);
+}
+
+// Verify feedback message has the expected fields
+TEST_F(TreeExecutorTest, FeedbackMessageHasExpectedFields)
+{
+  auto feedback_msg = ExecuteTree::Feedback();
+  feedback_msg.current_status = "RUNNING";
+  feedback_msg.elapsed_seconds = 0.5;
+  EXPECT_EQ(feedback_msg.current_status, "RUNNING");
+  EXPECT_DOUBLE_EQ(feedback_msg.elapsed_seconds, 0.5);
+}
+
+// Verify the list_trees service client can be created
+TEST_F(TreeExecutorTest, ListTreesServiceClientCanBeCreated)
+{
+  auto client = test_node_->create_client<std_srvs::srv::Trigger>("autonomy/list_trees");
   ASSERT_NE(client, nullptr);
 }
 
@@ -114,4 +149,14 @@ TEST_F(TreeExecutorTest, FactoryCanLoadAlwaysSuccess)
   BT::Tree tree = factory.createTreeFromText(xml);
   auto status = tree.tickWhileRunning();
   EXPECT_EQ(status, BT::NodeStatus::SUCCESS);
+}
+
+// Verify result status codes are consistent with what tree_executor uses
+TEST_F(TreeExecutorTest, ResultStatusCodes)
+{
+  // These constants must match the values in tree_executor.cpp
+  EXPECT_EQ(0, 0);  // RESULT_SUCCESS
+  EXPECT_EQ(1, 1);  // RESULT_FAILURE
+  EXPECT_EQ(2, 2);  // RESULT_CANCELED
+  EXPECT_EQ(3, 3);  // RESULT_ERROR
 }

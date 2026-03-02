@@ -29,6 +29,9 @@
   <!-- Ament utilities -->
   <depend>ament_index_cpp</depend>
 
+  <!-- Mercury custom messages (for ExecuteTree action) -->
+  <depend>mercury_msgs</depend>
+
   <!-- Launch -->
   <exec_depend>launch</exec_depend>
   <exec_depend>launch_ros</exec_depend>

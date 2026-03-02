@@ -8,13 +8,13 @@ receive. The leading comment block is replaced with a generic one for new nodes.
 
 Usage::
 
-    python3 scripts/bt_assistant.py create <type> <ClassName>
-    python3 scripts/bt_assistant.py check
-    python3 scripts/bt_assistant.py list
+    python3 dev_scripts/bt_assistant.py create <type> <ClassName>
+    python3 dev_scripts/bt_assistant.py check
+    python3 dev_scripts/bt_assistant.py list
 
-    python3 scripts/bt_assistant.py create action MoveToWaypoint
-    python3 scripts/bt_assistant.py create condition IsSubmerged
-    python3 scripts/bt_assistant.py create decorator RetryOnFail
+    python3 dev_scripts/bt_assistant.py create action MoveToWaypoint
+    python3 dev_scripts/bt_assistant.py create condition IsSubmerged
+    python3 dev_scripts/bt_assistant.py create decorator RetryOnFail
 """
 
 import argparse
@@ -22,9 +22,12 @@ import re
 import sys
 from pathlib import Path
 
-# Resolve package root (mercury_autonomy/ directory containing CMakeLists.txt)
+# Resolve package root (mercury_autonomy/ directory containing CMakeLists.txt).
+# This script lives in <repo_root>/dev_scripts/, so the package root is one
+# level up then into mercury_autonomy/.
 SCRIPT_DIR = Path(__file__).resolve().parent
-PACKAGE_ROOT = SCRIPT_DIR.parent
+REPO_ROOT = SCRIPT_DIR.parent
+PACKAGE_ROOT = REPO_ROOT / "mercury_autonomy"
 
 INCLUDE_DIR = PACKAGE_ROOT / "include" / "mercury_autonomy"
 SRC_DIR = PACKAGE_ROOT / "src"
