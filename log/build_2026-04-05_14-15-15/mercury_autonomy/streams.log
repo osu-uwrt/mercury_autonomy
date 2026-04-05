@@ -1,0 +1,60 @@
+[0.007s] Invoking command in '/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bobdobchob/osu-uwrt/development/software/install/mercury_launch:/home/bobdobchob/osu-uwrt/development/software/install/riptide_bringup2:/home/bobdobchob/osu-uwrt/development/software/install/remote_launch:/home/bobdobchob/osu-uwrt/development/software/src/install/riptide_bringup2:/home/bobdobchob/osu-uwrt/development/software/src/install/remote_launch:/opt/ros/humble /usr/bin/cmake /home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/mercury_autonomy -DBUILD_TESTING=ON -DBTCPP_EXAMPLES=OFF -DBTCPP_BUILD_TOOLS=OFF -DCMAKE_INSTALL_PREFIX=/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/install/mercury_autonomy
+[0.012s] -- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.077s] -- Found rclcpp: 16.0.11 (/opt/ros/humble/share/rclcpp/cmake)
+[0.088s] -- Found rosidl_generator_c: 3.1.6 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.088s] -- Found rosidl_adapter: 3.1.6 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.091s] -- Found rosidl_generator_cpp: 3.1.6 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.095s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.101s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.113s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.114s] -- Found rmw_fastrtps_cpp: 6.2.7 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.169s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.188s] -- Found rclcpp_action: 16.0.11 (/opt/ros/humble/share/rclcpp_action/cmake)
+[0.199s] -- Found std_srvs: 4.2.4 (/opt/ros/humble/share/std_srvs/cmake)
+[0.203s] -- Found geometry_msgs: 4.2.4 (/opt/ros/humble/share/geometry_msgs/cmake)
+[0.207s] -- Found sensor_msgs: 4.2.4 (/opt/ros/humble/share/sensor_msgs/cmake)
+[0.213s] -- Found nav_msgs: 4.2.4 (/opt/ros/humble/share/nav_msgs/cmake)
+[0.219s] -- Found vision_msgs: 4.1.1 (/opt/ros/humble/share/vision_msgs/cmake)
+[0.225s] -- Found robot_localization: 3.5.3 (/opt/ros/humble/share/robot_localization/cmake)
+[0.243s] -- Found tf2: 0.25.12 (/opt/ros/humble/share/tf2/cmake)
+[0.244s] -- Found tf2_ros: 0.25.12 (/opt/ros/humble/share/tf2_ros/cmake)
+[0.262s] -- Found tf2_geometry_msgs: 0.25.12 (/opt/ros/humble/share/tf2_geometry_msgs/cmake)
+[0.263s] -- Found eigen3_cmake_module: 0.1.1 (/opt/ros/humble/share/eigen3_cmake_module/cmake)
+[0.263s] -- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+[0.264s] -- Found behaviortree_cpp: 4.9.0 (/home/bobdobchob/osu-uwrt/development/software/install/behaviortree_cpp/share/behaviortree_cpp/cmake)
+[0.265s] -- Found mercury_msgs: 0.0.0 (/home/bobdobchob/osu-uwrt/development/software/install/mercury_msgs/share/mercury_msgs/cmake)
+[0.308s] -- Found ament_lint_auto: 0.12.11 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[0.342s] -- Found gtest sources under '/opt/ros/humble/src/gtest_vendor': C++ tests using 'Google Test' will be built
+[0.424s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[0.425s] -- Configured cppcheck include dirs: $<BUILD_INTERFACE:/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/mercury_autonomy/include>
+[0.425s] -- Configured cppcheck exclude dirs and/or files: 
+[0.425s] -- Added test 'flake8' to check Python code syntax and style conventions
+[0.426s] -- Added test 'lint_cmake' to check CMake code style
+[0.426s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[0.428s] -- Added test 'uncrustify' to check C / C++ code style
+[0.428s] -- Configured uncrustify additional arguments: 
+[0.428s] -- Added test 'xmllint' to check XML markup files
+[0.429s] -- Configuring done
+[0.434s] [31mCMake Error at /opt/ros/humble/share/ament_cmake_gtest/cmake/ament_add_gtest_executable.cmake:50 (add_executable):
+[0.434s]   Cannot find source file:
+[0.434s] 
+[0.434s]     ament_add_gtest
+[0.434s] 
+[0.434s]   Tried extensions .c .C .c++ .cc .cpp .cxx .cu .mpp .m .M .mm .ixx .cppm .h
+[0.434s]   .hh .h++ .hm .hpp .hxx .in .txx .f .F .for .f77 .f90 .f95 .f03 .hip .ispc
+[0.434s] Call Stack (most recent call first):
+[0.434s]   /opt/ros/humble/share/ament_cmake_gtest/cmake/ament_add_gtest_executable.cmake:37 (_ament_add_gtest_executable)
+[0.434s]   /opt/ros/humble/share/ament_cmake_gtest/cmake/ament_add_gtest.cmake:68 (ament_add_gtest_executable)
+[0.434s]   CMakeLists.txt:269 (ament_add_gtest)
+[0.434s] 
+[0.434s] [0m
+[0.435s] [31mCMake Error at /opt/ros/humble/share/ament_cmake_gtest/cmake/ament_add_gtest_executable.cmake:50 (add_executable):
+[0.435s]   No SOURCES given to target: test_publish_nodes
+[0.436s] Call Stack (most recent call first):
+[0.436s]   /opt/ros/humble/share/ament_cmake_gtest/cmake/ament_add_gtest_executable.cmake:37 (_ament_add_gtest_executable)
+[0.436s]   /opt/ros/humble/share/ament_cmake_gtest/cmake/ament_add_gtest.cmake:68 (ament_add_gtest_executable)
+[0.436s]   CMakeLists.txt:269 (ament_add_gtest)
+[0.436s] 
+[0.436s] [0m
+[0.436s] [0mCMake Generate step failed.  Build files cannot be regenerated correctly.[0m
+[0.441s] Invoked command in '/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy' returned '1': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bobdobchob/osu-uwrt/development/software/install/mercury_launch:/home/bobdobchob/osu-uwrt/development/software/install/riptide_bringup2:/home/bobdobchob/osu-uwrt/development/software/install/remote_launch:/home/bobdobchob/osu-uwrt/development/software/src/install/riptide_bringup2:/home/bobdobchob/osu-uwrt/development/software/src/install/remote_launch:/opt/ros/humble /usr/bin/cmake /home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/mercury_autonomy -DBUILD_TESTING=ON -DBTCPP_EXAMPLES=OFF -DBTCPP_BUILD_TOOLS=OFF -DCMAKE_INSTALL_PREFIX=/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/install/mercury_autonomy

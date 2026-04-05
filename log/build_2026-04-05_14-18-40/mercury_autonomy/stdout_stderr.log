@@ -1,0 +1,87 @@
+[  2%] Built target gtest_main
+[  4%] Built target gtest
+[  8%] Built target mercury_autonomy_core
+[35m[1mConsolidate compiler generated dependencies of target test_legacy_action_nodes[0m
+[ 13%] Built target mercury_bt_decorators
+[ 16%] Built target test_tree_executor
+[ 24%] Built target test_service_nodes
+[ 25%] Built target test_publish_nodes
+[ 29%] Built target test_transform_pose
+[ 33%] Built target test_decorator_nodes
+[ 39%] Built target test_sensor_nodes
+[ 43%] Built target test_approx_equal_to
+[ 45%] Built target tree_executor
+[ 54%] Built target mercury_bt_conditions
+[ 59%] Built target test_topic_nodes
+[ 65%] Built target test_condition_nodes
+[ 66%] [32mBuilding CXX object CMakeFiles/test_legacy_action_nodes.dir/test/test_legacy_action_nodes.cpp.o[0m
+[35m[1mConsolidate compiler generated dependencies of target mercury_bt_actions[0m
+[ 67%] [32mBuilding CXX object CMakeFiles/mercury_bt_actions.dir/src/bt_actions/compute_frame_alignment.cpp.o[0m
+[ 69%] [32mBuilding CXX object CMakeFiles/mercury_bt_actions.dir/src/bt_actions/publish_ekf_pose.cpp.o[0m
+[ 70%] [32mBuilding CXX object CMakeFiles/mercury_bt_actions.dir/src/bt_actions/publish_to_controller.cpp.o[0m
+[ 71%] [32mBuilding CXX object CMakeFiles/mercury_bt_actions.dir/src/bt_actions/set_controller_safe_mode.cpp.o[0m
+[ 72%] [32mBuilding CXX object CMakeFiles/mercury_bt_actions.dir/src/bt_actions/publish_int8.cpp.o[0m
+[ 74%] [32mBuilding CXX object CMakeFiles/mercury_bt_actions.dir/src/register_actions.cpp.o[0m
+[01m[K/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/mercury_autonomy/src/bt_actions/compute_frame_alignment.cpp:[m[K In member function ‘[01m[Kvirtual BT::NodeStatus mercury_autonomy::ComputeFrameAlignment::onRunning()[m[K’:
+[01m[K/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/mercury_autonomy/src/bt_actions/compute_frame_alignment.cpp:45:37:[m[K [01;31m[Kerror: [m[K‘[01m[K::geometryMsgsToTf2Transform[m[K’ has not been declared
+   45 |     const tf2::Transform tf_ttb = ::[01;31m[KgeometryMsgsToTf2Transform[m[K(geom_ttb_);
+      |                                     [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/mercury_autonomy/src/bt_actions/compute_frame_alignment.cpp:46:37:[m[K [01;31m[Kerror: [m[K‘[01m[K::geometryMsgsToTf2Transform[m[K’ has not been declared
+   46 |     const tf2::Transform tf_twr = ::[01;31m[KgeometryMsgsToTf2Transform[m[K(geom_twr_);
+      |                                     [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/mercury_autonomy/src/bt_actions/compute_frame_alignment.cpp:47:37:[m[K [01;31m[Kerror: [m[K‘[01m[K::geometryMsgsToTf2Transform[m[K’ has not been declared
+   47 |     const tf2::Transform tf_trt = ::[01;31m[KgeometryMsgsToTf2Transform[m[K(input_pose_);
+      |                                     [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/mercury_autonomy/src/bt_actions/compute_frame_alignment.cpp:50:24:[m[K [01;31m[Kerror: [m[K‘[01m[K::tf2TransformToGeometryMsgs[m[K’ has not been declared
+   50 |     const auto out = ::[01;31m[Ktf2TransformToGeometryMsgs[m[K(tf_twb);
+      |                        [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/mercury_bt_actions.dir/build.make:104: CMakeFiles/mercury_bt_actions.dir/src/bt_actions/compute_frame_alignment.cpp.o] Error 1
+gmake[2]: *** Waiting for unfinished jobs....
+[ 75%] [32m[1mLinking CXX executable test_legacy_action_nodes[0m
+/usr/bin/ld: CMakeFiles/test_legacy_action_nodes.dir/test/test_legacy_action_nodes.cpp.o: warning: relocation against `_ZTVN16mercury_autonomy13GetCovarianceE' in read-only section `.text._ZN16mercury_autonomy13GetCovarianceC2ERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERKN2BT10NodeConfigE[_ZN16mercury_autonomy13GetCovarianceC5ERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERKN2BT10NodeConfigE]'
+/usr/bin/ld: CMakeFiles/test_legacy_action_nodes.dir/test/test_legacy_action_nodes.cpp.o: in function `mercury_autonomy::ComputeFrameAlignment::ComputeFrameAlignment(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, BT::NodeConfig const&)':
+test_legacy_action_nodes.cpp:(.text._ZN16mercury_autonomy21ComputeFrameAlignmentC2ERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERKN2BT10NodeConfigE[_ZN16mercury_autonomy21ComputeFrameAlignmentC5ERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERKN2BT10NodeConfigE]+0x33): undefined reference to `vtable for mercury_autonomy::ComputeFrameAlignment'
+/usr/bin/ld: test_legacy_action_nodes.cpp:(.text._ZN16mercury_autonomy21ComputeFrameAlignmentC2ERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERKN2BT10NodeConfigE[_ZN16mercury_autonomy21ComputeFrameAlignmentC5ERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERKN2BT10NodeConfigE]+0x41): undefined reference to `vtable for mercury_autonomy::ComputeFrameAlignment'
+/usr/bin/ld: CMakeFiles/test_legacy_action_nodes.dir/test/test_legacy_action_nodes.cpp.o: in function `mercury_autonomy::GetCovariance::GetCovariance(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, BT::NodeConfig const&)':
+test_legacy_action_nodes.cpp:(.text._ZN16mercury_autonomy13GetCovarianceC2ERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERKN2BT10NodeConfigE[_ZN16mercury_autonomy13GetCovarianceC5ERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERKN2BT10NodeConfigE]+0x33): undefined reference to `vtable for mercury_autonomy::GetCovariance'
+/usr/bin/ld: test_legacy_action_nodes.cpp:(.text._ZN16mercury_autonomy13GetCovarianceC2ERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERKN2BT10NodeConfigE[_ZN16mercury_autonomy13GetCovarianceC5ERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERKN2BT10NodeConfigE]+0x41): undefined reference to `vtable for mercury_autonomy::GetCovariance'
+/usr/bin/ld: CMakeFiles/test_legacy_action_nodes.dir/test/test_legacy_action_nodes.cpp.o: in function `mercury_autonomy::GetFloat64Topic::GetFloat64Topic(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, BT::NodeConfig const&)':
+test_legacy_action_nodes.cpp:(.text._ZN16mercury_autonomy15GetFloat64TopicC2ERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERKN2BT10NodeConfigE[_ZN16mercury_autonomy15GetFloat64TopicC5ERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERKN2BT10NodeConfigE]+0x33): undefined reference to `vtable for mercury_autonomy::GetFloat64Topic'
+/usr/bin/ld: test_legacy_action_nodes.cpp:(.text._ZN16mercury_autonomy15GetFloat64TopicC2ERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERKN2BT10NodeConfigE[_ZN16mercury_autonomy15GetFloat64TopicC5ERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERKN2BT10NodeConfigE]+0x41): undefined reference to `vtable for mercury_autonomy::GetFloat64Topic'
+/usr/bin/ld: CMakeFiles/test_legacy_action_nodes.dir/test/test_legacy_action_nodes.cpp.o: in function `mercury_autonomy::GetMappingState::GetMappingState(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, BT::NodeConfig const&)':
+test_legacy_action_nodes.cpp:(.text._ZN16mercury_autonomy15GetMappingStateC2ERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERKN2BT10NodeConfigE[_ZN16mercury_autonomy15GetMappingStateC5ERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERKN2BT10NodeConfigE]+0x33): undefined reference to `vtable for mercury_autonomy::GetMappingState'
+/usr/bin/ld: test_legacy_action_nodes.cpp:(.text._ZN16mercury_autonomy15GetMappingStateC2ERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERKN2BT10NodeConfigE[_ZN16mercury_autonomy15GetMappingStateC5ERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERKN2BT10NodeConfigE]+0x41): undefined reference to `vtable for mercury_autonomy::GetMappingState'
+/usr/bin/ld: CMakeFiles/test_legacy_action_nodes.dir/test/test_legacy_action_nodes.cpp.o: in function `mercury_autonomy::PublishEKFPose::PublishEKFPose(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, BT::NodeConfig const&)':
+test_legacy_action_nodes.cpp:(.text._ZN16mercury_autonomy14PublishEKFPoseC2ERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERKN2BT10NodeConfigE[_ZN16mercury_autonomy14PublishEKFPoseC5ERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERKN2BT10NodeConfigE]+0x33): undefined reference to `vtable for mercury_autonomy::PublishEKFPose'
+/usr/bin/ld: test_legacy_action_nodes.cpp:(.text._ZN16mercury_autonomy14PublishEKFPoseC2ERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERKN2BT10NodeConfigE[_ZN16mercury_autonomy14PublishEKFPoseC5ERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERKN2BT10NodeConfigE]+0x41): undefined reference to `vtable for mercury_autonomy::PublishEKFPose'
+/usr/bin/ld: CMakeFiles/test_legacy_action_nodes.dir/test/test_legacy_action_nodes.cpp.o: in function `mercury_autonomy::PublishInt8::PublishInt8(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, BT::NodeConfig const&)':
+test_legacy_action_nodes.cpp:(.text._ZN16mercury_autonomy11PublishInt8C2ERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERKN2BT10NodeConfigE[_ZN16mercury_autonomy11PublishInt8C5ERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERKN2BT10NodeConfigE]+0x32): undefined reference to `vtable for mercury_autonomy::PublishInt8'
+/usr/bin/ld: test_legacy_action_nodes.cpp:(.text._ZN16mercury_autonomy11PublishInt8C2ERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERKN2BT10NodeConfigE[_ZN16mercury_autonomy11PublishInt8C5ERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERKN2BT10NodeConfigE]+0x40): undefined reference to `vtable for mercury_autonomy::PublishInt8'
+/usr/bin/ld: CMakeFiles/test_legacy_action_nodes.dir/test/test_legacy_action_nodes.cpp.o: in function `mercury_autonomy::PublishToController::PublishToController(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, BT::NodeConfig const&)':
+test_legacy_action_nodes.cpp:(.text._ZN16mercury_autonomy19PublishToControllerC2ERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERKN2BT10NodeConfigE[_ZN16mercury_autonomy19PublishToControllerC5ERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERKN2BT10NodeConfigE]+0x32): undefined reference to `vtable for mercury_autonomy::PublishToController'
+/usr/bin/ld: test_legacy_action_nodes.cpp:(.text._ZN16mercury_autonomy19PublishToControllerC2ERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERKN2BT10NodeConfigE[_ZN16mercury_autonomy19PublishToControllerC5ERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERKN2BT10NodeConfigE]+0x40): undefined reference to `vtable for mercury_autonomy::PublishToController'
+/usr/bin/ld: CMakeFiles/test_legacy_action_nodes.dir/test/test_legacy_action_nodes.cpp.o: in function `mercury_autonomy::SetControllerSafeMode::SetControllerSafeMode(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, BT::NodeConfig const&)':
+test_legacy_action_nodes.cpp:(.text._ZN16mercury_autonomy21SetControllerSafeModeC2ERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERKN2BT10NodeConfigE[_ZN16mercury_autonomy21SetControllerSafeModeC5ERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERKN2BT10NodeConfigE]+0x33): undefined reference to `vtable for mercury_autonomy::SetControllerSafeMode'
+/usr/bin/ld: test_legacy_action_nodes.cpp:(.text._ZN16mercury_autonomy21SetControllerSafeModeC2ERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERKN2BT10NodeConfigE[_ZN16mercury_autonomy21SetControllerSafeModeC5ERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERKN2BT10NodeConfigE]+0x41): undefined reference to `vtable for mercury_autonomy::SetControllerSafeMode'
+/usr/bin/ld: CMakeFiles/test_legacy_action_nodes.dir/test/test_legacy_action_nodes.cpp.o: in function `mercury_autonomy::SetMappingTarget::SetMappingTarget(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, BT::NodeConfig const&)':
+test_legacy_action_nodes.cpp:(.text._ZN16mercury_autonomy16SetMappingTargetC2ERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERKN2BT10NodeConfigE[_ZN16mercury_autonomy16SetMappingTargetC5ERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERKN2BT10NodeConfigE]+0x33): undefined reference to `vtable for mercury_autonomy::SetMappingTarget'
+/usr/bin/ld: test_legacy_action_nodes.cpp:(.text._ZN16mercury_autonomy16SetMappingTargetC2ERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERKN2BT10NodeConfigE[_ZN16mercury_autonomy16SetMappingTargetC5ERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERKN2BT10NodeConfigE]+0x41): undefined reference to `vtable for mercury_autonomy::SetMappingTarget'
+/usr/bin/ld: CMakeFiles/test_legacy_action_nodes.dir/test/test_legacy_action_nodes.cpp.o: in function `mercury_autonomy::SetStatus::SetStatus(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, BT::NodeConfig const&)':
+test_legacy_action_nodes.cpp:(.text._ZN16mercury_autonomy9SetStatusC2ERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERKN2BT10NodeConfigE[_ZN16mercury_autonomy9SetStatusC5ERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERKN2BT10NodeConfigE]+0x32): undefined reference to `vtable for mercury_autonomy::SetStatus'
+/usr/bin/ld: test_legacy_action_nodes.cpp:(.text._ZN16mercury_autonomy9SetStatusC2ERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERKN2BT10NodeConfigE[_ZN16mercury_autonomy9SetStatusC5ERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERKN2BT10NodeConfigE]+0x40): undefined reference to `vtable for mercury_autonomy::SetStatus'
+/usr/bin/ld: CMakeFiles/test_legacy_action_nodes.dir/test/test_legacy_action_nodes.cpp.o: in function `mercury_autonomy::TriggerControllerStunt::TriggerControllerStunt(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, BT::NodeConfig const&)':
+test_legacy_action_nodes.cpp:(.text._ZN16mercury_autonomy22TriggerControllerStuntC2ERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERKN2BT10NodeConfigE[_ZN16mercury_autonomy22TriggerControllerStuntC5ERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERKN2BT10NodeConfigE]+0x33): undefined reference to `vtable for mercury_autonomy::TriggerControllerStunt'
+/usr/bin/ld: test_legacy_action_nodes.cpp:(.text._ZN16mercury_autonomy22TriggerControllerStuntC2ERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERKN2BT10NodeConfigE[_ZN16mercury_autonomy22TriggerControllerStuntC5ERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERKN2BT10NodeConfigE]+0x41): undefined reference to `vtable for mercury_autonomy::TriggerControllerStunt'
+/usr/bin/ld: CMakeFiles/test_legacy_action_nodes.dir/test/test_legacy_action_nodes.cpp.o: in function `mercury_autonomy::Wait::Wait(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, BT::NodeConfig const&)':
+test_legacy_action_nodes.cpp:(.text._ZN16mercury_autonomy4WaitC2ERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERKN2BT10NodeConfigE[_ZN16mercury_autonomy4WaitC5ERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERKN2BT10NodeConfigE]+0x33): undefined reference to `vtable for mercury_autonomy::Wait'
+/usr/bin/ld: test_legacy_action_nodes.cpp:(.text._ZN16mercury_autonomy4WaitC2ERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERKN2BT10NodeConfigE[_ZN16mercury_autonomy4WaitC5ERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERKN2BT10NodeConfigE]+0x41): undefined reference to `vtable for mercury_autonomy::Wait'
+/usr/bin/ld: CMakeFiles/test_legacy_action_nodes.dir/test/test_legacy_action_nodes.cpp.o: in function `mercury_autonomy::WaitForDetection::WaitForDetection(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, BT::NodeConfig const&)':
+test_legacy_action_nodes.cpp:(.text._ZN16mercury_autonomy16WaitForDetectionC2ERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERKN2BT10NodeConfigE[_ZN16mercury_autonomy16WaitForDetectionC5ERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERKN2BT10NodeConfigE]+0x33): undefined reference to `vtable for mercury_autonomy::WaitForDetection'
+/usr/bin/ld: test_legacy_action_nodes.cpp:(.text._ZN16mercury_autonomy16WaitForDetectionC2ERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERKN2BT10NodeConfigE[_ZN16mercury_autonomy16WaitForDetectionC5ERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERKN2BT10NodeConfigE]+0x41): undefined reference to `vtable for mercury_autonomy::WaitForDetection'
+/usr/bin/ld: warning: creating DT_TEXTREL in a PIE
+collect2: error: ld returned 1 exit status
+gmake[2]: *** [CMakeFiles/test_legacy_action_nodes.dir/build.make:266: test_legacy_action_nodes] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:567: CMakeFiles/test_legacy_action_nodes.dir/all] Error 2
+gmake[1]: *** Waiting for unfinished jobs....
+gmake[1]: *** [CMakeFiles/Makefile2:209: CMakeFiles/mercury_bt_actions.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

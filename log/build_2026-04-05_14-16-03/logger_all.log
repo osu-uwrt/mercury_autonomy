@@ -1,0 +1,170 @@
+[0.051s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build', '--packages-select', 'mercury_autonomy', '--cmake-args', '-DBUILD_TESTING=ON', '-DBTCPP_EXAMPLES=OFF', '-DBTCPP_BUILD_TOOLS=OFF']
+[0.051s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=24, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=['mercury_autonomy'], packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=['-DBUILD_TESTING=ON', '-DBTCPP_EXAMPLES=OFF', '-DBTCPP_BUILD_TOOLS=OFF'], cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0x7376ddf4ab90>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x7376de02f2e0>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x7376de02f2e0>>)
+[0.118s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.118s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.118s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.118s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.118s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.118s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.118s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy'
+[0.118s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.118s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.119s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.119s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.119s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.119s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.119s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.119s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.119s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.128s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.128s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.128s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.128s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.128s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.128s] Level 1:colcon.colcon_core.package_identification:_identify(__pycache__) by extensions ['ignore', 'ignore_ament_install']
+[0.128s] Level 1:colcon.colcon_core.package_identification:_identify(__pycache__) by extension 'ignore'
+[0.128s] Level 1:colcon.colcon_core.package_identification:_identify(__pycache__) by extension 'ignore_ament_install'
+[0.128s] Level 1:colcon.colcon_core.package_identification:_identify(__pycache__) by extensions ['colcon_pkg']
+[0.128s] Level 1:colcon.colcon_core.package_identification:_identify(__pycache__) by extension 'colcon_pkg'
+[0.128s] Level 1:colcon.colcon_core.package_identification:_identify(__pycache__) by extensions ['colcon_meta']
+[0.128s] Level 1:colcon.colcon_core.package_identification:_identify(__pycache__) by extension 'colcon_meta'
+[0.128s] Level 1:colcon.colcon_core.package_identification:_identify(__pycache__) by extensions ['ros']
+[0.128s] Level 1:colcon.colcon_core.package_identification:_identify(__pycache__) by extension 'ros'
+[0.128s] Level 1:colcon.colcon_core.package_identification:_identify(__pycache__) by extensions ['cmake', 'python']
+[0.128s] Level 1:colcon.colcon_core.package_identification:_identify(__pycache__) by extension 'cmake'
+[0.128s] Level 1:colcon.colcon_core.package_identification:_identify(__pycache__) by extension 'python'
+[0.128s] Level 1:colcon.colcon_core.package_identification:_identify(__pycache__) by extensions ['python_setup_py']
+[0.128s] Level 1:colcon.colcon_core.package_identification:_identify(__pycache__) by extension 'python_setup_py'
+[0.128s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.128s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.128s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.128s] Level 1:colcon.colcon_core.package_identification:_identify(dependencies) by extensions ['ignore', 'ignore_ament_install']
+[0.128s] Level 1:colcon.colcon_core.package_identification:_identify(dependencies) by extension 'ignore'
+[0.128s] Level 1:colcon.colcon_core.package_identification:_identify(dependencies) by extension 'ignore_ament_install'
+[0.128s] Level 1:colcon.colcon_core.package_identification:_identify(dependencies) by extensions ['colcon_pkg']
+[0.128s] Level 1:colcon.colcon_core.package_identification:_identify(dependencies) by extension 'colcon_pkg'
+[0.128s] Level 1:colcon.colcon_core.package_identification:_identify(dependencies) by extensions ['colcon_meta']
+[0.128s] Level 1:colcon.colcon_core.package_identification:_identify(dependencies) by extension 'colcon_meta'
+[0.128s] Level 1:colcon.colcon_core.package_identification:_identify(dependencies) by extensions ['ros']
+[0.128s] Level 1:colcon.colcon_core.package_identification:_identify(dependencies) by extension 'ros'
+[0.128s] Level 1:colcon.colcon_core.package_identification:_identify(dependencies) by extensions ['cmake', 'python']
+[0.128s] Level 1:colcon.colcon_core.package_identification:_identify(dependencies) by extension 'cmake'
+[0.128s] Level 1:colcon.colcon_core.package_identification:_identify(dependencies) by extension 'python'
+[0.128s] Level 1:colcon.colcon_core.package_identification:_identify(dependencies) by extensions ['python_setup_py']
+[0.128s] Level 1:colcon.colcon_core.package_identification:_identify(dependencies) by extension 'python_setup_py'
+[0.128s] Level 1:colcon.colcon_core.package_identification:_identify(dependencies/BehaviorTreeCPP) by extensions ['ignore', 'ignore_ament_install']
+[0.128s] Level 1:colcon.colcon_core.package_identification:_identify(dependencies/BehaviorTreeCPP) by extension 'ignore'
+[0.128s] Level 1:colcon.colcon_core.package_identification:_identify(dependencies/BehaviorTreeCPP) by extension 'ignore_ament_install'
+[0.128s] Level 1:colcon.colcon_core.package_identification:_identify(dependencies/BehaviorTreeCPP) by extensions ['colcon_pkg']
+[0.128s] Level 1:colcon.colcon_core.package_identification:_identify(dependencies/BehaviorTreeCPP) by extension 'colcon_pkg'
+[0.128s] Level 1:colcon.colcon_core.package_identification:_identify(dependencies/BehaviorTreeCPP) by extensions ['colcon_meta']
+[0.128s] Level 1:colcon.colcon_core.package_identification:_identify(dependencies/BehaviorTreeCPP) by extension 'colcon_meta'
+[0.128s] Level 1:colcon.colcon_core.package_identification:_identify(dependencies/BehaviorTreeCPP) by extensions ['ros']
+[0.128s] Level 1:colcon.colcon_core.package_identification:_identify(dependencies/BehaviorTreeCPP) by extension 'ros'
+[0.130s] DEBUG:colcon.colcon_core.package_identification:Package 'dependencies/BehaviorTreeCPP' with type 'ros.ament_cmake' and name 'behaviortree_cpp'
+[0.130s] Level 1:colcon.colcon_core.package_identification:_identify(dev_scripts) by extensions ['ignore', 'ignore_ament_install']
+[0.130s] Level 1:colcon.colcon_core.package_identification:_identify(dev_scripts) by extension 'ignore'
+[0.130s] Level 1:colcon.colcon_core.package_identification:_identify(dev_scripts) by extension 'ignore_ament_install'
+[0.130s] Level 1:colcon.colcon_core.package_identification:_identify(dev_scripts) by extensions ['colcon_pkg']
+[0.130s] Level 1:colcon.colcon_core.package_identification:_identify(dev_scripts) by extension 'colcon_pkg'
+[0.130s] Level 1:colcon.colcon_core.package_identification:_identify(dev_scripts) by extensions ['colcon_meta']
+[0.130s] Level 1:colcon.colcon_core.package_identification:_identify(dev_scripts) by extension 'colcon_meta'
+[0.130s] Level 1:colcon.colcon_core.package_identification:_identify(dev_scripts) by extensions ['ros']
+[0.130s] Level 1:colcon.colcon_core.package_identification:_identify(dev_scripts) by extension 'ros'
+[0.130s] Level 1:colcon.colcon_core.package_identification:_identify(dev_scripts) by extensions ['cmake', 'python']
+[0.130s] Level 1:colcon.colcon_core.package_identification:_identify(dev_scripts) by extension 'cmake'
+[0.130s] Level 1:colcon.colcon_core.package_identification:_identify(dev_scripts) by extension 'python'
+[0.130s] Level 1:colcon.colcon_core.package_identification:_identify(dev_scripts) by extensions ['python_setup_py']
+[0.130s] Level 1:colcon.colcon_core.package_identification:_identify(dev_scripts) by extension 'python_setup_py'
+[0.130s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.130s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.130s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.130s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.130s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.130s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.130s] Level 1:colcon.colcon_core.package_identification:_identify(mercury_autonomy) by extensions ['ignore', 'ignore_ament_install']
+[0.130s] Level 1:colcon.colcon_core.package_identification:_identify(mercury_autonomy) by extension 'ignore'
+[0.130s] Level 1:colcon.colcon_core.package_identification:_identify(mercury_autonomy) by extension 'ignore_ament_install'
+[0.130s] Level 1:colcon.colcon_core.package_identification:_identify(mercury_autonomy) by extensions ['colcon_pkg']
+[0.130s] Level 1:colcon.colcon_core.package_identification:_identify(mercury_autonomy) by extension 'colcon_pkg'
+[0.130s] Level 1:colcon.colcon_core.package_identification:_identify(mercury_autonomy) by extensions ['colcon_meta']
+[0.130s] Level 1:colcon.colcon_core.package_identification:_identify(mercury_autonomy) by extension 'colcon_meta'
+[0.130s] Level 1:colcon.colcon_core.package_identification:_identify(mercury_autonomy) by extensions ['ros']
+[0.130s] Level 1:colcon.colcon_core.package_identification:_identify(mercury_autonomy) by extension 'ros'
+[0.131s] DEBUG:colcon.colcon_core.package_identification:Package 'mercury_autonomy' with type 'ros.ament_cmake' and name 'mercury_autonomy'
+[0.131s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.131s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.131s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.131s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.131s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.139s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'behaviortree_cpp' in 'dependencies/BehaviorTreeCPP'
+[0.139s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.140s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.141s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 21 installed packages in /home/bobdobchob/osu-uwrt/development/software/install
+[0.141s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 17 installed packages in /home/bobdobchob/osu-uwrt/development/software/src/install
+[0.142s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 7 installed packages in /home/bobdobchob/osu-uwrt/development/dependencies/install
+[0.142s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 291 installed packages in /opt/ros/humble
+[0.143s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[0.157s] Level 5:colcon.colcon_core.verb:set package 'mercury_autonomy' build argument 'cmake_args' from command line to '['-DBUILD_TESTING=ON', '-DBTCPP_EXAMPLES=OFF', '-DBTCPP_BUILD_TOOLS=OFF']'
+[0.158s] Level 5:colcon.colcon_core.verb:set package 'mercury_autonomy' build argument 'cmake_target' from command line to 'None'
+[0.158s] Level 5:colcon.colcon_core.verb:set package 'mercury_autonomy' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.158s] Level 5:colcon.colcon_core.verb:set package 'mercury_autonomy' build argument 'cmake_clean_cache' from command line to 'False'
+[0.158s] Level 5:colcon.colcon_core.verb:set package 'mercury_autonomy' build argument 'cmake_clean_first' from command line to 'False'
+[0.158s] Level 5:colcon.colcon_core.verb:set package 'mercury_autonomy' build argument 'cmake_force_configure' from command line to 'False'
+[0.158s] Level 5:colcon.colcon_core.verb:set package 'mercury_autonomy' build argument 'ament_cmake_args' from command line to 'None'
+[0.158s] Level 5:colcon.colcon_core.verb:set package 'mercury_autonomy' build argument 'catkin_cmake_args' from command line to 'None'
+[0.158s] Level 5:colcon.colcon_core.verb:set package 'mercury_autonomy' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.158s] DEBUG:colcon.colcon_core.verb:Building package 'mercury_autonomy' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': ['-DBUILD_TESTING=ON', '-DBTCPP_EXAMPLES=OFF', '-DBTCPP_BUILD_TOOLS=OFF'], 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/install/mercury_autonomy', 'merge_install': False, 'path': '/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/mercury_autonomy', 'symlink_install': False, 'test_result_base': None}
+[0.158s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.158s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.158s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/mercury_autonomy' with build type 'ament_cmake'
+[0.158s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/mercury_autonomy'
+[0.159s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.160s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.160s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.161s] WARNING:colcon.colcon_core.shell:The following packages are in the workspace but haven't been built:
+- behaviortree_cpp
+They are being used from the following locations instead:
+- /home/bobdobchob/osu-uwrt/development/software/install/behaviortree_cpp
+To suppress this warning ignore these packages in the workspace:
+--packages-ignore behaviortree_cpp
+[0.165s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bobdobchob/osu-uwrt/development/software/install/mercury_launch:/home/bobdobchob/osu-uwrt/development/software/install/riptide_bringup2:/home/bobdobchob/osu-uwrt/development/software/install/remote_launch:/home/bobdobchob/osu-uwrt/development/software/src/install/riptide_bringup2:/home/bobdobchob/osu-uwrt/development/software/src/install/remote_launch:/opt/ros/humble /usr/bin/cmake /home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/mercury_autonomy -DBUILD_TESTING=ON -DBTCPP_EXAMPLES=OFF -DBTCPP_BUILD_TOOLS=OFF -DCMAKE_INSTALL_PREFIX=/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/install/mercury_autonomy
+[0.652s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bobdobchob/osu-uwrt/development/software/install/mercury_launch:/home/bobdobchob/osu-uwrt/development/software/install/riptide_bringup2:/home/bobdobchob/osu-uwrt/development/software/install/remote_launch:/home/bobdobchob/osu-uwrt/development/software/src/install/riptide_bringup2:/home/bobdobchob/osu-uwrt/development/software/src/install/remote_launch:/opt/ros/humble /usr/bin/cmake /home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/mercury_autonomy -DBUILD_TESTING=ON -DBTCPP_EXAMPLES=OFF -DBTCPP_BUILD_TOOLS=OFF -DCMAKE_INSTALL_PREFIX=/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/install/mercury_autonomy
+[0.654s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bobdobchob/osu-uwrt/development/software/install/mercury_launch:/home/bobdobchob/osu-uwrt/development/software/install/riptide_bringup2:/home/bobdobchob/osu-uwrt/development/software/install/remote_launch:/home/bobdobchob/osu-uwrt/development/software/src/install/riptide_bringup2:/home/bobdobchob/osu-uwrt/development/software/src/install/remote_launch:/opt/ros/humble /usr/bin/cmake --build /home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy -- -j24 -l24
+[17.272s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bobdobchob/osu-uwrt/development/software/install/mercury_launch:/home/bobdobchob/osu-uwrt/development/software/install/riptide_bringup2:/home/bobdobchob/osu-uwrt/development/software/install/remote_launch:/home/bobdobchob/osu-uwrt/development/software/src/install/riptide_bringup2:/home/bobdobchob/osu-uwrt/development/software/src/install/remote_launch:/opt/ros/humble /usr/bin/cmake --build /home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy -- -j24 -l24
+[17.273s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(mercury_autonomy)
+[17.274s] Level 1:colcon.colcon_core.environment:checking '/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/install/mercury_autonomy' for CMake module files
+[17.274s] Level 1:colcon.colcon_core.environment:checking '/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/install/mercury_autonomy' for CMake config files
+[17.274s] Level 1:colcon.colcon_core.environment:checking '/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/install/mercury_autonomy/lib'
+[17.274s] Level 1:colcon.colcon_core.shell:create_environment_hook('mercury_autonomy', 'ld_library_path_lib')
+[17.274s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/install/mercury_autonomy/share/mercury_autonomy/hook/ld_library_path_lib.ps1'
+[17.275s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/install/mercury_autonomy/share/mercury_autonomy/hook/ld_library_path_lib.dsv'
+[17.275s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/install/mercury_autonomy/share/mercury_autonomy/hook/ld_library_path_lib.sh'
+[17.275s] Level 1:colcon.colcon_core.environment:checking '/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/install/mercury_autonomy/bin'
+[17.275s] Level 1:colcon.colcon_core.environment:checking '/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/install/mercury_autonomy/lib/pkgconfig/mercury_autonomy.pc'
+[17.275s] Level 1:colcon.colcon_core.environment:checking '/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/install/mercury_autonomy/lib/python3.10/site-packages'
+[17.275s] Level 1:colcon.colcon_core.environment:checking '/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/install/mercury_autonomy/bin'
+[17.275s] INFO:colcon.colcon_core.shell:Creating package script '/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/install/mercury_autonomy/share/mercury_autonomy/package.ps1'
+[17.276s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/install/mercury_autonomy/share/mercury_autonomy/package.dsv'
+[17.276s] INFO:colcon.colcon_core.shell:Creating package script '/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/install/mercury_autonomy/share/mercury_autonomy/package.sh'
+[17.276s] INFO:colcon.colcon_core.shell:Creating package script '/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/install/mercury_autonomy/share/mercury_autonomy/package.bash'
+[17.276s] INFO:colcon.colcon_core.shell:Creating package script '/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/install/mercury_autonomy/share/mercury_autonomy/package.zsh'
+[17.277s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/install/mercury_autonomy/share/colcon-core/packages/mercury_autonomy)
+[17.287s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[17.287s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[17.287s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '2'
+[17.287s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[17.292s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[17.292s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[17.292s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[17.298s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[17.298s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/install/local_setup.ps1'
+[17.298s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/install/_local_setup_util_ps1.py'
+[17.299s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/install/setup.ps1'
+[17.300s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/install/local_setup.sh'
+[17.300s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/install/_local_setup_util_sh.py'
+[17.301s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/install/setup.sh'
+[17.302s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/install/local_setup.bash'
+[17.302s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/install/setup.bash'
+[17.303s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/install/local_setup.zsh'
+[17.303s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/install/setup.zsh'

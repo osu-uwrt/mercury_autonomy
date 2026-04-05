@@ -1,0 +1,819 @@
+[0.000000] (-) TimerEvent: {}
+[0.000264] (mercury_autonomy) JobQueued: {'identifier': 'mercury_autonomy', 'dependencies': OrderedDict([('behaviortree_cpp', '/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/install/behaviortree_cpp'), ('mercury_autonomy', '/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/install/mercury_autonomy')])}
+[0.000337] (mercury_autonomy) JobStarted: {'identifier': 'mercury_autonomy'}
+[0.012587] (mercury_autonomy) Command: {'cmd': ['/usr/bin/ctest', '-C', 'Release', '-D', 'ExperimentalTest', '--no-compress-output', '-V', '--force-new-ctest-process'], 'cwd': '/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('PYTHON_BASIC_REPL', '1'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'bobdobchob'), ('FONTCONFIG_PATH', '/etc/fonts'), ('GIT_EDITOR', ':'), ('GIO_MODULE_DIR', '/home/bobdobchob/snap/code/common/.cache/gio-modules'), ('XDG_SESSION_TYPE', 'x11'), ('GIT_ASKPASS', '/snap/code/232/usr/share/code/resources/app/extensions/git/dist/askpass.sh'), ('GTK_EXE_PREFIX_VSCODE_SNAP_ORIG', ''), ('GDK_BACKEND_VSCODE_SNAP_ORIG', ''), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/install/mercury_autonomy/lib:/home/bobdobchob/osu-uwrt/development/software/install/riptide_rviz/lib:/home/bobdobchob/osu-uwrt/development/software/install/riptide_gyro/lib:/home/bobdobchob/osu-uwrt/development/software/install/riptide_autonomy2/lib:/home/bobdobchob/osu-uwrt/development/software/install/riptide_msgs2/lib:/home/bobdobchob/osu-uwrt/development/software/install/mercury_autonomy/lib:/home/bobdobchob/osu-uwrt/development/software/install/mercury_msgs/lib:/home/bobdobchob/osu-uwrt/development/software/install/launch_msgs/lib:/home/bobdobchob/osu-uwrt/development/software/install/behaviortree_cpp/lib:/home/bobdobchob/osu-uwrt/development/software/src/install/riptide_rviz/lib:/home/bobdobchob/osu-uwrt/development/software/src/install/riptide_gyro/lib:/home/bobdobchob/osu-uwrt/development/software/src/install/riptide_autonomy2/lib:/home/bobdobchob/osu-uwrt/development/software/src/install/riptide_msgs2/lib:/home/bobdobchob/osu-uwrt/development/software/src/install/launch_msgs/lib:/home/bobdobchob/osu-uwrt/development/dependencies/install/vectornav/lib:/home/bobdobchob/osu-uwrt/development/dependencies/install/vectornav_msgs/lib:/home/bobdobchob/osu-uwrt/development/dependencies/install/nortek_dvl_msgs/lib:/home/bobdobchob/osu-uwrt/development/dependencies/install/chameleon_tf_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/bobdobchob'), ('CHROME_DESKTOP', 'code.desktop'), ('LOCPATH_VSCODE_SNAP_ORIG', ''), ('TERM_PROGRAM_VERSION', '1.114.0'), ('DESKTOP_SESSION', 'ubuntu'), ('GTK_PATH', '/snap/code/232/usr/lib/x86_64-linux-gnu/gtk-3.0'), ('NVM_BIN', '/home/bobdobchob/.nvm/versions/node/v25.2.1/bin'), ('NVM_INC', '/home/bobdobchob/.nvm/versions/node/v25.2.1/include/node'), ('XDG_DATA_HOME_VSCODE_SNAP_ORIG', ''), ('GTK_IM_MODULE_FILE', '/home/bobdobchob/snap/code/common/.cache/immodules/immodules.cache'), ('GIO_LAUNCHED_DESKTOP_FILE', '/var/lib/snapd/desktop/applications/code_code.desktop'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('GK_GL_PATH', '/tmp/gitkraken/gitlens/gitlens-ipc-server-78376-41775.json'), ('GSETTINGS_SCHEMA_DIR_VSCODE_SNAP_ORIG', ''), ('VSCODE_GIT_ASKPASS_MAIN', '/snap/code/232/usr/share/code/resources/app/extensions/git/dist/askpass-main.js'), ('VSCODE_GIT_ASKPASS_NODE', '/snap/code/232/usr/share/code/code'), ('MANAGERPID', '1952'), ('PYDEVD_DISABLE_FILE_VALIDATION', '1'), ('SYSTEMD_EXEC_PID', '2373'), ('BUNDLED_DEBUGPY_PATH', '/home/bobdobchob/.vscode/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/libs/debugpy'), ('VSCODE_PYTHON_AUTOACTIVATE_GUARD', '1'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '78282'), ('NVM_DIR', '/home/bobdobchob/.nvm'), ('COLCON_PREFIX_PATH', '/home/bobdobchob/osu-uwrt/development/software/install:/home/bobdobchob/osu-uwrt/development/software/src/install:/home/bobdobchob/osu-uwrt/development/dependencies/install'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'bobdobchob'), ('JOURNAL_STREAM', '8:11666'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_CONFIG_DIRS_VSCODE_SNAP_ORIG', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_SESSION_CLASS', 'user'), ('XDG_DATA_DIRS_VSCODE_SNAP_ORIG', '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('USERNAME', 'bobdobchob'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('FC_FONTATIONS', '1'), ('ROS_LOCALHOST_ONLY', '0'), ('HISTCONTROL', 'ignorespace'), ('WINDOWPATH', '2'), ('PATH', '/home/bobdobchob/.config/Code/User/globalStorage/github.copilot-chat/debugCommand:/home/bobdobchob/.config/Code/User/globalStorage/github.copilot-chat/copilotCli:/home/bobdobchob/.local/bin:/home/bobdobchob/.nvm/versions/node/v25.2.1/bin:/home/bobdobchob/osu-uwrt/development/software/install/behaviortree_cpp/bin:/opt/ros/humble/bin:/home/bobdobchob/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/bobdobchob/.vscode/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/scripts/noConfigScripts'), ('SESSION_MANAGER', 'local/gigapc:@/tmp/.ICE-unix/2349,unix/gigapc:/tmp/.ICE-unix/2349'), ('GTK_EXE_PREFIX', '/snap/code/232/usr'), ('INVOCATION_ID', 'ffdc8aa4fca44c85aef7ab7dcec12654'), ('XDG_MENU_PREFIX', 'gnome-'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('GDK_BACKEND', 'x11'), ('DISPLAY', ':1'), ('LOCPATH', '/snap/code/232/usr/lib/locale'), ('VSCODE_DEBUGPY_ADAPTER_ENDPOINTS', '/home/bobdobchob/.vscode/extensions/ms-python.debugpy-2025.18.0-linux-x64/.noConfigDebugAdapterEndpoints/endpoint-e357c35afe6ac870.txt'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('PYTHONSTARTUP', '/home/bobdobchob/.config/Code/User/workspaceStorage/aed5219422adb01c5e016aca837d7f52/ms-python.python/pythonrc.py'), ('GIO_MODULE_DIR_VSCODE_SNAP_ORIG', ''), ('XDG_DATA_HOME', '/home/bobdobchob/snap/code/232/.local/share'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-e50fc4c56f.sock'), ('TERM_PROGRAM', 'vscode'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('GSETTINGS_SCHEMA_DIR', '/home/bobdobchob/snap/code/232/.local/share/glib-2.0/schemas'), ('AMENT_PREFIX_PATH', '/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/install/mercury_autonomy:/home/bobdobchob/osu-uwrt/development/software/install/mercury_launch:/home/bobdobchob/osu-uwrt/development/software/install/riptide_rviz:/home/bobdobchob/osu-uwrt/development/software/install/riptide_imu:/home/bobdobchob/osu-uwrt/development/software/install/riptide_hardware2:/home/bobdobchob/osu-uwrt/development/software/install/riptide_gyro:/home/bobdobchob/osu-uwrt/development/software/install/riptide_controllers2:/home/bobdobchob/osu-uwrt/development/software/install/riptide_autonomy2:/home/bobdobchob/osu-uwrt/development/software/install/riptide_acoustics:/home/bobdobchob/osu-uwrt/development/software/install/complete_controller:/home/bobdobchob/osu-uwrt/development/software/install/camera_faker:/home/bobdobchob/osu-uwrt/development/software/install/c_simulator:/home/bobdobchob/osu-uwrt/development/software/install/riptide_msgs2:/home/bobdobchob/osu-uwrt/development/software/install/riptide_meshes:/home/bobdobchob/osu-uwrt/development/software/install/riptide_mapping2:/home/bobdobchob/osu-uwrt/development/software/install/riptide_descriptions2:/home/bobdobchob/osu-uwrt/development/software/install/riptide_bringup2:/home/bobdobchob/osu-uwrt/development/software/install/remote_launch:/home/bobdobchob/osu-uwrt/development/software/install/mercury_autonomy:/home/bobdobchob/osu-uwrt/development/software/install/mercury_msgs:/home/bobdobchob/osu-uwrt/development/software/install/launch_msgs:/home/bobdobchob/osu-uwrt/development/software/install/behaviortree_cpp:/home/bobdobchob/osu-uwrt/development/software/src/install/riptide_rviz:/home/bobdobchob/osu-uwrt/development/software/src/install/riptide_imu:/home/bobdobchob/osu-uwrt/development/software/src/install/riptide_hardware2:/home/bobdobchob/osu-uwrt/development/software/src/install/riptide_gyro:/home/bobdobchob/osu-uwrt/development/software/src/install/riptide_controllers2:/home/bobdobchob/osu-uwrt/development/software/src/install/riptide_autonomy2:/home/bobdobchob/osu-uwrt/development/software/src/install/riptide_acoustics:/home/bobdobchob/osu-uwrt/development/software/src/install/complete_controller:/home/bobdobchob/osu-uwrt/development/software/src/install/camera_faker:/home/bobdobchob/osu-uwrt/development/software/src/install/c_simulator:/home/bobdobchob/osu-uwrt/development/software/src/install/riptide_msgs2:/home/bobdobchob/osu-uwrt/development/software/src/install/riptide_meshes:/home/bobdobchob/osu-uwrt/development/software/src/install/riptide_mapping2:/home/bobdobchob/osu-uwrt/development/software/src/install/riptide_descriptions2:/home/bobdobchob/osu-uwrt/development/software/src/install/riptide_bringup2:/home/bobdobchob/osu-uwrt/development/software/src/install/remote_launch:/home/bobdobchob/osu-uwrt/development/software/src/install/launch_msgs:/home/bobdobchob/osu-uwrt/development/dependencies/install/vectornav:/home/bobdobchob/osu-uwrt/development/dependencies/install/vectornav_msgs:/home/bobdobchob/osu-uwrt/development/dependencies/install/nortek_dvl_msgs:/home/bobdobchob/osu-uwrt/development/dependencies/install/nortek_dvl:/home/bobdobchob/osu-uwrt/development/dependencies/install/micro_ros_setup:/home/bobdobchob/osu-uwrt/development/dependencies/install/chameleon_tf_msgs:/home/bobdobchob/osu-uwrt/development/dependencies/install/chameleon_tf:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('GTK_PATH_VSCODE_SNAP_ORIG', ''), ('FONTCONFIG_FILE', '/etc/fonts/fonts.conf'), ('GK_GL_ADDR', 'http://127.0.0.1:41775'), ('GTK_IM_MODULE_FILE_VSCODE_SNAP_ORIG', ''), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('GIT_PAGER', 'cat'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy'), ('GIT_MERGE_AUTOEDIT', 'no'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('NVM_CD_FLAGS', ''), ('XDG_DATA_DIRS', '/home/bobdobchob/snap/code/232/.local/share:/home/bobdobchob/snap/code/232:/snap/code/232/usr/share:/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/bobdobchob/osu-uwrt/development/software/install/mercury_launch/lib/python3.10/site-packages:/home/bobdobchob/osu-uwrt/development/software/install/riptide_hardware2/local/lib/python3.10/dist-packages:/home/bobdobchob/osu-uwrt/development/software/install/riptide_msgs2/local/lib/python3.10/dist-packages:/home/bobdobchob/osu-uwrt/development/software/install/riptide_bringup2/lib/python3.10/site-packages:/home/bobdobchob/osu-uwrt/development/software/install/remote_launch/lib/python3.10/site-packages:/home/bobdobchob/osu-uwrt/development/software/install/mercury_msgs/local/lib/python3.10/dist-packages:/home/bobdobchob/osu-uwrt/development/software/install/launch_msgs/local/lib/python3.10/dist-packages:/home/bobdobchob/osu-uwrt/development/software/src/install/riptide_hardware2/local/lib/python3.10/dist-packages:/home/bobdobchob/osu-uwrt/development/software/src/install/riptide_msgs2/local/lib/python3.10/dist-packages:/home/bobdobchob/osu-uwrt/development/software/src/install/riptide_bringup2/lib/python3.10/site-packages:/home/bobdobchob/osu-uwrt/development/software/src/install/remote_launch/lib/python3.10/site-packages:/home/bobdobchob/osu-uwrt/development/software/src/install/launch_msgs/local/lib/python3.10/dist-packages:/home/bobdobchob/osu-uwrt/development/dependencies/install/vectornav_msgs/local/lib/python3.10/dist-packages:/home/bobdobchob/osu-uwrt/development/dependencies/install/nortek_dvl_msgs/local/lib/python3.10/dist-packages:/home/bobdobchob/osu-uwrt/development/dependencies/install/chameleon_tf_msgs/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/install/mercury_autonomy:/home/bobdobchob/osu-uwrt/development/software/install/riptide_rviz:/home/bobdobchob/osu-uwrt/development/software/install/riptide_imu:/home/bobdobchob/osu-uwrt/development/software/install/riptide_hardware2:/home/bobdobchob/osu-uwrt/development/software/install/riptide_gyro:/home/bobdobchob/osu-uwrt/development/software/install/riptide_controllers2:/home/bobdobchob/osu-uwrt/development/software/install/riptide_autonomy2:/home/bobdobchob/osu-uwrt/development/software/install/riptide_acoustics:/home/bobdobchob/osu-uwrt/development/software/install/complete_controller:/home/bobdobchob/osu-uwrt/development/software/install/camera_faker:/home/bobdobchob/osu-uwrt/development/software/install/c_simulator:/home/bobdobchob/osu-uwrt/development/software/install/riptide_msgs2:/home/bobdobchob/osu-uwrt/development/software/install/riptide_meshes:/home/bobdobchob/osu-uwrt/development/software/install/riptide_mapping2:/home/bobdobchob/osu-uwrt/development/software/install/riptide_descriptions2:/home/bobdobchob/osu-uwrt/development/software/install/mercury_autonomy:/home/bobdobchob/osu-uwrt/development/software/install/mercury_msgs:/home/bobdobchob/osu-uwrt/development/software/install/launch_msgs:/home/bobdobchob/osu-uwrt/development/software/install/behaviortree_cpp:/home/bobdobchob/osu-uwrt/development/software/src/install/riptide_rviz:/home/bobdobchob/osu-uwrt/development/software/src/install/riptide_imu:/home/bobdobchob/osu-uwrt/development/software/src/install/riptide_hardware2:/home/bobdobchob/osu-uwrt/development/software/src/install/riptide_gyro:/home/bobdobchob/osu-uwrt/development/software/src/install/riptide_controllers2:/home/bobdobchob/osu-uwrt/development/software/src/install/riptide_autonomy2:/home/bobdobchob/osu-uwrt/development/software/src/install/riptide_acoustics:/home/bobdobchob/osu-uwrt/development/software/src/install/complete_controller:/home/bobdobchob/osu-uwrt/development/software/src/install/camera_faker:/home/bobdobchob/osu-uwrt/development/software/src/install/c_simulator:/home/bobdobchob/osu-uwrt/development/software/src/install/riptide_msgs2:/home/bobdobchob/osu-uwrt/development/software/src/install/riptide_meshes:/home/bobdobchob/osu-uwrt/development/software/src/install/riptide_mapping2:/home/bobdobchob/osu-uwrt/development/software/src/install/riptide_descriptions2:/home/bobdobchob/osu-uwrt/development/software/src/install/launch_msgs:/home/bobdobchob/osu-uwrt/development/dependencies/install/vectornav:/home/bobdobchob/osu-uwrt/development/dependencies/install/vectornav_msgs:/home/bobdobchob/osu-uwrt/development/dependencies/install/nortek_dvl_msgs:/home/bobdobchob/osu-uwrt/development/dependencies/install/nortek_dvl:/home/bobdobchob/osu-uwrt/development/dependencies/install/micro_ros_setup:/home/bobdobchob/osu-uwrt/development/dependencies/install/chameleon_tf_msgs:/home/bobdobchob/osu-uwrt/development/dependencies/install/chameleon_tf')]), 'shell': False}
+[0.016905] (mercury_autonomy) StdoutLine: {'line': b'UpdateCTestConfiguration  from :/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/CTestConfiguration.ini\n'}
+[0.017048] (mercury_autonomy) StdoutLine: {'line': b'Parse Config file:/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/CTestConfiguration.ini\n'}
+[0.017095] (mercury_autonomy) StdoutLine: {'line': b'   Site: gigapc\n'}
+[0.017127] (mercury_autonomy) StdoutLine: {'line': b'   Build name: (empty)\n'}
+[0.017160] (mercury_autonomy) StdoutLine: {'line': b' Add coverage exclude regular expressions.\n'}
+[0.017182] (mercury_autonomy) StdoutLine: {'line': b'Create new tag: 20260405-1819 - Experimental\n'}
+[0.017209] (mercury_autonomy) StdoutLine: {'line': b'UpdateCTestConfiguration  from :/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/CTestConfiguration.ini\n'}
+[0.017229] (mercury_autonomy) StdoutLine: {'line': b'Parse Config file:/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/CTestConfiguration.ini\n'}
+[0.017248] (mercury_autonomy) StdoutLine: {'line': b'Test project /home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy\n'}
+[0.017267] (mercury_autonomy) StdoutLine: {'line': b'Constructing a list of tests\n'}
+[0.017573] (mercury_autonomy) StdoutLine: {'line': b'Done constructing a list of tests\n'}
+[0.017601] (mercury_autonomy) StdoutLine: {'line': b'Updating test list for fixtures\n'}
+[0.017625] (mercury_autonomy) StdoutLine: {'line': b'Added 0 tests to meet fixture requirements\n'}
+[0.017648] (mercury_autonomy) StdoutLine: {'line': b'Checking test dependency graph...\n'}
+[0.017677] (mercury_autonomy) StdoutLine: {'line': b'Checking test dependency graph end\n'}
+[0.017695] (mercury_autonomy) StdoutLine: {'line': b'test 1\n'}
+[0.017713] (mercury_autonomy) StdoutLine: {'line': b'      Start  1: test_tree_executor\n'}
+[0.017731] (mercury_autonomy) StdoutLine: {'line': b'\n'}
+[0.017749] (mercury_autonomy) StdoutLine: {'line': b'1: Test command: /usr/bin/python3 "-u" "/opt/ros/humble/share/ament_cmake_test/cmake/run_test.py" "/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/test_results/mercury_autonomy/test_tree_executor.gtest.xml" "--package-name" "mercury_autonomy" "--output-file" "/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/ament_cmake_gtest/test_tree_executor.txt" "--command" "/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/test_tree_executor" "--gtest_output=xml:/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/test_results/mercury_autonomy/test_tree_executor.gtest.xml"\n'}
+[0.017771] (mercury_autonomy) StdoutLine: {'line': b'1: Test timeout computed to be: 60\n'}
+[0.048752] (mercury_autonomy) StdoutLine: {'line': b"1: -- run_test.py: invoking following command in '/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy':\n"}
+[0.048873] (mercury_autonomy) StdoutLine: {'line': b'1:  - /home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/test_tree_executor --gtest_output=xml:/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/test_results/mercury_autonomy/test_tree_executor.gtest.xml\n'}
+[0.052070] (mercury_autonomy) StdoutLine: {'line': b'1: Running main() from /opt/ros/humble/src/gtest_vendor/src/gtest_main.cc\n'}
+[0.052140] (mercury_autonomy) StdoutLine: {'line': b'1: [==========] Running 9 tests from 1 test suite.\n'}
+[0.052172] (mercury_autonomy) StdoutLine: {'line': b'1: [----------] Global test environment set-up.\n'}
+[0.052203] (mercury_autonomy) StdoutLine: {'line': b'1: [----------] 9 tests from TreeExecutorTest\n'}
+[0.055658] (mercury_autonomy) StdoutLine: {'line': b'1: [ RUN      ] TreeExecutorTest.ActionClientCanBeCreated\n'}
+[0.063334] (mercury_autonomy) StdoutLine: {'line': b'1: [       OK ] TreeExecutorTest.ActionClientCanBeCreated (8 ms)\n'}
+[0.063453] (mercury_autonomy) StdoutLine: {'line': b'1: [ RUN      ] TreeExecutorTest.GoalMessageHasExpectedFields\n'}
+[0.065999] (mercury_autonomy) StdoutLine: {'line': b'1: [       OK ] TreeExecutorTest.GoalMessageHasExpectedFields (3 ms)\n'}
+[0.066110] (mercury_autonomy) StdoutLine: {'line': b'1: [ RUN      ] TreeExecutorTest.ResultMessageHasExpectedFields\n'}
+[0.068521] (mercury_autonomy) StdoutLine: {'line': b'1: [       OK ] TreeExecutorTest.ResultMessageHasExpectedFields (2 ms)\n'}
+[0.068589] (mercury_autonomy) StdoutLine: {'line': b'1: [ RUN      ] TreeExecutorTest.FeedbackMessageHasExpectedFields\n'}
+[0.071365] (mercury_autonomy) StdoutLine: {'line': b'1: [       OK ] TreeExecutorTest.FeedbackMessageHasExpectedFields (3 ms)\n'}
+[0.071430] (mercury_autonomy) StdoutLine: {'line': b'1: [ RUN      ] TreeExecutorTest.ListTreesServiceClientCanBeCreated\n'}
+[0.073884] (mercury_autonomy) StdoutLine: {'line': b'1: [       OK ] TreeExecutorTest.ListTreesServiceClientCanBeCreated (3 ms)\n'}
+[0.073958] (mercury_autonomy) StdoutLine: {'line': b'1: [ RUN      ] TreeExecutorTest.TestTreeFileExists\n'}
+[0.076276] (mercury_autonomy) StdoutLine: {'line': b'1: [       OK ] TreeExecutorTest.TestTreeFileExists (2 ms)\n'}
+[0.076342] (mercury_autonomy) StdoutLine: {'line': b'1: [ RUN      ] TreeExecutorTest.BtFactoryCanParseTree\n'}
+[0.079727] (mercury_autonomy) StdoutLine: {'line': b'1: [       OK ] TreeExecutorTest.BtFactoryCanParseTree (3 ms)\n'}
+[0.079843] (mercury_autonomy) StdoutLine: {'line': b'1: [ RUN      ] TreeExecutorTest.FactoryCanLoadAlwaysSuccess\n'}
+[0.082157] (mercury_autonomy) StdoutLine: {'line': b'1: [       OK ] TreeExecutorTest.FactoryCanLoadAlwaysSuccess (3 ms)\n'}
+[0.082223] (mercury_autonomy) StdoutLine: {'line': b'1: [ RUN      ] TreeExecutorTest.ResultStatusCodes\n'}
+[0.084534] (mercury_autonomy) StdoutLine: {'line': b'1: [       OK ] TreeExecutorTest.ResultStatusCodes (2 ms)\n'}
+[0.084613] (mercury_autonomy) StdoutLine: {'line': b'1: [----------] 9 tests from TreeExecutorTest (29 ms total)\n'}
+[0.084648] (mercury_autonomy) StdoutLine: {'line': b'1: \n'}
+[0.084677] (mercury_autonomy) StdoutLine: {'line': b'1: [----------] Global test environment tear-down\n'}
+[0.084792] (mercury_autonomy) StdoutLine: {'line': b'1: [==========] 9 tests from 1 test suite ran. (32 ms total)\n'}
+[0.084827] (mercury_autonomy) StdoutLine: {'line': b'1: [  PASSED  ] 9 tests.\n'}
+[0.099876] (-) TimerEvent: {}
+[0.186436] (mercury_autonomy) StdoutLine: {'line': b'1: -- run_test.py: return code 0\n'}
+[0.186606] (mercury_autonomy) StdoutLine: {'line': b"1: -- run_test.py: inject classname prefix into gtest result file '/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/test_results/mercury_autonomy/test_tree_executor.gtest.xml'\n"}
+[0.186660] (mercury_autonomy) StdoutLine: {'line': b"1: -- run_test.py: verify result file '/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/test_results/mercury_autonomy/test_tree_executor.gtest.xml'\n"}
+[0.193685] (mercury_autonomy) StdoutLine: {'line': b' 1/16 Test  #1: test_tree_executor ...............   Passed    0.18 sec\n'}
+[0.193865] (mercury_autonomy) StdoutLine: {'line': b'test 2\n'}
+[0.193905] (mercury_autonomy) StdoutLine: {'line': b'      Start  2: test_approx_equal_to\n'}
+[0.193934] (mercury_autonomy) StdoutLine: {'line': b'\n'}
+[0.193967] (mercury_autonomy) StdoutLine: {'line': b'2: Test command: /usr/bin/python3 "-u" "/opt/ros/humble/share/ament_cmake_test/cmake/run_test.py" "/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/test_results/mercury_autonomy/test_approx_equal_to.gtest.xml" "--package-name" "mercury_autonomy" "--output-file" "/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/ament_cmake_gtest/test_approx_equal_to.txt" "--command" "/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/test_approx_equal_to" "--gtest_output=xml:/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/test_results/mercury_autonomy/test_approx_equal_to.gtest.xml"\n'}
+[0.194005] (mercury_autonomy) StdoutLine: {'line': b'2: Test timeout computed to be: 60\n'}
+[0.199939] (-) TimerEvent: {}
+[0.226690] (mercury_autonomy) StdoutLine: {'line': b"2: -- run_test.py: invoking following command in '/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy':\n"}
+[0.226813] (mercury_autonomy) StdoutLine: {'line': b'2:  - /home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/test_approx_equal_to --gtest_output=xml:/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/test_results/mercury_autonomy/test_approx_equal_to.gtest.xml\n'}
+[0.230255] (mercury_autonomy) StdoutLine: {'line': b'2: Running main() from /opt/ros/humble/src/gtest_vendor/src/gtest_main.cc\n'}
+[0.230285] (mercury_autonomy) StdoutLine: {'line': b'2: [==========] Running 2 tests from 1 test suite.\n'}
+[0.230306] (mercury_autonomy) StdoutLine: {'line': b'2: [----------] Global test environment set-up.\n'}
+[0.230327] (mercury_autonomy) StdoutLine: {'line': b'2: [----------] 2 tests from ApproxEqualToTest\n'}
+[0.230346] (mercury_autonomy) StdoutLine: {'line': b'2: [ RUN      ] ApproxEqualToTest.RegistersWithFactory\n'}
+[0.230450] (mercury_autonomy) StdoutLine: {'line': b'2: [       OK ] ApproxEqualToTest.RegistersWithFactory (0 ms)\n'}
+[0.230470] (mercury_autonomy) StdoutLine: {'line': b'2: [ RUN      ] ApproxEqualToTest.HasCorrectPorts\n'}
+[0.230551] (mercury_autonomy) StdoutLine: {'line': b'2: [       OK ] ApproxEqualToTest.HasCorrectPorts (0 ms)\n'}
+[0.230571] (mercury_autonomy) StdoutLine: {'line': b'2: [----------] 2 tests from ApproxEqualToTest (0 ms total)\n'}
+[0.230590] (mercury_autonomy) StdoutLine: {'line': b'2: \n'}
+[0.230608] (mercury_autonomy) StdoutLine: {'line': b'2: [----------] Global test environment tear-down\n'}
+[0.230697] (mercury_autonomy) StdoutLine: {'line': b'2: [==========] 2 tests from 1 test suite ran. (0 ms total)\n'}
+[0.230716] (mercury_autonomy) StdoutLine: {'line': b'2: [  PASSED  ] 2 tests.\n'}
+[0.230981] (mercury_autonomy) StdoutLine: {'line': b'2: -- run_test.py: return code 0\n'}
+[0.231066] (mercury_autonomy) StdoutLine: {'line': b"2: -- run_test.py: inject classname prefix into gtest result file '/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/test_results/mercury_autonomy/test_approx_equal_to.gtest.xml'\n"}
+[0.231115] (mercury_autonomy) StdoutLine: {'line': b"2: -- run_test.py: verify result file '/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/test_results/mercury_autonomy/test_approx_equal_to.gtest.xml'\n"}
+[0.235347] (mercury_autonomy) StdoutLine: {'line': b' 2/16 Test  #2: test_approx_equal_to .............   Passed    0.04 sec\n'}
+[0.235393] (mercury_autonomy) StdoutLine: {'line': b'test 3\n'}
+[0.235427] (mercury_autonomy) StdoutLine: {'line': b'      Start  3: test_topic_nodes\n'}
+[0.235446] (mercury_autonomy) StdoutLine: {'line': b'\n'}
+[0.235467] (mercury_autonomy) StdoutLine: {'line': b'3: Test command: /usr/bin/python3 "-u" "/opt/ros/humble/share/ament_cmake_test/cmake/run_test.py" "/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/test_results/mercury_autonomy/test_topic_nodes.gtest.xml" "--package-name" "mercury_autonomy" "--output-file" "/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/ament_cmake_gtest/test_topic_nodes.txt" "--command" "/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/test_topic_nodes" "--gtest_output=xml:/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/test_results/mercury_autonomy/test_topic_nodes.gtest.xml"\n'}
+[0.235491] (mercury_autonomy) StdoutLine: {'line': b'3: Test timeout computed to be: 60\n'}
+[0.265809] (mercury_autonomy) StdoutLine: {'line': b"3: -- run_test.py: invoking following command in '/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy':\n"}
+[0.265926] (mercury_autonomy) StdoutLine: {'line': b'3:  - /home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/test_topic_nodes --gtest_output=xml:/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/test_results/mercury_autonomy/test_topic_nodes.gtest.xml\n'}
+[0.270565] (mercury_autonomy) StdoutLine: {'line': b'3: Running main() from /opt/ros/humble/src/gtest_vendor/src/gtest_main.cc\n'}
+[0.270670] (mercury_autonomy) StdoutLine: {'line': b'3: [==========] Running 4 tests from 1 test suite.\n'}
+[0.270699] (mercury_autonomy) StdoutLine: {'line': b'3: [----------] Global test environment set-up.\n'}
+[0.270724] (mercury_autonomy) StdoutLine: {'line': b'3: [----------] 4 tests from TopicNodeTest\n'}
+[0.270767] (mercury_autonomy) StdoutLine: {'line': b'3: [ RUN      ] TopicNodeTest.GetBoolTopicRegisters\n'}
+[0.270797] (mercury_autonomy) StdoutLine: {'line': b'3: [       OK ] TopicNodeTest.GetBoolTopicRegisters (0 ms)\n'}
+[0.270827] (mercury_autonomy) StdoutLine: {'line': b'3: [ RUN      ] TopicNodeTest.GetBoolTopicHasCorrectPorts\n'}
+[0.270878] (mercury_autonomy) StdoutLine: {'line': b'3: [       OK ] TopicNodeTest.GetBoolTopicHasCorrectPorts (0 ms)\n'}
+[0.270902] (mercury_autonomy) StdoutLine: {'line': b'3: [ RUN      ] TopicNodeTest.GetFloatTopicRegisters\n'}
+[0.270946] (mercury_autonomy) StdoutLine: {'line': b'3: [       OK ] TopicNodeTest.GetFloatTopicRegisters (1 ms)\n'}
+[0.270982] (mercury_autonomy) StdoutLine: {'line': b'3: [ RUN      ] TopicNodeTest.GetFloatTopicHasCorrectPorts\n'}
+[0.271096] (mercury_autonomy) StdoutLine: {'line': b'3: [       OK ] TopicNodeTest.GetFloatTopicHasCorrectPorts (0 ms)\n'}
+[0.271117] (mercury_autonomy) StdoutLine: {'line': b'3: [----------] 4 tests from TopicNodeTest (1 ms total)\n'}
+[0.271136] (mercury_autonomy) StdoutLine: {'line': b'3: \n'}
+[0.271156] (mercury_autonomy) StdoutLine: {'line': b'3: [----------] Global test environment tear-down\n'}
+[0.271259] (mercury_autonomy) StdoutLine: {'line': b'3: [==========] 4 tests from 1 test suite ran. (1 ms total)\n'}
+[0.271280] (mercury_autonomy) StdoutLine: {'line': b'3: [  PASSED  ] 4 tests.\n'}
+[0.271721] (mercury_autonomy) StdoutLine: {'line': b'3: -- run_test.py: return code 0\n'}
+[0.271854] (mercury_autonomy) StdoutLine: {'line': b"3: -- run_test.py: inject classname prefix into gtest result file '/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/test_results/mercury_autonomy/test_topic_nodes.gtest.xml'\n"}
+[0.271924] (mercury_autonomy) StdoutLine: {'line': b"3: -- run_test.py: verify result file '/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/test_results/mercury_autonomy/test_topic_nodes.gtest.xml'\n"}
+[0.277152] (mercury_autonomy) StdoutLine: {'line': b' 3/16 Test  #3: test_topic_nodes .................   Passed    0.04 sec\n'}
+[0.277268] (mercury_autonomy) StdoutLine: {'line': b'test 4\n'}
+[0.277297] (mercury_autonomy) StdoutLine: {'line': b'      Start  4: test_service_nodes\n'}
+[0.277318] (mercury_autonomy) StdoutLine: {'line': b'\n'}
+[0.277337] (mercury_autonomy) StdoutLine: {'line': b'4: Test command: /usr/bin/python3 "-u" "/opt/ros/humble/share/ament_cmake_test/cmake/run_test.py" "/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/test_results/mercury_autonomy/test_service_nodes.gtest.xml" "--package-name" "mercury_autonomy" "--output-file" "/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/ament_cmake_gtest/test_service_nodes.txt" "--command" "/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/test_service_nodes" "--gtest_output=xml:/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/test_results/mercury_autonomy/test_service_nodes.gtest.xml"\n'}
+[0.277361] (mercury_autonomy) StdoutLine: {'line': b'4: Test timeout computed to be: 60\n'}
+[0.299985] (-) TimerEvent: {}
+[0.306629] (mercury_autonomy) StdoutLine: {'line': b"4: -- run_test.py: invoking following command in '/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy':\n"}
+[0.306753] (mercury_autonomy) StdoutLine: {'line': b'4:  - /home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/test_service_nodes --gtest_output=xml:/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/test_results/mercury_autonomy/test_service_nodes.gtest.xml\n'}
+[0.310105] (mercury_autonomy) StdoutLine: {'line': b'4: Running main() from /opt/ros/humble/src/gtest_vendor/src/gtest_main.cc\n'}
+[0.310196] (mercury_autonomy) StdoutLine: {'line': b'4: [==========] Running 4 tests from 1 test suite.\n'}
+[0.310240] (mercury_autonomy) StdoutLine: {'line': b'4: [----------] Global test environment set-up.\n'}
+[0.310271] (mercury_autonomy) StdoutLine: {'line': b'4: [----------] 4 tests from ServiceNodeTest\n'}
+[0.310299] (mercury_autonomy) StdoutLine: {'line': b'4: [ RUN      ] ServiceNodeTest.CallSetBoolServiceRegisters\n'}
+[0.310355] (mercury_autonomy) StdoutLine: {'line': b'4: [       OK ] ServiceNodeTest.CallSetBoolServiceRegisters (0 ms)\n'}
+[0.310386] (mercury_autonomy) StdoutLine: {'line': b'4: [ RUN      ] ServiceNodeTest.CallSetBoolServiceHasCorrectPorts\n'}
+[0.310477] (mercury_autonomy) StdoutLine: {'line': b'4: [       OK ] ServiceNodeTest.CallSetBoolServiceHasCorrectPorts (0 ms)\n'}
+[0.310509] (mercury_autonomy) StdoutLine: {'line': b'4: [ RUN      ] ServiceNodeTest.CallTriggerServiceRegisters\n'}
+[0.310585] (mercury_autonomy) StdoutLine: {'line': b'4: [       OK ] ServiceNodeTest.CallTriggerServiceRegisters (0 ms)\n'}
+[0.310615] (mercury_autonomy) StdoutLine: {'line': b'4: [ RUN      ] ServiceNodeTest.CallTriggerServiceHasCorrectPorts\n'}
+[0.310696] (mercury_autonomy) StdoutLine: {'line': b'4: [       OK ] ServiceNodeTest.CallTriggerServiceHasCorrectPorts (0 ms)\n'}
+[0.310727] (mercury_autonomy) StdoutLine: {'line': b'4: [----------] 4 tests from ServiceNodeTest (0 ms total)\n'}
+[0.310756] (mercury_autonomy) StdoutLine: {'line': b'4: \n'}
+[0.310783] (mercury_autonomy) StdoutLine: {'line': b'4: [----------] Global test environment tear-down\n'}
+[0.310873] (mercury_autonomy) StdoutLine: {'line': b'4: [==========] 4 tests from 1 test suite ran. (0 ms total)\n'}
+[0.310906] (mercury_autonomy) StdoutLine: {'line': b'4: [  PASSED  ] 4 tests.\n'}
+[0.311160] (mercury_autonomy) StdoutLine: {'line': b'4: -- run_test.py: return code 0\n'}
+[0.311240] (mercury_autonomy) StdoutLine: {'line': b"4: -- run_test.py: inject classname prefix into gtest result file '/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/test_results/mercury_autonomy/test_service_nodes.gtest.xml'\n"}
+[0.311322] (mercury_autonomy) StdoutLine: {'line': b"4: -- run_test.py: verify result file '/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/test_results/mercury_autonomy/test_service_nodes.gtest.xml'\n"}
+[0.315634] (mercury_autonomy) StdoutLine: {'line': b' 4/16 Test  #4: test_service_nodes ...............   Passed    0.04 sec\n'}
+[0.315833] (mercury_autonomy) StdoutLine: {'line': b'test 5\n'}
+[0.315914] (mercury_autonomy) StdoutLine: {'line': b'      Start  5: test_transform_pose\n'}
+[0.315943] (mercury_autonomy) StdoutLine: {'line': b'\n'}
+[0.315978] (mercury_autonomy) StdoutLine: {'line': b'5: Test command: /usr/bin/python3 "-u" "/opt/ros/humble/share/ament_cmake_test/cmake/run_test.py" "/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/test_results/mercury_autonomy/test_transform_pose.gtest.xml" "--package-name" "mercury_autonomy" "--output-file" "/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/ament_cmake_gtest/test_transform_pose.txt" "--command" "/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/test_transform_pose" "--gtest_output=xml:/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/test_results/mercury_autonomy/test_transform_pose.gtest.xml"\n'}
+[0.316019] (mercury_autonomy) StdoutLine: {'line': b'5: Test timeout computed to be: 60\n'}
+[0.345148] (mercury_autonomy) StdoutLine: {'line': b"5: -- run_test.py: invoking following command in '/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy':\n"}
+[0.345263] (mercury_autonomy) StdoutLine: {'line': b'5:  - /home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/test_transform_pose --gtest_output=xml:/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/test_results/mercury_autonomy/test_transform_pose.gtest.xml\n'}
+[0.349145] (mercury_autonomy) StdoutLine: {'line': b'5: Running main() from /opt/ros/humble/src/gtest_vendor/src/gtest_main.cc\n'}
+[0.349208] (mercury_autonomy) StdoutLine: {'line': b'5: [==========] Running 2 tests from 1 test suite.\n'}
+[0.349232] (mercury_autonomy) StdoutLine: {'line': b'5: [----------] Global test environment set-up.\n'}
+[0.349253] (mercury_autonomy) StdoutLine: {'line': b'5: [----------] 2 tests from TransformPoseTest\n'}
+[0.349272] (mercury_autonomy) StdoutLine: {'line': b'5: [ RUN      ] TransformPoseTest.RegistersWithFactory\n'}
+[0.349329] (mercury_autonomy) StdoutLine: {'line': b'5: [       OK ] TransformPoseTest.RegistersWithFactory (0 ms)\n'}
+[0.349352] (mercury_autonomy) StdoutLine: {'line': b'5: [ RUN      ] TransformPoseTest.HasCorrectPorts\n'}
+[0.349439] (mercury_autonomy) StdoutLine: {'line': b'5: [       OK ] TransformPoseTest.HasCorrectPorts (0 ms)\n'}
+[0.349462] (mercury_autonomy) StdoutLine: {'line': b'5: [----------] 2 tests from TransformPoseTest (0 ms total)\n'}
+[0.349481] (mercury_autonomy) StdoutLine: {'line': b'5: \n'}
+[0.349498] (mercury_autonomy) StdoutLine: {'line': b'5: [----------] Global test environment tear-down\n'}
+[0.349548] (mercury_autonomy) StdoutLine: {'line': b'5: [==========] 2 tests from 1 test suite ran. (0 ms total)\n'}
+[0.349568] (mercury_autonomy) StdoutLine: {'line': b'5: [  PASSED  ] 2 tests.\n'}
+[0.349818] (mercury_autonomy) StdoutLine: {'line': b'5: -- run_test.py: return code 0\n'}
+[0.349992] (mercury_autonomy) StdoutLine: {'line': b"5: -- run_test.py: inject classname prefix into gtest result file '/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/test_results/mercury_autonomy/test_transform_pose.gtest.xml'\n"}
+[0.350077] (mercury_autonomy) StdoutLine: {'line': b"5: -- run_test.py: verify result file '/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/test_results/mercury_autonomy/test_transform_pose.gtest.xml'\n"}
+[0.355148] (mercury_autonomy) StdoutLine: {'line': b' 5/16 Test  #5: test_transform_pose ..............   Passed    0.04 sec\n'}
+[0.355229] (mercury_autonomy) StdoutLine: {'line': b'test 6\n'}
+[0.355279] (mercury_autonomy) StdoutLine: {'line': b'      Start  6: test_sensor_nodes\n'}
+[0.355312] (mercury_autonomy) StdoutLine: {'line': b'\n'}
+[0.355342] (mercury_autonomy) StdoutLine: {'line': b'6: Test command: /usr/bin/python3 "-u" "/opt/ros/humble/share/ament_cmake_test/cmake/run_test.py" "/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/test_results/mercury_autonomy/test_sensor_nodes.gtest.xml" "--package-name" "mercury_autonomy" "--output-file" "/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/ament_cmake_gtest/test_sensor_nodes.txt" "--command" "/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/test_sensor_nodes" "--gtest_output=xml:/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/test_results/mercury_autonomy/test_sensor_nodes.gtest.xml"\n'}
+[0.355376] (mercury_autonomy) StdoutLine: {'line': b'6: Test timeout computed to be: 60\n'}
+[0.385441] (mercury_autonomy) StdoutLine: {'line': b"6: -- run_test.py: invoking following command in '/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy':\n"}
+[0.385584] (mercury_autonomy) StdoutLine: {'line': b'6:  - /home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/test_sensor_nodes --gtest_output=xml:/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/test_results/mercury_autonomy/test_sensor_nodes.gtest.xml\n'}
+[0.390067] (mercury_autonomy) StdoutLine: {'line': b'6: Running main() from /opt/ros/humble/src/gtest_vendor/src/gtest_main.cc\n'}
+[0.390167] (mercury_autonomy) StdoutLine: {'line': b'6: [==========] Running 6 tests from 1 test suite.\n'}
+[0.390196] (mercury_autonomy) StdoutLine: {'line': b'6: [----------] Global test environment set-up.\n'}
+[0.390218] (mercury_autonomy) StdoutLine: {'line': b'6: [----------] 6 tests from SensorNodeTest\n'}
+[0.390239] (mercury_autonomy) StdoutLine: {'line': b'6: [ RUN      ] SensorNodeTest.GetOdometryRegisters\n'}
+[0.390296] (mercury_autonomy) StdoutLine: {'line': b'6: [       OK ] SensorNodeTest.GetOdometryRegisters (0 ms)\n'}
+[0.390316] (mercury_autonomy) StdoutLine: {'line': b'6: [ RUN      ] SensorNodeTest.GetOdometryHasCorrectPorts\n'}
+[0.390454] (mercury_autonomy) StdoutLine: {'line': b'6: [       OK ] SensorNodeTest.GetOdometryHasCorrectPorts (0 ms)\n'}
+[0.390483] (mercury_autonomy) StdoutLine: {'line': b'6: [ RUN      ] SensorNodeTest.GetImuOrientationRegisters\n'}
+[0.390566] (mercury_autonomy) StdoutLine: {'line': b'6: [       OK ] SensorNodeTest.GetImuOrientationRegisters (0 ms)\n'}
+[0.390586] (mercury_autonomy) StdoutLine: {'line': b'6: [ RUN      ] SensorNodeTest.GetImuOrientationHasCorrectPorts\n'}
+[0.390679] (mercury_autonomy) StdoutLine: {'line': b'6: [       OK ] SensorNodeTest.GetImuOrientationHasCorrectPorts (0 ms)\n'}
+[0.390699] (mercury_autonomy) StdoutLine: {'line': b'6: [ RUN      ] SensorNodeTest.GetTwistTopicRegisters\n'}
+[0.390789] (mercury_autonomy) StdoutLine: {'line': b'6: [       OK ] SensorNodeTest.GetTwistTopicRegisters (0 ms)\n'}
+[0.390809] (mercury_autonomy) StdoutLine: {'line': b'6: [ RUN      ] SensorNodeTest.GetTwistTopicHasCorrectPorts\n'}
+[0.390898] (mercury_autonomy) StdoutLine: {'line': b'6: [       OK ] SensorNodeTest.GetTwistTopicHasCorrectPorts (1 ms)\n'}
+[0.390925] (mercury_autonomy) StdoutLine: {'line': b'6: [----------] 6 tests from SensorNodeTest (1 ms total)\n'}
+[0.390944] (mercury_autonomy) StdoutLine: {'line': b'6: \n'}
+[0.390970] (mercury_autonomy) StdoutLine: {'line': b'6: [----------] Global test environment tear-down\n'}
+[0.391113] (mercury_autonomy) StdoutLine: {'line': b'6: [==========] 6 tests from 1 test suite ran. (1 ms total)\n'}
+[0.391142] (mercury_autonomy) StdoutLine: {'line': b'6: [  PASSED  ] 6 tests.\n'}
+[0.391463] (mercury_autonomy) StdoutLine: {'line': b'6: -- run_test.py: return code 0\n'}
+[0.391584] (mercury_autonomy) StdoutLine: {'line': b"6: -- run_test.py: inject classname prefix into gtest result file '/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/test_results/mercury_autonomy/test_sensor_nodes.gtest.xml'\n"}
+[0.391645] (mercury_autonomy) StdoutLine: {'line': b"6: -- run_test.py: verify result file '/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/test_results/mercury_autonomy/test_sensor_nodes.gtest.xml'\n"}
+[0.396280] (mercury_autonomy) StdoutLine: {'line': b' 6/16 Test  #6: test_sensor_nodes ................   Passed    0.04 sec\n'}
+[0.396339] (mercury_autonomy) StdoutLine: {'line': b'test 7\n'}
+[0.396361] (mercury_autonomy) StdoutLine: {'line': b'      Start  7: test_condition_nodes\n'}
+[0.396386] (mercury_autonomy) StdoutLine: {'line': b'\n'}
+[0.396405] (mercury_autonomy) StdoutLine: {'line': b'7: Test command: /usr/bin/python3 "-u" "/opt/ros/humble/share/ament_cmake_test/cmake/run_test.py" "/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/test_results/mercury_autonomy/test_condition_nodes.gtest.xml" "--package-name" "mercury_autonomy" "--output-file" "/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/ament_cmake_gtest/test_condition_nodes.txt" "--command" "/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/test_condition_nodes" "--gtest_output=xml:/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/test_results/mercury_autonomy/test_condition_nodes.gtest.xml"\n'}
+[0.396429] (mercury_autonomy) StdoutLine: {'line': b'7: Test timeout computed to be: 60\n'}
+[0.400035] (-) TimerEvent: {}
+[0.426348] (mercury_autonomy) StdoutLine: {'line': b"7: -- run_test.py: invoking following command in '/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy':\n"}
+[0.426490] (mercury_autonomy) StdoutLine: {'line': b'7:  - /home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/test_condition_nodes --gtest_output=xml:/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/test_results/mercury_autonomy/test_condition_nodes.gtest.xml\n'}
+[0.429997] (mercury_autonomy) StdoutLine: {'line': b'7: Running main() from /opt/ros/humble/src/gtest_vendor/src/gtest_main.cc\n'}
+[0.430071] (mercury_autonomy) StdoutLine: {'line': b'7: [==========] Running 6 tests from 1 test suite.\n'}
+[0.430095] (mercury_autonomy) StdoutLine: {'line': b'7: [----------] Global test environment set-up.\n'}
+[0.430115] (mercury_autonomy) StdoutLine: {'line': b'7: [----------] 6 tests from ConditionNodeTest\n'}
+[0.430135] (mercury_autonomy) StdoutLine: {'line': b'7: [ RUN      ] ConditionNodeTest.ApproxEqualToAngleRegisters\n'}
+[0.430204] (mercury_autonomy) StdoutLine: {'line': b'7: [       OK ] ConditionNodeTest.ApproxEqualToAngleRegisters (0 ms)\n'}
+[0.430224] (mercury_autonomy) StdoutLine: {'line': b'7: [ RUN      ] ConditionNodeTest.ApproxEqualToAngleHasCorrectPorts\n'}
+[0.430291] (mercury_autonomy) StdoutLine: {'line': b'7: [       OK ] ConditionNodeTest.ApproxEqualToAngleHasCorrectPorts (0 ms)\n'}
+[0.430310] (mercury_autonomy) StdoutLine: {'line': b'7: [ RUN      ] ConditionNodeTest.CompareNumsRegisters\n'}
+[0.430376] (mercury_autonomy) StdoutLine: {'line': b'7: [       OK ] ConditionNodeTest.CompareNumsRegisters (0 ms)\n'}
+[0.430394] (mercury_autonomy) StdoutLine: {'line': b'7: [ RUN      ] ConditionNodeTest.CompareNumsHasCorrectPorts\n'}
+[0.430461] (mercury_autonomy) StdoutLine: {'line': b'7: [       OK ] ConditionNodeTest.CompareNumsHasCorrectPorts (0 ms)\n'}
+[0.430479] (mercury_autonomy) StdoutLine: {'line': b'7: [ RUN      ] ConditionNodeTest.IsTrueRegisters\n'}
+[0.430541] (mercury_autonomy) StdoutLine: {'line': b'7: [       OK ] ConditionNodeTest.IsTrueRegisters (0 ms)\n'}
+[0.430559] (mercury_autonomy) StdoutLine: {'line': b'7: [ RUN      ] ConditionNodeTest.IsTrueHasCorrectPorts\n'}
+[0.430619] (mercury_autonomy) StdoutLine: {'line': b'7: [       OK ] ConditionNodeTest.IsTrueHasCorrectPorts (0 ms)\n'}
+[0.430649] (mercury_autonomy) StdoutLine: {'line': b'7: [----------] 6 tests from ConditionNodeTest (0 ms total)\n'}
+[0.430675] (mercury_autonomy) StdoutLine: {'line': b'7: \n'}
+[0.430697] (mercury_autonomy) StdoutLine: {'line': b'7: [----------] Global test environment tear-down\n'}
+[0.430798] (mercury_autonomy) StdoutLine: {'line': b'7: [==========] 6 tests from 1 test suite ran. (0 ms total)\n'}
+[0.430866] (mercury_autonomy) StdoutLine: {'line': b'7: [  PASSED  ] 6 tests.\n'}
+[0.431073] (mercury_autonomy) StdoutLine: {'line': b'7: -- run_test.py: return code 0\n'}
+[0.431179] (mercury_autonomy) StdoutLine: {'line': b"7: -- run_test.py: inject classname prefix into gtest result file '/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/test_results/mercury_autonomy/test_condition_nodes.gtest.xml'\n"}
+[0.431229] (mercury_autonomy) StdoutLine: {'line': b"7: -- run_test.py: verify result file '/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/test_results/mercury_autonomy/test_condition_nodes.gtest.xml'\n"}
+[0.436330] (mercury_autonomy) StdoutLine: {'line': b' 7/16 Test  #7: test_condition_nodes .............   Passed    0.04 sec\n'}
+[0.436420] (mercury_autonomy) StdoutLine: {'line': b'test 8\n'}
+[0.436453] (mercury_autonomy) StdoutLine: {'line': b'      Start  8: test_decorator_nodes\n'}
+[0.436475] (mercury_autonomy) StdoutLine: {'line': b'\n'}
+[0.436495] (mercury_autonomy) StdoutLine: {'line': b'8: Test command: /usr/bin/python3 "-u" "/opt/ros/humble/share/ament_cmake_test/cmake/run_test.py" "/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/test_results/mercury_autonomy/test_decorator_nodes.gtest.xml" "--package-name" "mercury_autonomy" "--output-file" "/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/ament_cmake_gtest/test_decorator_nodes.txt" "--command" "/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/test_decorator_nodes" "--gtest_output=xml:/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/test_results/mercury_autonomy/test_decorator_nodes.gtest.xml"\n'}
+[0.436523] (mercury_autonomy) StdoutLine: {'line': b'8: Test timeout computed to be: 60\n'}
+[0.466159] (mercury_autonomy) StdoutLine: {'line': b"8: -- run_test.py: invoking following command in '/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy':\n"}
+[0.466311] (mercury_autonomy) StdoutLine: {'line': b'8:  - /home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/test_decorator_nodes --gtest_output=xml:/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/test_results/mercury_autonomy/test_decorator_nodes.gtest.xml\n'}
+[0.470554] (mercury_autonomy) StdoutLine: {'line': b'8: Running main() from /opt/ros/humble/src/gtest_vendor/src/gtest_main.cc\n'}
+[0.470636] (mercury_autonomy) StdoutLine: {'line': b'8: [==========] Running 2 tests from 1 test suite.\n'}
+[0.470661] (mercury_autonomy) StdoutLine: {'line': b'8: [----------] Global test environment set-up.\n'}
+[0.470682] (mercury_autonomy) StdoutLine: {'line': b'8: [----------] 2 tests from DecoratorNodeTest\n'}
+[0.470711] (mercury_autonomy) StdoutLine: {'line': b'8: [ RUN      ] DecoratorNodeTest.RetryUntilSuccessfulOrTimeoutRegisters\n'}
+[0.470729] (mercury_autonomy) StdoutLine: {'line': b'8: [       OK ] DecoratorNodeTest.RetryUntilSuccessfulOrTimeoutRegisters (0 ms)\n'}
+[0.470753] (mercury_autonomy) StdoutLine: {'line': b'8: [ RUN      ] DecoratorNodeTest.RetryUntilSuccessfulOrTimeoutHasCorrectPorts\n'}
+[0.470800] (mercury_autonomy) StdoutLine: {'line': b'8: [       OK ] DecoratorNodeTest.RetryUntilSuccessfulOrTimeoutHasCorrectPorts (0 ms)\n'}
+[0.470819] (mercury_autonomy) StdoutLine: {'line': b'8: [----------] 2 tests from DecoratorNodeTest (0 ms total)\n'}
+[0.470836] (mercury_autonomy) StdoutLine: {'line': b'8: \n'}
+[0.470854] (mercury_autonomy) StdoutLine: {'line': b'8: [----------] Global test environment tear-down\n'}
+[0.470908] (mercury_autonomy) StdoutLine: {'line': b'8: [==========] 2 tests from 1 test suite ran. (0 ms total)\n'}
+[0.470928] (mercury_autonomy) StdoutLine: {'line': b'8: [  PASSED  ] 2 tests.\n'}
+[0.471205] (mercury_autonomy) StdoutLine: {'line': b'8: -- run_test.py: return code 0\n'}
+[0.471310] (mercury_autonomy) StdoutLine: {'line': b"8: -- run_test.py: inject classname prefix into gtest result file '/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/test_results/mercury_autonomy/test_decorator_nodes.gtest.xml'\n"}
+[0.471365] (mercury_autonomy) StdoutLine: {'line': b"8: -- run_test.py: verify result file '/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/test_results/mercury_autonomy/test_decorator_nodes.gtest.xml'\n"}
+[0.476037] (mercury_autonomy) StdoutLine: {'line': b' 8/16 Test  #8: test_decorator_nodes .............   Passed    0.04 sec\n'}
+[0.476090] (mercury_autonomy) StdoutLine: {'line': b'test 9\n'}
+[0.476133] (mercury_autonomy) StdoutLine: {'line': b'      Start  9: test_publish_nodes\n'}
+[0.476159] (mercury_autonomy) StdoutLine: {'line': b'\n'}
+[0.476184] (mercury_autonomy) StdoutLine: {'line': b'9: Test command: /usr/bin/python3 "-u" "/opt/ros/humble/share/ament_cmake_test/cmake/run_test.py" "/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/test_results/mercury_autonomy/test_publish_nodes.gtest.xml" "--package-name" "mercury_autonomy" "--output-file" "/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/ament_cmake_gtest/test_publish_nodes.txt" "--command" "/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/test_publish_nodes" "--gtest_output=xml:/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/test_results/mercury_autonomy/test_publish_nodes.gtest.xml"\n'}
+[0.476215] (mercury_autonomy) StdoutLine: {'line': b'9: Test timeout computed to be: 60\n'}
+[0.500111] (-) TimerEvent: {}
+[0.507800] (mercury_autonomy) StdoutLine: {'line': b"9: -- run_test.py: invoking following command in '/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy':\n"}
+[0.507889] (mercury_autonomy) StdoutLine: {'line': b'9:  - /home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/test_publish_nodes --gtest_output=xml:/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/test_results/mercury_autonomy/test_publish_nodes.gtest.xml\n'}
+[0.511744] (mercury_autonomy) StdoutLine: {'line': b'9: Running main() from /opt/ros/humble/src/gtest_vendor/src/gtest_main.cc\n'}
+[0.511809] (mercury_autonomy) StdoutLine: {'line': b'9: [==========] Running 6 tests from 1 test suite.\n'}
+[0.511831] (mercury_autonomy) StdoutLine: {'line': b'9: [----------] Global test environment set-up.\n'}
+[0.511850] (mercury_autonomy) StdoutLine: {'line': b'9: [----------] 6 tests from PublishNodeTest\n'}
+[0.511869] (mercury_autonomy) StdoutLine: {'line': b'9: [ RUN      ] PublishNodeTest.PublishTwistRegisters\n'}
+[0.511921] (mercury_autonomy) StdoutLine: {'line': b'9: [       OK ] PublishNodeTest.PublishTwistRegisters (1 ms)\n'}
+[0.511942] (mercury_autonomy) StdoutLine: {'line': b'9: [ RUN      ] PublishNodeTest.PublishTwistHasCorrectPorts\n'}
+[0.512011] (mercury_autonomy) StdoutLine: {'line': b'9: [       OK ] PublishNodeTest.PublishTwistHasCorrectPorts (0 ms)\n'}
+[0.512033] (mercury_autonomy) StdoutLine: {'line': b'9: [ RUN      ] PublishNodeTest.PublishTwistPortCount\n'}
+[0.512104] (mercury_autonomy) StdoutLine: {'line': b'9: [       OK ] PublishNodeTest.PublishTwistPortCount (0 ms)\n'}
+[0.512123] (mercury_autonomy) StdoutLine: {'line': b'9: [ RUN      ] PublishNodeTest.PublishBoolRegisters\n'}
+[0.512193] (mercury_autonomy) StdoutLine: {'line': b'9: [       OK ] PublishNodeTest.PublishBoolRegisters (0 ms)\n'}
+[0.512214] (mercury_autonomy) StdoutLine: {'line': b'9: [ RUN      ] PublishNodeTest.PublishBoolHasCorrectPorts\n'}
+[0.512280] (mercury_autonomy) StdoutLine: {'line': b'9: [       OK ] PublishNodeTest.PublishBoolHasCorrectPorts (0 ms)\n'}
+[0.512300] (mercury_autonomy) StdoutLine: {'line': b'9: [ RUN      ] PublishNodeTest.PublishBoolPortCount\n'}
+[0.512362] (mercury_autonomy) StdoutLine: {'line': b'9: [       OK ] PublishNodeTest.PublishBoolPortCount (0 ms)\n'}
+[0.512387] (mercury_autonomy) StdoutLine: {'line': b'9: [----------] 6 tests from PublishNodeTest (1 ms total)\n'}
+[0.512404] (mercury_autonomy) StdoutLine: {'line': b'9: \n'}
+[0.512420] (mercury_autonomy) StdoutLine: {'line': b'9: [----------] Global test environment tear-down\n'}
+[0.512537] (mercury_autonomy) StdoutLine: {'line': b'9: [==========] 6 tests from 1 test suite ran. (1 ms total)\n'}
+[0.512557] (mercury_autonomy) StdoutLine: {'line': b'9: [  PASSED  ] 6 tests.\n'}
+[0.512756] (mercury_autonomy) StdoutLine: {'line': b'9: -- run_test.py: return code 0\n'}
+[0.512871] (mercury_autonomy) StdoutLine: {'line': b"9: -- run_test.py: inject classname prefix into gtest result file '/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/test_results/mercury_autonomy/test_publish_nodes.gtest.xml'\n"}
+[0.512927] (mercury_autonomy) StdoutLine: {'line': b"9: -- run_test.py: verify result file '/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/test_results/mercury_autonomy/test_publish_nodes.gtest.xml'\n"}
+[0.517702] (mercury_autonomy) StdoutLine: {'line': b' 9/16 Test  #9: test_publish_nodes ...............   Passed    0.04 sec\n'}
+[0.517763] (mercury_autonomy) StdoutLine: {'line': b'test 10\n'}
+[0.517790] (mercury_autonomy) StdoutLine: {'line': b'      Start 10: test_legacy_action_nodes\n'}
+[0.517825] (mercury_autonomy) StdoutLine: {'line': b'\n'}
+[0.517845] (mercury_autonomy) StdoutLine: {'line': b'10: Test command: /usr/bin/python3 "-u" "/opt/ros/humble/share/ament_cmake_test/cmake/run_test.py" "/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/test_results/mercury_autonomy/test_legacy_action_nodes.gtest.xml" "--package-name" "mercury_autonomy" "--output-file" "/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/ament_cmake_gtest/test_legacy_action_nodes.txt" "--command" "/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/test_legacy_action_nodes" "--gtest_output=xml:/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/test_results/mercury_autonomy/test_legacy_action_nodes.gtest.xml"\n'}
+[0.517872] (mercury_autonomy) StdoutLine: {'line': b'10: Test timeout computed to be: 60\n'}
+[0.547265] (mercury_autonomy) StdoutLine: {'line': b"10: -- run_test.py: invoking following command in '/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy':\n"}
+[0.547368] (mercury_autonomy) StdoutLine: {'line': b'10:  - /home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/test_legacy_action_nodes --gtest_output=xml:/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/test_results/mercury_autonomy/test_legacy_action_nodes.gtest.xml\n'}
+[0.554378] (mercury_autonomy) StdoutLine: {'line': b'10: Running main() from /opt/ros/humble/src/gtest_vendor/src/gtest_main.cc\n'}
+[0.554461] (mercury_autonomy) StdoutLine: {'line': b'10: [==========] Running 6 tests from 1 test suite.\n'}
+[0.554493] (mercury_autonomy) StdoutLine: {'line': b'10: [----------] Global test environment set-up.\n'}
+[0.554521] (mercury_autonomy) StdoutLine: {'line': b'10: [----------] 6 tests from LegacyActionNodeTest\n'}
+[0.554546] (mercury_autonomy) StdoutLine: {'line': b'10: [ RUN      ] LegacyActionNodeTest.RegistersAllLegacyNodes\n'}
+[0.554737] (mercury_autonomy) StdoutLine: {'line': b'10: [       OK ] LegacyActionNodeTest.RegistersAllLegacyNodes (0 ms)\n'}
+[0.554777] (mercury_autonomy) StdoutLine: {'line': b'10: [ RUN      ] LegacyActionNodeTest.GetFloat64TopicPorts\n'}
+[0.554908] (mercury_autonomy) StdoutLine: {'line': b'10: [       OK ] LegacyActionNodeTest.GetFloat64TopicPorts (1 ms)\n'}
+[0.554951] (mercury_autonomy) StdoutLine: {'line': b'10: [ RUN      ] LegacyActionNodeTest.PublishInt8Ports\n'}
+[0.555075] (mercury_autonomy) StdoutLine: {'line': b'10: [       OK ] LegacyActionNodeTest.PublishInt8Ports (0 ms)\n'}
+[0.555125] (mercury_autonomy) StdoutLine: {'line': b'10: [ RUN      ] LegacyActionNodeTest.SetMappingTargetPorts\n'}
+[0.555234] (mercury_autonomy) StdoutLine: {'line': b'10: [       OK ] LegacyActionNodeTest.SetMappingTargetPorts (0 ms)\n'}
+[0.555267] (mercury_autonomy) StdoutLine: {'line': b'10: [ RUN      ] LegacyActionNodeTest.PublishToControllerPorts\n'}
+[0.555385] (mercury_autonomy) StdoutLine: {'line': b'10: [       OK ] LegacyActionNodeTest.PublishToControllerPorts (0 ms)\n'}
+[0.555418] (mercury_autonomy) StdoutLine: {'line': b'10: [ RUN      ] LegacyActionNodeTest.ComputeFrameAlignmentPorts\n'}
+[0.555534] (mercury_autonomy) StdoutLine: {'line': b'10: [       OK ] LegacyActionNodeTest.ComputeFrameAlignmentPorts (0 ms)\n'}
+[0.555566] (mercury_autonomy) StdoutLine: {'line': b'10: [----------] 6 tests from LegacyActionNodeTest (1 ms total)\n'}
+[0.555592] (mercury_autonomy) StdoutLine: {'line': b'10: \n'}
+[0.555617] (mercury_autonomy) StdoutLine: {'line': b'10: [----------] Global test environment tear-down\n'}
+[0.555727] (mercury_autonomy) StdoutLine: {'line': b'10: [==========] 6 tests from 1 test suite ran. (1 ms total)\n'}
+[0.555758] (mercury_autonomy) StdoutLine: {'line': b'10: [  PASSED  ] 6 tests.\n'}
+[0.556629] (mercury_autonomy) StdoutLine: {'line': b'10: -- run_test.py: return code 0\n'}
+[0.556728] (mercury_autonomy) StdoutLine: {'line': b"10: -- run_test.py: inject classname prefix into gtest result file '/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/test_results/mercury_autonomy/test_legacy_action_nodes.gtest.xml'\n"}
+[0.556785] (mercury_autonomy) StdoutLine: {'line': b"10: -- run_test.py: verify result file '/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/test_results/mercury_autonomy/test_legacy_action_nodes.gtest.xml'\n"}
+[0.561472] (mercury_autonomy) StdoutLine: {'line': b'10/16 Test #10: test_legacy_action_nodes .........   Passed    0.04 sec\n'}
+[0.561575] (mercury_autonomy) StdoutLine: {'line': b'test 11\n'}
+[0.561646] (mercury_autonomy) StdoutLine: {'line': b'      Start 11: cppcheck\n'}
+[0.561693] (mercury_autonomy) StdoutLine: {'line': b'\n'}
+[0.561729] (mercury_autonomy) StdoutLine: {'line': b'11: Test command: /usr/bin/python3 "-u" "/opt/ros/humble/share/ament_cmake_test/cmake/run_test.py" "/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/test_results/mercury_autonomy/cppcheck.xunit.xml" "--package-name" "mercury_autonomy" "--output-file" "/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/ament_cppcheck/cppcheck.txt" "--command" "/opt/ros/humble/bin/ament_cppcheck" "--xunit-file" "/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/test_results/mercury_autonomy/cppcheck.xunit.xml" "--include_dirs" "/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/mercury_autonomy/include"\n'}
+[0.561767] (mercury_autonomy) StdoutLine: {'line': b'11: Test timeout computed to be: 300\n'}
+[0.590229] (mercury_autonomy) StdoutLine: {'line': b"11: -- run_test.py: invoking following command in '/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/mercury_autonomy':\n"}
+[0.590354] (mercury_autonomy) StdoutLine: {'line': b'11:  - /opt/ros/humble/bin/ament_cppcheck --xunit-file /home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/test_results/mercury_autonomy/cppcheck.xunit.xml --include_dirs /home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/mercury_autonomy/include\n'}
+[0.600176] (-) TimerEvent: {}
+[0.627004] (mercury_autonomy) StdoutLine: {'line': b'11: cppcheck 2.7 has known performance issues and therefore will not be used, set the AMENT_CPPCHECK_ALLOW_SLOW_VERSIONS environment variable to override this.\n'}
+[0.632752] (mercury_autonomy) StdoutLine: {'line': b'11: -- run_test.py: return code 0\n'}
+[0.632835] (mercury_autonomy) StdoutLine: {'line': b"11: -- run_test.py: verify result file '/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/test_results/mercury_autonomy/cppcheck.xunit.xml'\n"}
+[0.637660] (mercury_autonomy) StdoutLine: {'line': b'11/16 Test #11: cppcheck .........................   Passed    0.08 sec\n'}
+[0.637711] (mercury_autonomy) StdoutLine: {'line': b'test 12\n'}
+[0.637751] (mercury_autonomy) StdoutLine: {'line': b'      Start 12: flake8\n'}
+[0.637771] (mercury_autonomy) StdoutLine: {'line': b'\n'}
+[0.637790] (mercury_autonomy) StdoutLine: {'line': b'12: Test command: /usr/bin/python3 "-u" "/opt/ros/humble/share/ament_cmake_test/cmake/run_test.py" "/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/test_results/mercury_autonomy/flake8.xunit.xml" "--package-name" "mercury_autonomy" "--output-file" "/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/ament_flake8/flake8.txt" "--command" "/opt/ros/humble/bin/ament_flake8" "--xunit-file" "/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/test_results/mercury_autonomy/flake8.xunit.xml"\n'}
+[0.637813] (mercury_autonomy) StdoutLine: {'line': b'12: Test timeout computed to be: 60\n'}
+[0.667471] (mercury_autonomy) StdoutLine: {'line': b"12: -- run_test.py: invoking following command in '/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/mercury_autonomy':\n"}
+[0.667577] (mercury_autonomy) StdoutLine: {'line': b'12:  - /opt/ros/humble/bin/ament_flake8 --xunit-file /home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/test_results/mercury_autonomy/flake8.xunit.xml\n'}
+[0.700259] (-) TimerEvent: {}
+[0.738728] (mercury_autonomy) StdoutLine: {'line': b'12: \n'}
+[0.738853] (mercury_autonomy) StdoutLine: {'line': b'12: 1 files checked\n'}
+[0.738883] (mercury_autonomy) StdoutLine: {'line': b'12: No problems found\n'}
+[0.738904] (mercury_autonomy) StdoutLine: {'line': b'12: \n'}
+[0.738926] (mercury_autonomy) StdoutLine: {'line': b'12: Checked files:\n'}
+[0.738949] (mercury_autonomy) StdoutLine: {'line': b'12: \n'}
+[0.738980] (mercury_autonomy) StdoutLine: {'line': b'12: * ./launch/autonomy.launch.py\n'}
+[0.747013] (mercury_autonomy) StdoutLine: {'line': b'12: -- run_test.py: return code 0\n'}
+[0.747061] (mercury_autonomy) StdoutLine: {'line': b"12: -- run_test.py: verify result file '/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/test_results/mercury_autonomy/flake8.xunit.xml'\n"}
+[0.751906] (mercury_autonomy) StdoutLine: {'line': b'12/16 Test #12: flake8 ...........................   Passed    0.11 sec\n'}
+[0.751988] (mercury_autonomy) StdoutLine: {'line': b'test 13\n'}
+[0.752012] (mercury_autonomy) StdoutLine: {'line': b'      Start 13: lint_cmake\n'}
+[0.752032] (mercury_autonomy) StdoutLine: {'line': b'\n'}
+[0.752051] (mercury_autonomy) StdoutLine: {'line': b'13: Test command: /usr/bin/python3 "-u" "/opt/ros/humble/share/ament_cmake_test/cmake/run_test.py" "/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/test_results/mercury_autonomy/lint_cmake.xunit.xml" "--package-name" "mercury_autonomy" "--output-file" "/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/ament_lint_cmake/lint_cmake.txt" "--command" "/opt/ros/humble/bin/ament_lint_cmake" "--xunit-file" "/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/test_results/mercury_autonomy/lint_cmake.xunit.xml"\n'}
+[0.752074] (mercury_autonomy) StdoutLine: {'line': b'13: Test timeout computed to be: 60\n'}
+[0.780687] (mercury_autonomy) StdoutLine: {'line': b"13: -- run_test.py: invoking following command in '/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/mercury_autonomy':\n"}
+[0.780806] (mercury_autonomy) StdoutLine: {'line': b'13:  - /opt/ros/humble/bin/ament_lint_cmake --xunit-file /home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/test_results/mercury_autonomy/lint_cmake.xunit.xml\n'}
+[0.800327] (-) TimerEvent: {}
+[0.814683] (mercury_autonomy) StdoutLine: {'line': b'13: \n'}
+[0.814810] (mercury_autonomy) StdoutLine: {'line': b'13: No problems found\n'}
+[0.819878] (mercury_autonomy) StdoutLine: {'line': b'13: -- run_test.py: return code 0\n'}
+[0.819962] (mercury_autonomy) StdoutLine: {'line': b"13: -- run_test.py: verify result file '/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/test_results/mercury_autonomy/lint_cmake.xunit.xml'\n"}
+[0.825034] (mercury_autonomy) StdoutLine: {'line': b'13/16 Test #13: lint_cmake .......................   Passed    0.07 sec\n'}
+[0.825122] (mercury_autonomy) StdoutLine: {'line': b'test 14\n'}
+[0.825155] (mercury_autonomy) StdoutLine: {'line': b'      Start 14: pep257\n'}
+[0.825191] (mercury_autonomy) StdoutLine: {'line': b'\n'}
+[0.825220] (mercury_autonomy) StdoutLine: {'line': b'14: Test command: /usr/bin/python3 "-u" "/opt/ros/humble/share/ament_cmake_test/cmake/run_test.py" "/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/test_results/mercury_autonomy/pep257.xunit.xml" "--package-name" "mercury_autonomy" "--output-file" "/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/ament_pep257/pep257.txt" "--command" "/opt/ros/humble/bin/ament_pep257" "--xunit-file" "/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/test_results/mercury_autonomy/pep257.xunit.xml"\n'}
+[0.825253] (mercury_autonomy) StdoutLine: {'line': b'14: Test timeout computed to be: 60\n'}
+[0.855375] (mercury_autonomy) StdoutLine: {'line': b"14: -- run_test.py: invoking following command in '/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/mercury_autonomy':\n"}
+[0.855497] (mercury_autonomy) StdoutLine: {'line': b'14:  - /opt/ros/humble/bin/ament_pep257 --xunit-file /home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/test_results/mercury_autonomy/pep257.xunit.xml\n'}
+[0.900410] (-) TimerEvent: {}
+[0.909293] (mercury_autonomy) StdoutLine: {'line': b'14: checking ./launch/autonomy.launch.py\n'}
+[0.909428] (mercury_autonomy) StdoutLine: {'line': b'14: No problems found\n'}
+[0.917551] (mercury_autonomy) StdoutLine: {'line': b'14: -- run_test.py: return code 0\n'}
+[0.917669] (mercury_autonomy) StdoutLine: {'line': b"14: -- run_test.py: verify result file '/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/test_results/mercury_autonomy/pep257.xunit.xml'\n"}
+[0.923399] (mercury_autonomy) StdoutLine: {'line': b'14/16 Test #14: pep257 ...........................   Passed    0.10 sec\n'}
+[0.923543] (mercury_autonomy) StdoutLine: {'line': b'test 15\n'}
+[0.923572] (mercury_autonomy) StdoutLine: {'line': b'      Start 15: uncrustify\n'}
+[0.923594] (mercury_autonomy) StdoutLine: {'line': b'\n'}
+[0.923614] (mercury_autonomy) StdoutLine: {'line': b'15: Test command: /usr/bin/python3 "-u" "/opt/ros/humble/share/ament_cmake_test/cmake/run_test.py" "/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/test_results/mercury_autonomy/uncrustify.xunit.xml" "--package-name" "mercury_autonomy" "--output-file" "/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/ament_uncrustify/uncrustify.txt" "--command" "/opt/ros/humble/bin/ament_uncrustify" "--xunit-file" "/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/test_results/mercury_autonomy/uncrustify.xunit.xml"\n'}
+[0.923640] (mercury_autonomy) StdoutLine: {'line': b'15: Test timeout computed to be: 60\n'}
+[0.953593] (mercury_autonomy) StdoutLine: {'line': b"15: -- run_test.py: invoking following command in '/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/mercury_autonomy':\n"}
+[0.953732] (mercury_autonomy) StdoutLine: {'line': b'15:  - /opt/ros/humble/bin/ament_uncrustify --xunit-file /home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/test_results/mercury_autonomy/uncrustify.xunit.xml\n'}
+[1.000489] (-) TimerEvent: {}
+[1.041754] (mercury_autonomy) StdoutLine: {'line': b"15: Code style divergence in file 'include/mercury_autonomy/bt_actions/compute_frame_alignment.hpp':\n"}
+[1.042400] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.042447] (mercury_autonomy) StdoutLine: {'line': b'15: --- include/mercury_autonomy/bt_actions/compute_frame_alignment.hpp\n'}
+[1.042480] (mercury_autonomy) StdoutLine: {'line': b'15: +++ include/mercury_autonomy/bt_actions/compute_frame_alignment.hpp.uncrustify\n'}
+[1.042511] (mercury_autonomy) StdoutLine: {'line': b'15: @@ -56 +56 @@\n'}
+[1.042540] (mercury_autonomy) StdoutLine: {'line': b'15: -}  // namespace mercury_autonomy\n'}
+[1.042570] (mercury_autonomy) StdoutLine: {'line': b'15: +}  // namespace mercury_autonomy\n'}
+[1.042600] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.042628] (mercury_autonomy) StdoutLine: {'line': b"15: Code style divergence in file 'include/mercury_autonomy/bt_actions/get_covariance.hpp':\n"}
+[1.042656] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.042684] (mercury_autonomy) StdoutLine: {'line': b'15: --- include/mercury_autonomy/bt_actions/get_covariance.hpp\n'}
+[1.042711] (mercury_autonomy) StdoutLine: {'line': b'15: +++ include/mercury_autonomy/bt_actions/get_covariance.hpp.uncrustify\n'}
+[1.042738] (mercury_autonomy) StdoutLine: {'line': b'15: @@ -43 +43 @@\n'}
+[1.042764] (mercury_autonomy) StdoutLine: {'line': b'15: -}  // namespace mercury_autonomy\n'}
+[1.042791] (mercury_autonomy) StdoutLine: {'line': b'15: +}  // namespace mercury_autonomy\n'}
+[1.042821] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.042848] (mercury_autonomy) StdoutLine: {'line': b"15: Code style divergence in file 'include/mercury_autonomy/bt_actions/get_float64_topic.hpp':\n"}
+[1.042876] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.042903] (mercury_autonomy) StdoutLine: {'line': b'15: --- include/mercury_autonomy/bt_actions/get_float64_topic.hpp\n'}
+[1.042930] (mercury_autonomy) StdoutLine: {'line': b'15: +++ include/mercury_autonomy/bt_actions/get_float64_topic.hpp.uncrustify\n'}
+[1.042960] (mercury_autonomy) StdoutLine: {'line': b'15: @@ -42 +42 @@\n'}
+[1.042989] (mercury_autonomy) StdoutLine: {'line': b'15: -}  // namespace mercury_autonomy\n'}
+[1.043017] (mercury_autonomy) StdoutLine: {'line': b'15: +}  // namespace mercury_autonomy\n'}
+[1.043044] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.043069] (mercury_autonomy) StdoutLine: {'line': b"15: Code style divergence in file 'include/mercury_autonomy/bt_actions/get_mapping_state.hpp':\n"}
+[1.043096] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.043121] (mercury_autonomy) StdoutLine: {'line': b'15: --- include/mercury_autonomy/bt_actions/get_mapping_state.hpp\n'}
+[1.043147] (mercury_autonomy) StdoutLine: {'line': b'15: +++ include/mercury_autonomy/bt_actions/get_mapping_state.hpp.uncrustify\n'}
+[1.043172] (mercury_autonomy) StdoutLine: {'line': b'15: @@ -40 +40 @@\n'}
+[1.043202] (mercury_autonomy) StdoutLine: {'line': b'15: -}  // namespace mercury_autonomy\n'}
+[1.043229] (mercury_autonomy) StdoutLine: {'line': b'15: +}  // namespace mercury_autonomy\n'}
+[1.043255] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.043280] (mercury_autonomy) StdoutLine: {'line': b"15: Code style divergence in file 'include/mercury_autonomy/bt_actions/publish_ekf_pose.hpp':\n"}
+[1.043309] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.043334] (mercury_autonomy) StdoutLine: {'line': b'15: --- include/mercury_autonomy/bt_actions/publish_ekf_pose.hpp\n'}
+[1.043359] (mercury_autonomy) StdoutLine: {'line': b'15: +++ include/mercury_autonomy/bt_actions/publish_ekf_pose.hpp.uncrustify\n'}
+[1.043384] (mercury_autonomy) StdoutLine: {'line': b'15: @@ -50 +50 @@\n'}
+[1.043411] (mercury_autonomy) StdoutLine: {'line': b'15: -}  // namespace mercury_autonomy\n'}
+[1.043435] (mercury_autonomy) StdoutLine: {'line': b'15: +}  // namespace mercury_autonomy\n'}
+[1.043460] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.043484] (mercury_autonomy) StdoutLine: {'line': b"15: Code style divergence in file 'include/mercury_autonomy/bt_actions/publish_int8.hpp':\n"}
+[1.043509] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.043534] (mercury_autonomy) StdoutLine: {'line': b'15: --- include/mercury_autonomy/bt_actions/publish_int8.hpp\n'}
+[1.043559] (mercury_autonomy) StdoutLine: {'line': b'15: +++ include/mercury_autonomy/bt_actions/publish_int8.hpp.uncrustify\n'}
+[1.043584] (mercury_autonomy) StdoutLine: {'line': b'15: @@ -38 +38 @@\n'}
+[1.043608] (mercury_autonomy) StdoutLine: {'line': b'15: -}  // namespace mercury_autonomy\n'}
+[1.043633] (mercury_autonomy) StdoutLine: {'line': b'15: +}  // namespace mercury_autonomy\n'}
+[1.043657] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.043682] (mercury_autonomy) StdoutLine: {'line': b"15: Code style divergence in file 'include/mercury_autonomy/bt_actions/publish_to_controller.hpp':\n"}
+[1.043706] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.043731] (mercury_autonomy) StdoutLine: {'line': b'15: --- include/mercury_autonomy/bt_actions/publish_to_controller.hpp\n'}
+[1.043755] (mercury_autonomy) StdoutLine: {'line': b'15: +++ include/mercury_autonomy/bt_actions/publish_to_controller.hpp.uncrustify\n'}
+[1.043780] (mercury_autonomy) StdoutLine: {'line': b'15: @@ -41 +41 @@\n'}
+[1.043805] (mercury_autonomy) StdoutLine: {'line': b'15: -}  // namespace mercury_autonomy\n'}
+[1.043829] (mercury_autonomy) StdoutLine: {'line': b'15: +}  // namespace mercury_autonomy\n'}
+[1.043854] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.043878] (mercury_autonomy) StdoutLine: {'line': b"15: Code style divergence in file 'include/mercury_autonomy/bt_actions/set_controller_safe_mode.hpp':\n"}
+[1.043903] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.043927] (mercury_autonomy) StdoutLine: {'line': b'15: --- include/mercury_autonomy/bt_actions/set_controller_safe_mode.hpp\n'}
+[1.043952] (mercury_autonomy) StdoutLine: {'line': b'15: +++ include/mercury_autonomy/bt_actions/set_controller_safe_mode.hpp.uncrustify\n'}
+[1.043982] (mercury_autonomy) StdoutLine: {'line': b'15: @@ -42 +42 @@\n'}
+[1.044006] (mercury_autonomy) StdoutLine: {'line': b'15: -}  // namespace mercury_autonomy\n'}
+[1.044031] (mercury_autonomy) StdoutLine: {'line': b'15: +}  // namespace mercury_autonomy\n'}
+[1.044056] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.044081] (mercury_autonomy) StdoutLine: {'line': b"15: Code style divergence in file 'include/mercury_autonomy/bt_actions/set_mapping_target.hpp':\n"}
+[1.044106] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.044131] (mercury_autonomy) StdoutLine: {'line': b'15: --- include/mercury_autonomy/bt_actions/set_mapping_target.hpp\n'}
+[1.044155] (mercury_autonomy) StdoutLine: {'line': b'15: +++ include/mercury_autonomy/bt_actions/set_mapping_target.hpp.uncrustify\n'}
+[1.044181] (mercury_autonomy) StdoutLine: {'line': b'15: @@ -41 +41 @@\n'}
+[1.044206] (mercury_autonomy) StdoutLine: {'line': b'15: -}  // namespace mercury_autonomy\n'}
+[1.044231] (mercury_autonomy) StdoutLine: {'line': b'15: +}  // namespace mercury_autonomy\n'}
+[1.044255] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.044280] (mercury_autonomy) StdoutLine: {'line': b"15: Code style divergence in file 'include/mercury_autonomy/bt_actions/set_status.hpp':\n"}
+[1.044306] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.044332] (mercury_autonomy) StdoutLine: {'line': b'15: --- include/mercury_autonomy/bt_actions/set_status.hpp\n'}
+[1.044357] (mercury_autonomy) StdoutLine: {'line': b'15: +++ include/mercury_autonomy/bt_actions/set_status.hpp.uncrustify\n'}
+[1.044382] (mercury_autonomy) StdoutLine: {'line': b'15: @@ -34 +34 @@\n'}
+[1.044406] (mercury_autonomy) StdoutLine: {'line': b'15: -}  // namespace mercury_autonomy\n'}
+[1.044432] (mercury_autonomy) StdoutLine: {'line': b'15: +}  // namespace mercury_autonomy\n'}
+[1.044457] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.044481] (mercury_autonomy) StdoutLine: {'line': b"15: Code style divergence in file 'include/mercury_autonomy/bt_actions/trigger_controller_stunt.hpp':\n"}
+[1.044508] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.044532] (mercury_autonomy) StdoutLine: {'line': b'15: --- include/mercury_autonomy/bt_actions/trigger_controller_stunt.hpp\n'}
+[1.044557] (mercury_autonomy) StdoutLine: {'line': b'15: +++ include/mercury_autonomy/bt_actions/trigger_controller_stunt.hpp.uncrustify\n'}
+[1.044583] (mercury_autonomy) StdoutLine: {'line': b'15: @@ -41 +41 @@\n'}
+[1.044609] (mercury_autonomy) StdoutLine: {'line': b'15: -}  // namespace mercury_autonomy\n'}
+[1.044635] (mercury_autonomy) StdoutLine: {'line': b'15: +}  // namespace mercury_autonomy\n'}
+[1.044660] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.044684] (mercury_autonomy) StdoutLine: {'line': b"15: Code style divergence in file 'include/mercury_autonomy/bt_actions/wait.hpp':\n"}
+[1.044709] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.044734] (mercury_autonomy) StdoutLine: {'line': b'15: --- include/mercury_autonomy/bt_actions/wait.hpp\n'}
+[1.044759] (mercury_autonomy) StdoutLine: {'line': b'15: +++ include/mercury_autonomy/bt_actions/wait.hpp.uncrustify\n'}
+[1.044784] (mercury_autonomy) StdoutLine: {'line': b'15: @@ -33 +33 @@\n'}
+[1.044808] (mercury_autonomy) StdoutLine: {'line': b'15: -}  // namespace mercury_autonomy\n'}
+[1.044833] (mercury_autonomy) StdoutLine: {'line': b'15: +}  // namespace mercury_autonomy\n'}
+[1.044858] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.044883] (mercury_autonomy) StdoutLine: {'line': b"15: Code style divergence in file 'include/mercury_autonomy/bt_actions/wait_for_detection.hpp':\n"}
+[1.044908] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.044933] (mercury_autonomy) StdoutLine: {'line': b'15: --- include/mercury_autonomy/bt_actions/wait_for_detection.hpp\n'}
+[1.044958] (mercury_autonomy) StdoutLine: {'line': b'15: +++ include/mercury_autonomy/bt_actions/wait_for_detection.hpp.uncrustify\n'}
+[1.044990] (mercury_autonomy) StdoutLine: {'line': b'15: @@ -42 +42 @@\n'}
+[1.045015] (mercury_autonomy) StdoutLine: {'line': b'15: -}  // namespace mercury_autonomy\n'}
+[1.045040] (mercury_autonomy) StdoutLine: {'line': b'15: +}  // namespace mercury_autonomy\n'}
+[1.045067] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.045092] (mercury_autonomy) StdoutLine: {'line': b"15: Code style divergence in file 'src/bt_actions/compute_frame_alignment.cpp':\n"}
+[1.045117] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.045142] (mercury_autonomy) StdoutLine: {'line': b'15: --- src/bt_actions/compute_frame_alignment.cpp\n'}
+[1.045168] (mercury_autonomy) StdoutLine: {'line': b'15: +++ src/bt_actions/compute_frame_alignment.cpp.uncrustify\n'}
+[1.045193] (mercury_autonomy) StdoutLine: {'line': b'15: @@ -80 +80 @@\n'}
+[1.045218] (mercury_autonomy) StdoutLine: {'line': b'15: -}  // namespace mercury_autonomy\n'}
+[1.045245] (mercury_autonomy) StdoutLine: {'line': b'15: +}  // namespace mercury_autonomy\n'}
+[1.045270] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.045296] (mercury_autonomy) StdoutLine: {'line': b"15: Code style divergence in file 'src/bt_actions/get_covariance.cpp':\n"}
+[1.045321] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.045346] (mercury_autonomy) StdoutLine: {'line': b'15: --- src/bt_actions/get_covariance.cpp\n'}
+[1.045372] (mercury_autonomy) StdoutLine: {'line': b'15: +++ src/bt_actions/get_covariance.cpp.uncrustify\n'}
+[1.045397] (mercury_autonomy) StdoutLine: {'line': b'15: @@ -40 +40,2 @@\n'}
+[1.045422] (mercury_autonomy) StdoutLine: {'line': b'15: -    RCLCPP_ERROR(rosNode()->get_logger(), "getCovariance: timed out waiting on %s", topic_name_.c_str());\n'}
+[1.045449] (mercury_autonomy) StdoutLine: {'line': b'15: +    RCLCPP_ERROR(\n'}
+[1.045474] (mercury_autonomy) StdoutLine: {'line': b'15: +      rosNode()->get_logger(), "getCovariance: timed out waiting on %s", topic_name_.c_str());\n'}
+[1.045501] (mercury_autonomy) StdoutLine: {'line': b'15: @@ -51 +52,2 @@\n'}
+[1.045526] (mercury_autonomy) StdoutLine: {'line': b'15: -void GetCovariance::topicCallback(const geometry_msgs::msg::PoseWithCovarianceStamped::SharedPtr msg)\n'}
+[1.045552] (mercury_autonomy) StdoutLine: {'line': b'15: +void GetCovariance::topicCallback(\n'}
+[1.045577] (mercury_autonomy) StdoutLine: {'line': b'15: +  const geometry_msgs::msg::PoseWithCovarianceStamped::SharedPtr msg)\n'}
+[1.045602] (mercury_autonomy) StdoutLine: {'line': b'15: @@ -67 +69 @@\n'}
+[1.045627] (mercury_autonomy) StdoutLine: {'line': b'15: -}  // namespace mercury_autonomy\n'}
+[1.045652] (mercury_autonomy) StdoutLine: {'line': b'15: +}  // namespace mercury_autonomy\n'}
+[1.045679] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.045704] (mercury_autonomy) StdoutLine: {'line': b"15: Code style divergence in file 'src/bt_actions/get_float64_topic.cpp':\n"}
+[1.045730] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.045755] (mercury_autonomy) StdoutLine: {'line': b'15: --- src/bt_actions/get_float64_topic.cpp\n'}
+[1.045780] (mercury_autonomy) StdoutLine: {'line': b'15: +++ src/bt_actions/get_float64_topic.cpp.uncrustify\n'}
+[1.045806] (mercury_autonomy) StdoutLine: {'line': b'15: @@ -58 +58 @@\n'}
+[1.045831] (mercury_autonomy) StdoutLine: {'line': b'15: -}  // namespace mercury_autonomy\n'}
+[1.045856] (mercury_autonomy) StdoutLine: {'line': b'15: +}  // namespace mercury_autonomy\n'}
+[1.045881] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.045907] (mercury_autonomy) StdoutLine: {'line': b"15: Code style divergence in file 'src/bt_actions/get_mapping_state.cpp':\n"}
+[1.045933] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.045959] (mercury_autonomy) StdoutLine: {'line': b'15: --- src/bt_actions/get_mapping_state.cpp\n'}
+[1.045995] (mercury_autonomy) StdoutLine: {'line': b'15: +++ src/bt_actions/get_mapping_state.cpp.uncrustify\n'}
+[1.046024] (mercury_autonomy) StdoutLine: {'line': b'15: @@ -52 +52 @@\n'}
+[1.046051] (mercury_autonomy) StdoutLine: {'line': b'15: -}  // namespace mercury_autonomy\n'}
+[1.046076] (mercury_autonomy) StdoutLine: {'line': b'15: +}  // namespace mercury_autonomy\n'}
+[1.046101] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.046125] (mercury_autonomy) StdoutLine: {'line': b"15: Code style divergence in file 'src/bt_actions/publish_ekf_pose.cpp':\n"}
+[1.046151] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.046176] (mercury_autonomy) StdoutLine: {'line': b'15: --- src/bt_actions/publish_ekf_pose.cpp\n'}
+[1.046203] (mercury_autonomy) StdoutLine: {'line': b'15: +++ src/bt_actions/publish_ekf_pose.cpp.uncrustify\n'}
+[1.046229] (mercury_autonomy) StdoutLine: {'line': b'15: @@ -104 +104 @@\n'}
+[1.046256] (mercury_autonomy) StdoutLine: {'line': b'15: -}  // namespace mercury_autonomy\n'}
+[1.046282] (mercury_autonomy) StdoutLine: {'line': b'15: +}  // namespace mercury_autonomy\n'}
+[1.046308] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.046333] (mercury_autonomy) StdoutLine: {'line': b"15: Code style divergence in file 'src/bt_actions/publish_int8.cpp':\n"}
+[1.046359] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.046385] (mercury_autonomy) StdoutLine: {'line': b'15: --- src/bt_actions/publish_int8.cpp\n'}
+[1.046411] (mercury_autonomy) StdoutLine: {'line': b'15: +++ src/bt_actions/publish_int8.cpp.uncrustify\n'}
+[1.046438] (mercury_autonomy) StdoutLine: {'line': b'15: @@ -44 +44 @@\n'}
+[1.046465] (mercury_autonomy) StdoutLine: {'line': b'15: -}  // namespace mercury_autonomy\n'}
+[1.046492] (mercury_autonomy) StdoutLine: {'line': b'15: +}  // namespace mercury_autonomy\n'}
+[1.046518] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.046544] (mercury_autonomy) StdoutLine: {'line': b"15: Code style divergence in file 'src/bt_actions/publish_to_controller.cpp':\n"}
+[1.046571] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.046597] (mercury_autonomy) StdoutLine: {'line': b'15: --- src/bt_actions/publish_to_controller.cpp\n'}
+[1.046626] (mercury_autonomy) StdoutLine: {'line': b'15: +++ src/bt_actions/publish_to_controller.cpp.uncrustify\n'}
+[1.046653] (mercury_autonomy) StdoutLine: {'line': b'15: @@ -16,2 +16,4 @@\n'}
+[1.046679] (mercury_autonomy) StdoutLine: {'line': b'15: -  position_pub_ = rosNode()->create_publisher<mercury_msgs::msg::ControllerCommand>(kLinearTopic, 10);\n'}
+[1.046706] (mercury_autonomy) StdoutLine: {'line': b'15: -  orientation_pub_ = rosNode()->create_publisher<mercury_msgs::msg::ControllerCommand>(kAngularTopic, 10);\n'}
+[1.046735] (mercury_autonomy) StdoutLine: {'line': b'15: +  position_pub_ =\n'}
+[1.046762] (mercury_autonomy) StdoutLine: {'line': b'15: +    rosNode()->create_publisher<mercury_msgs::msg::ControllerCommand>(kLinearTopic, 10);\n'}
+[1.046789] (mercury_autonomy) StdoutLine: {'line': b'15: +  orientation_pub_ = rosNode()->create_publisher<mercury_msgs::msg::ControllerCommand>(\n'}
+[1.046816] (mercury_autonomy) StdoutLine: {'line': b'15: +    kAngularTopic, 10);\n'}
+[1.046842] (mercury_autonomy) StdoutLine: {'line': b'15: @@ -61 +63 @@\n'}
+[1.046867] (mercury_autonomy) StdoutLine: {'line': b'15: -}  // namespace mercury_autonomy\n'}
+[1.046892] (mercury_autonomy) StdoutLine: {'line': b'15: +}  // namespace mercury_autonomy\n'}
+[1.046917] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.046942] (mercury_autonomy) StdoutLine: {'line': b"15: Code style divergence in file 'src/bt_actions/set_controller_safe_mode.cpp':\n"}
+[1.046970] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.046993] (mercury_autonomy) StdoutLine: {'line': b'15: --- src/bt_actions/set_controller_safe_mode.cpp\n'}
+[1.047017] (mercury_autonomy) StdoutLine: {'line': b'15: +++ src/bt_actions/set_controller_safe_mode.cpp.uncrustify\n'}
+[1.047041] (mercury_autonomy) StdoutLine: {'line': b'15: @@ -68 +68,3 @@\n'}
+[1.047060] (mercury_autonomy) StdoutLine: {'line': b'15: -    RCLCPP_ERROR(rosNode()->get_logger(), "SetControllerSafeMode: unexpected parameter result count");\n'}
+[1.047076] (mercury_autonomy) StdoutLine: {'line': b'15: +    RCLCPP_ERROR(\n'}
+[1.047092] (mercury_autonomy) StdoutLine: {'line': b'15: +      rosNode()->get_logger(),\n'}
+[1.047108] (mercury_autonomy) StdoutLine: {'line': b'15: +      "SetControllerSafeMode: unexpected parameter result count");\n'}
+[1.047124] (mercury_autonomy) StdoutLine: {'line': b'15: @@ -81 +83 @@\n'}
+[1.047141] (mercury_autonomy) StdoutLine: {'line': b'15: -}  // namespace mercury_autonomy\n'}
+[1.047158] (mercury_autonomy) StdoutLine: {'line': b'15: +}  // namespace mercury_autonomy\n'}
+[1.047174] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.047191] (mercury_autonomy) StdoutLine: {'line': b"15: Code style divergence in file 'src/bt_actions/set_mapping_target.cpp':\n"}
+[1.047211] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.047231] (mercury_autonomy) StdoutLine: {'line': b'15: --- src/bt_actions/set_mapping_target.cpp\n'}
+[1.047254] (mercury_autonomy) StdoutLine: {'line': b'15: +++ src/bt_actions/set_mapping_target.cpp.uncrustify\n'}
+[1.047276] (mercury_autonomy) StdoutLine: {'line': b'15: @@ -69 +69 @@\n'}
+[1.047297] (mercury_autonomy) StdoutLine: {'line': b'15: -}  // namespace mercury_autonomy\n'}
+[1.047318] (mercury_autonomy) StdoutLine: {'line': b'15: +}  // namespace mercury_autonomy\n'}
+[1.047339] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.047360] (mercury_autonomy) StdoutLine: {'line': b"15: Code style divergence in file 'src/bt_actions/set_status.cpp':\n"}
+[1.047382] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.047403] (mercury_autonomy) StdoutLine: {'line': b'15: --- src/bt_actions/set_status.cpp\n'}
+[1.047424] (mercury_autonomy) StdoutLine: {'line': b'15: +++ src/bt_actions/set_status.cpp.uncrustify\n'}
+[1.047445] (mercury_autonomy) StdoutLine: {'line': b'15: @@ -59 +59,2 @@\n'}
+[1.047467] (mercury_autonomy) StdoutLine: {'line': b'15: -      cmd.red = 255; cmd.green = 255; cmd.blue = 255; cmd.mode = cmd.MODE_SOLID; cmd.target = cmd.TARGET_ALL; break;\n'}
+[1.047489] (mercury_autonomy) StdoutLine: {'line': b'15: +      cmd.red = 255; cmd.green = 255; cmd.blue = 255; cmd.mode = cmd.MODE_SOLID;\n'}
+[1.047511] (mercury_autonomy) StdoutLine: {'line': b'15: +      cmd.target = cmd.TARGET_ALL; break;\n'}
+[1.047533] (mercury_autonomy) StdoutLine: {'line': b'15: @@ -61 +62,2 @@\n'}
+[1.047554] (mercury_autonomy) StdoutLine: {'line': b'15: -      cmd.red = 255; cmd.green = 0; cmd.blue = 0; cmd.mode = cmd.MODE_SOLID; cmd.target = cmd.TARGET_ALL; break;\n'}
+[1.047576] (mercury_autonomy) StdoutLine: {'line': b'15: +      cmd.red = 255; cmd.green = 0; cmd.blue = 0; cmd.mode = cmd.MODE_SOLID;\n'}
+[1.047597] (mercury_autonomy) StdoutLine: {'line': b'15: +      cmd.target = cmd.TARGET_ALL; break;\n'}
+[1.047618] (mercury_autonomy) StdoutLine: {'line': b'15: @@ -63 +65,2 @@\n'}
+[1.047639] (mercury_autonomy) StdoutLine: {'line': b'15: -      cmd.red = 0; cmd.green = 0; cmd.blue = 255; cmd.mode = cmd.MODE_SLOW_FLASH; cmd.target = cmd.TARGET_ALL; break;\n'}
+[1.047660] (mercury_autonomy) StdoutLine: {'line': b'15: +      cmd.red = 0; cmd.green = 0; cmd.blue = 255; cmd.mode = cmd.MODE_SLOW_FLASH;\n'}
+[1.047681] (mercury_autonomy) StdoutLine: {'line': b'15: +      cmd.target = cmd.TARGET_ALL; break;\n'}
+[1.047702] (mercury_autonomy) StdoutLine: {'line': b'15: @@ -65 +68,2 @@\n'}
+[1.047723] (mercury_autonomy) StdoutLine: {'line': b'15: -      cmd.red = 0; cmd.green = 255; cmd.blue = 0; cmd.mode = cmd.MODE_SOLID; cmd.target = cmd.TARGET_ALL; break;\n'}
+[1.047744] (mercury_autonomy) StdoutLine: {'line': b'15: +      cmd.red = 0; cmd.green = 255; cmd.blue = 0; cmd.mode = cmd.MODE_SOLID;\n'}
+[1.047765] (mercury_autonomy) StdoutLine: {'line': b'15: +      cmd.target = cmd.TARGET_ALL; break;\n'}
+[1.047787] (mercury_autonomy) StdoutLine: {'line': b'15: @@ -67 +71,2 @@\n'}
+[1.047808] (mercury_autonomy) StdoutLine: {'line': b'15: -      cmd.red = 255; cmd.green = 100; cmd.blue = 0; cmd.mode = cmd.MODE_SOLID; cmd.target = cmd.TARGET_ALL; break;\n'}
+[1.047830] (mercury_autonomy) StdoutLine: {'line': b'15: +      cmd.red = 255; cmd.green = 100; cmd.blue = 0; cmd.mode = cmd.MODE_SOLID;\n'}
+[1.047851] (mercury_autonomy) StdoutLine: {'line': b'15: +      cmd.target = cmd.TARGET_ALL; break;\n'}
+[1.047872] (mercury_autonomy) StdoutLine: {'line': b'15: @@ -69 +74,2 @@\n'}
+[1.047893] (mercury_autonomy) StdoutLine: {'line': b'15: -      cmd.red = 255; cmd.green = 0; cmd.blue = 255; cmd.mode = cmd.MODE_SLOW_FLASH; cmd.target = cmd.TARGET_ALL; break;\n'}
+[1.047914] (mercury_autonomy) StdoutLine: {'line': b'15: +      cmd.red = 255; cmd.green = 0; cmd.blue = 255; cmd.mode = cmd.MODE_SLOW_FLASH;\n'}
+[1.047935] (mercury_autonomy) StdoutLine: {'line': b'15: +      cmd.target = cmd.TARGET_ALL; break;\n'}
+[1.047957] (mercury_autonomy) StdoutLine: {'line': b'15: @@ -71 +77,2 @@\n'}
+[1.047978] (mercury_autonomy) StdoutLine: {'line': b'15: -      cmd.red = 0; cmd.green = 0; cmd.blue = 255; cmd.mode = cmd.MODE_FAST_FLASH; cmd.target = cmd.TARGET_ALL; break;\n'}
+[1.047995] (mercury_autonomy) StdoutLine: {'line': b'15: +      cmd.red = 0; cmd.green = 0; cmd.blue = 255; cmd.mode = cmd.MODE_FAST_FLASH;\n'}
+[1.048011] (mercury_autonomy) StdoutLine: {'line': b'15: +      cmd.target = cmd.TARGET_ALL; break;\n'}
+[1.048026] (mercury_autonomy) StdoutLine: {'line': b'15: @@ -73 +80,2 @@\n'}
+[1.048042] (mercury_autonomy) StdoutLine: {'line': b'15: -      cmd.red = 0; cmd.green = 255; cmd.blue = 0; cmd.mode = cmd.MODE_BREATH; cmd.target = cmd.TARGET_ALL; break;\n'}
+[1.048058] (mercury_autonomy) StdoutLine: {'line': b'15: +      cmd.red = 0; cmd.green = 255; cmd.blue = 0; cmd.mode = cmd.MODE_BREATH;\n'}
+[1.048074] (mercury_autonomy) StdoutLine: {'line': b'15: +      cmd.target = cmd.TARGET_ALL; break;\n'}
+[1.048097] (mercury_autonomy) StdoutLine: {'line': b'15: @@ -75 +83,2 @@\n'}
+[1.048117] (mercury_autonomy) StdoutLine: {'line': b'15: -      cmd.red = 255; cmd.green = 0; cmd.blue = 0; cmd.mode = cmd.MODE_BREATH; cmd.target = cmd.TARGET_ALL; break;\n'}
+[1.048139] (mercury_autonomy) StdoutLine: {'line': b'15: +      cmd.red = 255; cmd.green = 0; cmd.blue = 0; cmd.mode = cmd.MODE_BREATH;\n'}
+[1.048155] (mercury_autonomy) StdoutLine: {'line': b'15: +      cmd.target = cmd.TARGET_ALL; break;\n'}
+[1.048178] (mercury_autonomy) StdoutLine: {'line': b'15: @@ -77 +86,2 @@\n'}
+[1.048198] (mercury_autonomy) StdoutLine: {'line': b'15: -      cmd.red = 255; cmd.green = 0; cmd.blue = 0; cmd.mode = cmd.MODE_FAST_FLASH; cmd.target = cmd.TARGET_ALL; break;\n'}
+[1.048236] (mercury_autonomy) StdoutLine: {'line': b'15: +      cmd.red = 255; cmd.green = 0; cmd.blue = 0; cmd.mode = cmd.MODE_FAST_FLASH;\n'}
+[1.048254] (mercury_autonomy) StdoutLine: {'line': b'15: +      cmd.target = cmd.TARGET_ALL; break;\n'}
+[1.048276] (mercury_autonomy) StdoutLine: {'line': b'15: @@ -93 +103 @@\n'}
+[1.048299] (mercury_autonomy) StdoutLine: {'line': b'15: -}  // namespace mercury_autonomy\n'}
+[1.048321] (mercury_autonomy) StdoutLine: {'line': b'15: +}  // namespace mercury_autonomy\n'}
+[1.048343] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.048365] (mercury_autonomy) StdoutLine: {'line': b"15: Code style divergence in file 'src/bt_actions/trigger_controller_stunt.cpp':\n"}
+[1.048387] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.048410] (mercury_autonomy) StdoutLine: {'line': b'15: --- src/bt_actions/trigger_controller_stunt.cpp\n'}
+[1.048433] (mercury_autonomy) StdoutLine: {'line': b'15: +++ src/bt_actions/trigger_controller_stunt.cpp.uncrustify\n'}
+[1.048456] (mercury_autonomy) StdoutLine: {'line': b'15: @@ -20 +20 @@\n'}
+[1.048478] (mercury_autonomy) StdoutLine: {'line': b'15: -    [this](std_msgs::msg::UInt16::SharedPtr msg) { stuntStateCallback(msg); });\n'}
+[1.048501] (mercury_autonomy) StdoutLine: {'line': b'15: +    [this](std_msgs::msg::UInt16::SharedPtr msg) {stuntStateCallback(msg);});\n'}
+[1.048531] (mercury_autonomy) StdoutLine: {'line': b'15: @@ -66 +66 @@\n'}
+[1.048552] (mercury_autonomy) StdoutLine: {'line': b'15: -}  // namespace mercury_autonomy\n'}
+[1.048572] (mercury_autonomy) StdoutLine: {'line': b'15: +}  // namespace mercury_autonomy\n'}
+[1.048593] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.048614] (mercury_autonomy) StdoutLine: {'line': b"15: Code style divergence in file 'src/bt_actions/wait.cpp':\n"}
+[1.048635] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.048655] (mercury_autonomy) StdoutLine: {'line': b'15: --- src/bt_actions/wait.cpp\n'}
+[1.048676] (mercury_autonomy) StdoutLine: {'line': b'15: +++ src/bt_actions/wait.cpp.uncrustify\n'}
+[1.048696] (mercury_autonomy) StdoutLine: {'line': b'15: @@ -22 +22 @@\n'}
+[1.048717] (mercury_autonomy) StdoutLine: {'line': b'15: -    BT::NodeStatus::SUCCESS : BT::NodeStatus::RUNNING;\n'}
+[1.048738] (mercury_autonomy) StdoutLine: {'line': b'15: +         BT::NodeStatus::SUCCESS : BT::NodeStatus::RUNNING;\n'}
+[1.048756] (mercury_autonomy) StdoutLine: {'line': b'15: @@ -29 +29 @@\n'}
+[1.048773] (mercury_autonomy) StdoutLine: {'line': b'15: -}  // namespace mercury_autonomy\n'}
+[1.048794] (mercury_autonomy) StdoutLine: {'line': b'15: +}  // namespace mercury_autonomy\n'}
+[1.048815] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.048835] (mercury_autonomy) StdoutLine: {'line': b"15: Code style divergence in file 'src/bt_actions/wait_for_detection.cpp':\n"}
+[1.048856] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.048877] (mercury_autonomy) StdoutLine: {'line': b'15: --- src/bt_actions/wait_for_detection.cpp\n'}
+[1.048898] (mercury_autonomy) StdoutLine: {'line': b'15: +++ src/bt_actions/wait_for_detection.cpp.uncrustify\n'}
+[1.048918] (mercury_autonomy) StdoutLine: {'line': b'15: @@ -17 +17 @@\n'}
+[1.048939] (mercury_autonomy) StdoutLine: {'line': b'15: -    [this](vision_msgs::msg::Detection3DArray::SharedPtr msg) { detectionCallback(msg); });\n'}
+[1.048961] (mercury_autonomy) StdoutLine: {'line': b'15: +    [this](vision_msgs::msg::Detection3DArray::SharedPtr msg) {detectionCallback(msg);});\n'}
+[1.048986] (mercury_autonomy) StdoutLine: {'line': b'15: @@ -58 +58 @@\n'}
+[1.049008] (mercury_autonomy) StdoutLine: {'line': b'15: -}  // namespace mercury_autonomy\n'}
+[1.049028] (mercury_autonomy) StdoutLine: {'line': b'15: +}  // namespace mercury_autonomy\n'}
+[1.049049] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.049071] (mercury_autonomy) StdoutLine: {'line': b'15: 26 files with code style divergence\n'}
+[1.049092] (mercury_autonomy) StdoutLine: {'line': b"15: No code style divergence in file 'include/mercury_autonomy/autonomy_base.hpp'\n"}
+[1.049112] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.049133] (mercury_autonomy) StdoutLine: {'line': b"15: No code style divergence in file 'include/mercury_autonomy/autonomy_lib.hpp'\n"}
+[1.049154] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.049175] (mercury_autonomy) StdoutLine: {'line': b"15: No code style divergence in file 'include/mercury_autonomy/autonomy_util.hpp'\n"}
+[1.049195] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.049216] (mercury_autonomy) StdoutLine: {'line': b"15: No code style divergence in file 'include/mercury_autonomy/bt_actions/call_set_bool_service.hpp'\n"}
+[1.049236] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.049257] (mercury_autonomy) StdoutLine: {'line': b"15: No code style divergence in file 'include/mercury_autonomy/bt_actions/call_trigger_service.hpp'\n"}
+[1.049277] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.049298] (mercury_autonomy) StdoutLine: {'line': b"15: No code style divergence in file 'include/mercury_autonomy/bt_actions/example_action.hpp'\n"}
+[1.049319] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.049340] (mercury_autonomy) StdoutLine: {'line': b"15: No code style divergence in file 'include/mercury_autonomy/bt_actions/get_bool_topic.hpp'\n"}
+[1.049360] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.049380] (mercury_autonomy) StdoutLine: {'line': b"15: No code style divergence in file 'include/mercury_autonomy/bt_actions/get_float_topic.hpp'\n"}
+[1.049401] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.049421] (mercury_autonomy) StdoutLine: {'line': b"15: No code style divergence in file 'include/mercury_autonomy/bt_actions/get_imu_orientation.hpp'\n"}
+[1.049442] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.049462] (mercury_autonomy) StdoutLine: {'line': b"15: No code style divergence in file 'include/mercury_autonomy/bt_actions/get_odometry.hpp'\n"}
+[1.049483] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.049504] (mercury_autonomy) StdoutLine: {'line': b"15: No code style divergence in file 'include/mercury_autonomy/bt_actions/get_twist_topic.hpp'\n"}
+[1.049524] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.049546] (mercury_autonomy) StdoutLine: {'line': b"15: No code style divergence in file 'include/mercury_autonomy/bt_actions/publish_bool.hpp'\n"}
+[1.049567] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.049587] (mercury_autonomy) StdoutLine: {'line': b"15: No code style divergence in file 'include/mercury_autonomy/bt_actions/publish_twist.hpp'\n"}
+[1.049608] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.049629] (mercury_autonomy) StdoutLine: {'line': b"15: No code style divergence in file 'include/mercury_autonomy/bt_actions/transform_pose.hpp'\n"}
+[1.049650] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.049671] (mercury_autonomy) StdoutLine: {'line': b"15: No code style divergence in file 'include/mercury_autonomy/bt_conditions/approx_equal_to.hpp'\n"}
+[1.049692] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.049712] (mercury_autonomy) StdoutLine: {'line': b"15: No code style divergence in file 'include/mercury_autonomy/bt_conditions/approx_equal_to_angle.hpp'\n"}
+[1.049733] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.049754] (mercury_autonomy) StdoutLine: {'line': b"15: No code style divergence in file 'include/mercury_autonomy/bt_conditions/compare_nums.hpp'\n"}
+[1.049774] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.049794] (mercury_autonomy) StdoutLine: {'line': b"15: No code style divergence in file 'include/mercury_autonomy/bt_conditions/example_condition.hpp'\n"}
+[1.049815] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.049836] (mercury_autonomy) StdoutLine: {'line': b"15: No code style divergence in file 'include/mercury_autonomy/bt_conditions/is_true.hpp'\n"}
+[1.049857] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.049878] (mercury_autonomy) StdoutLine: {'line': b"15: No code style divergence in file 'include/mercury_autonomy/bt_decorators/example_decorator.hpp'\n"}
+[1.049898] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.049918] (mercury_autonomy) StdoutLine: {'line': b"15: No code style divergence in file 'include/mercury_autonomy/bt_decorators/retry_until_successful_or_timeout.hpp'\n"}
+[1.049939] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.049961] (mercury_autonomy) StdoutLine: {'line': b"15: No code style divergence in file 'include/mercury_autonomy/mercury_bt_node.hpp'\n"}
+[1.049986] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.050007] (mercury_autonomy) StdoutLine: {'line': b"15: No code style divergence in file 'src/autonomy_util.cpp'\n"}
+[1.050028] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.050048] (mercury_autonomy) StdoutLine: {'line': b"15: No code style divergence in file 'src/bt_actions/call_set_bool_service.cpp'\n"}
+[1.050070] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.050090] (mercury_autonomy) StdoutLine: {'line': b"15: No code style divergence in file 'src/bt_actions/call_trigger_service.cpp'\n"}
+[1.050112] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.050132] (mercury_autonomy) StdoutLine: {'line': b"15: No code style divergence in file 'src/bt_actions/example_action.cpp'\n"}
+[1.050153] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.050174] (mercury_autonomy) StdoutLine: {'line': b"15: No code style divergence in file 'src/bt_actions/get_bool_topic.cpp'\n"}
+[1.050195] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.050215] (mercury_autonomy) StdoutLine: {'line': b"15: No code style divergence in file 'src/bt_actions/get_float_topic.cpp'\n"}
+[1.050237] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.050257] (mercury_autonomy) StdoutLine: {'line': b"15: No code style divergence in file 'src/bt_actions/get_imu_orientation.cpp'\n"}
+[1.050279] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.050300] (mercury_autonomy) StdoutLine: {'line': b"15: No code style divergence in file 'src/bt_actions/get_odometry.cpp'\n"}
+[1.050320] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.050341] (mercury_autonomy) StdoutLine: {'line': b"15: No code style divergence in file 'src/bt_actions/get_twist_topic.cpp'\n"}
+[1.050362] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.050383] (mercury_autonomy) StdoutLine: {'line': b"15: No code style divergence in file 'src/bt_actions/publish_bool.cpp'\n"}
+[1.050403] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.050424] (mercury_autonomy) StdoutLine: {'line': b"15: No code style divergence in file 'src/bt_actions/publish_twist.cpp'\n"}
+[1.050445] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.050466] (mercury_autonomy) StdoutLine: {'line': b"15: No code style divergence in file 'src/bt_actions/transform_pose.cpp'\n"}
+[1.050486] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.050507] (mercury_autonomy) StdoutLine: {'line': b"15: No code style divergence in file 'src/bt_conditions/approx_equal_to.cpp'\n"}
+[1.050528] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.050548] (mercury_autonomy) StdoutLine: {'line': b"15: No code style divergence in file 'src/bt_conditions/approx_equal_to_angle.cpp'\n"}
+[1.050569] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.050590] (mercury_autonomy) StdoutLine: {'line': b"15: No code style divergence in file 'src/bt_conditions/compare_nums.cpp'\n"}
+[1.050611] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.050632] (mercury_autonomy) StdoutLine: {'line': b"15: No code style divergence in file 'src/bt_conditions/example_condition.cpp'\n"}
+[1.050652] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.050673] (mercury_autonomy) StdoutLine: {'line': b"15: No code style divergence in file 'src/bt_conditions/is_true.cpp'\n"}
+[1.050694] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.050714] (mercury_autonomy) StdoutLine: {'line': b"15: No code style divergence in file 'src/bt_decorators/example_decorator.cpp'\n"}
+[1.050735] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.050756] (mercury_autonomy) StdoutLine: {'line': b"15: No code style divergence in file 'src/bt_decorators/retry_until_successful_or_timeout.cpp'\n"}
+[1.050777] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.050797] (mercury_autonomy) StdoutLine: {'line': b"15: No code style divergence in file 'src/mercury_bt_node.cpp'\n"}
+[1.050818] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.050838] (mercury_autonomy) StdoutLine: {'line': b"15: No code style divergence in file 'src/register_actions.cpp'\n"}
+[1.050859] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.050880] (mercury_autonomy) StdoutLine: {'line': b"15: No code style divergence in file 'src/register_conditions.cpp'\n"}
+[1.050900] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.050921] (mercury_autonomy) StdoutLine: {'line': b"15: No code style divergence in file 'src/register_decorators.cpp'\n"}
+[1.050942] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.050965] (mercury_autonomy) StdoutLine: {'line': b"15: No code style divergence in file 'src/tree_executor.cpp'\n"}
+[1.050987] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.051007] (mercury_autonomy) StdoutLine: {'line': b"15: No code style divergence in file 'test/test_approx_equal_to.cpp'\n"}
+[1.051028] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.051048] (mercury_autonomy) StdoutLine: {'line': b"15: No code style divergence in file 'test/test_condition_nodes.cpp'\n"}
+[1.051069] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.051089] (mercury_autonomy) StdoutLine: {'line': b"15: No code style divergence in file 'test/test_decorator_nodes.cpp'\n"}
+[1.051111] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.051131] (mercury_autonomy) StdoutLine: {'line': b"15: No code style divergence in file 'test/test_legacy_action_nodes.cpp'\n"}
+[1.051149] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.051165] (mercury_autonomy) StdoutLine: {'line': b"15: No code style divergence in file 'test/test_publish_nodes.cpp'\n"}
+[1.051182] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.051198] (mercury_autonomy) StdoutLine: {'line': b"15: No code style divergence in file 'test/test_sensor_nodes.cpp'\n"}
+[1.051214] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.051230] (mercury_autonomy) StdoutLine: {'line': b"15: No code style divergence in file 'test/test_service_nodes.cpp'\n"}
+[1.051245] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.051261] (mercury_autonomy) StdoutLine: {'line': b"15: No code style divergence in file 'test/test_topic_nodes.cpp'\n"}
+[1.051277] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.051293] (mercury_autonomy) StdoutLine: {'line': b"15: No code style divergence in file 'test/test_transform_pose.cpp'\n"}
+[1.051310] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.051327] (mercury_autonomy) StdoutLine: {'line': b"15: No code style divergence in file 'test/test_tree_executor.cpp'\n"}
+[1.051347] (mercury_autonomy) StdoutLine: {'line': b'15: \n'}
+[1.051368] (mercury_autonomy) StdoutLine: {'line': b'15: -- run_test.py: return code 1\n'}
+[1.051385] (mercury_autonomy) StdoutLine: {'line': b"15: -- run_test.py: verify result file '/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/test_results/mercury_autonomy/uncrustify.xunit.xml'\n"}
+[1.053285] (mercury_autonomy) StdoutLine: {'line': b'15/16 Test #15: uncrustify .......................***Failed    0.13 sec\n'}
+[1.053332] (mercury_autonomy) StdoutLine: {'line': b'test 16\n'}
+[1.053366] (mercury_autonomy) StdoutLine: {'line': b'      Start 16: xmllint\n'}
+[1.053386] (mercury_autonomy) StdoutLine: {'line': b'\n'}
+[1.053404] (mercury_autonomy) StdoutLine: {'line': b'16: Test command: /usr/bin/python3 "-u" "/opt/ros/humble/share/ament_cmake_test/cmake/run_test.py" "/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/test_results/mercury_autonomy/xmllint.xunit.xml" "--package-name" "mercury_autonomy" "--output-file" "/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/ament_xmllint/xmllint.txt" "--command" "/opt/ros/humble/bin/ament_xmllint" "--xunit-file" "/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/test_results/mercury_autonomy/xmllint.xunit.xml"\n'}
+[1.053428] (mercury_autonomy) StdoutLine: {'line': b'16: Test timeout computed to be: 60\n'}
+[1.082791] (mercury_autonomy) StdoutLine: {'line': b"16: -- run_test.py: invoking following command in '/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/mercury_autonomy':\n"}
+[1.082921] (mercury_autonomy) StdoutLine: {'line': b'16:  - /opt/ros/humble/bin/ament_xmllint --xunit-file /home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/test_results/mercury_autonomy/xmllint.xunit.xml\n'}
+[1.100564] (-) TimerEvent: {}
+[1.200767] (-) TimerEvent: {}
+[1.301007] (-) TimerEvent: {}
+[1.328934] (mercury_autonomy) StdoutLine: {'line': b"16: File 'package.xml' is valid\n"}
+[1.329065] (mercury_autonomy) StdoutLine: {'line': b'16: \n'}
+[1.329092] (mercury_autonomy) StdoutLine: {'line': b"16: File 'trees/action_server_demo.xml' is valid\n"}
+[1.329114] (mercury_autonomy) StdoutLine: {'line': b'16: \n'}
+[1.329133] (mercury_autonomy) StdoutLine: {'line': b"16: File 'trees/example_tree.xml' is valid\n"}
+[1.329154] (mercury_autonomy) StdoutLine: {'line': b'16: \n'}
+[1.329172] (mercury_autonomy) StdoutLine: {'line': b'16: No problems found\n'}
+[1.335306] (mercury_autonomy) StdoutLine: {'line': b'16: -- run_test.py: return code 0\n'}
+[1.335422] (mercury_autonomy) StdoutLine: {'line': b"16: -- run_test.py: verify result file '/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/test_results/mercury_autonomy/xmllint.xunit.xml'\n"}
+[1.340512] (mercury_autonomy) StdoutLine: {'line': b'16/16 Test #16: xmllint ..........................   Passed    0.29 sec\n'}
+[1.340660] (mercury_autonomy) StdoutLine: {'line': b'\n'}
+[1.340718] (mercury_autonomy) StdoutLine: {'line': b'94% tests passed\x1b[0;0m, \x1b[0;31m1 tests failed\x1b[0;0m out of 16\n'}
+[1.340747] (mercury_autonomy) StdoutLine: {'line': b'\n'}
+[1.340766] (mercury_autonomy) StdoutLine: {'line': b'Label Time Summary:\n'}
+[1.340784] (mercury_autonomy) StdoutLine: {'line': b'cppcheck      =   0.08 sec*proc (1 test)\n'}
+[1.340802] (mercury_autonomy) StdoutLine: {'line': b'flake8        =   0.11 sec*proc (1 test)\n'}
+[1.340819] (mercury_autonomy) StdoutLine: {'line': b'gtest         =   0.54 sec*proc (10 tests)\n'}
+[1.340836] (mercury_autonomy) StdoutLine: {'line': b'lint_cmake    =   0.07 sec*proc (1 test)\n'}
+[1.340852] (mercury_autonomy) StdoutLine: {'line': b'linter        =   0.78 sec*proc (6 tests)\n'}
+[1.340869] (mercury_autonomy) StdoutLine: {'line': b'pep257        =   0.10 sec*proc (1 test)\n'}
+[1.340885] (mercury_autonomy) StdoutLine: {'line': b'uncrustify    =   0.13 sec*proc (1 test)\n'}
+[1.340900] (mercury_autonomy) StdoutLine: {'line': b'xmllint       =   0.29 sec*proc (1 test)\n'}
+[1.340916] (mercury_autonomy) StdoutLine: {'line': b'\n'}
+[1.340932] (mercury_autonomy) StdoutLine: {'line': b'Total Test time (real) =   1.32 sec\n'}
+[1.340947] (mercury_autonomy) StdoutLine: {'line': b'\n'}
+[1.340968] (mercury_autonomy) StdoutLine: {'line': b'The following tests FAILED:\n'}
+[1.340985] (mercury_autonomy) StdoutLine: {'line': b'\t\x1b[0;31m 15 - uncrustify (Failed)\x1b[0;0m\n'}
+[1.342803] (mercury_autonomy) StderrLine: {'line': b'Errors while running CTest\n'}
+[1.342846] (mercury_autonomy) StderrLine: {'line': b'Output from these tests are in: /home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy/Testing/Temporary/LastTest.log\n'}
+[1.342867] (mercury_autonomy) StderrLine: {'line': b'Use "--rerun-failed --output-on-failure" to re-run the failed cases verbosely.\n'}
+[1.343868] (mercury_autonomy) CommandEnded: {'returncode': 8}
+[1.344353] (mercury_autonomy) TestFailure: {'identifier': 'mercury_autonomy'}
+[1.344380] (mercury_autonomy) JobEnded: {'identifier': 'mercury_autonomy', 'rc': 0}
+[1.344632] (-) EventReactorShutdown: {}

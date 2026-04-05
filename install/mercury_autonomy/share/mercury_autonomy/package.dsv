@@ -1,0 +1,11 @@
+source;share/mercury_autonomy/hook/cmake_prefix_path.ps1
+source;share/mercury_autonomy/hook/cmake_prefix_path.dsv
+source;share/mercury_autonomy/hook/cmake_prefix_path.sh
+source;share/mercury_autonomy/hook/ld_library_path_lib.ps1
+source;share/mercury_autonomy/hook/ld_library_path_lib.dsv
+source;share/mercury_autonomy/hook/ld_library_path_lib.sh
+source;share/mercury_autonomy/local_setup.bash
+source;share/mercury_autonomy/local_setup.dsv
+source;share/mercury_autonomy/local_setup.ps1
+source;share/mercury_autonomy/local_setup.sh
+source;share/mercury_autonomy/local_setup.zsh

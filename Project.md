@@ -259,14 +259,32 @@ colcon test-result --verbose
 | ExampleAction       | Template action node (multi-tick lifecycle demo)         |
 | GetBoolTopic        | Subscribe to a Bool topic and output the value           |
 | GetFloatTopic       | Subscribe to a Float64 topic and output the value        |
+| GetFloat64Topic     | Legacy alias that subscribes to a Float64 topic          |
 | GetTwistTopic       | Subscribe to a Twist topic and output velocity components|
 | GetOdometry         | Subscribe to an Odometry topic and output pose as XYZ/RPY|
 | GetImuOrientation   | Subscribe to an IMU topic and output orientation as RPY  |
+| GetMappingState     | Subscribe to mapping state and output the target name    |
+| getCovariance       | Compute a scalar covariance score from pose covariance   |
 | CallSetBoolService  | Asynchronously call a SetBool service with timeout       |
 | CallTriggerService  | Asynchronously call a Trigger service with timeout       |
+| SetMappingTarget    | Call the mapping target service with target and lock     |
+| SetControllerSafeMode | Toggle controller stunt safe mode via parameters       |
+| PublishToController | Publish controller setpoints to the linear/angular topics|
+| PublishEKFPose      | Push a pose update to robot_localization/set_pose         |
+| PublishInt8         | Publish an integer command topic for legacy trees        |
+| SetStatus           | Publish a LED status command                              |
+| TriggerControllerStunt | Trigger and confirm a controller stunt state          |
+| Wait                | Wait for a fixed number of seconds                        |
+| WaitForDetection    | Wait until a detection for a named object arrives        |
+| ComputeFrameAlignment | Compute a controller pose by chaining TF transforms     |
 | TransformPose       | Look up a TF2 transform and apply it to a pose          |
 | PublishTwist        | Publish a Twist message with configurable velocity fields|
 | PublishBool         | Publish a Bool message to a topic                        |
+
+The `GetActuatorStatus` node from riptide is intentionally not ported yet
+because Mercury does not currently have the required custom `ActuatorStatus.msg`
+type. That message needs claw, torpedo, dropper, and busy state fields before
+the node can be restored.
 
 ### Conditions
 

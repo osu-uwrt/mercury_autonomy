@@ -1,0 +1,180 @@
+[0.008s] Invoking command in '/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bobdobchob/osu-uwrt/development/software/install/mercury_launch:/home/bobdobchob/osu-uwrt/development/software/install/riptide_bringup2:/home/bobdobchob/osu-uwrt/development/software/install/remote_launch:/home/bobdobchob/osu-uwrt/development/software/src/install/riptide_bringup2:/home/bobdobchob/osu-uwrt/development/software/src/install/remote_launch:/opt/ros/humble /usr/bin/cmake --build /home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy -- -j24 -l24
+[0.025s] -- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.087s] -- Found rclcpp: 16.0.11 (/opt/ros/humble/share/rclcpp/cmake)
+[0.099s] -- Found rosidl_generator_c: 3.1.6 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.099s] -- Found rosidl_adapter: 3.1.6 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.102s] -- Found rosidl_generator_cpp: 3.1.6 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.106s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.111s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.123s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.124s] -- Found rmw_fastrtps_cpp: 6.2.7 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.178s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.196s] -- Found rclcpp_action: 16.0.11 (/opt/ros/humble/share/rclcpp_action/cmake)
+[0.208s] -- Found std_srvs: 4.2.4 (/opt/ros/humble/share/std_srvs/cmake)
+[0.211s] -- Found geometry_msgs: 4.2.4 (/opt/ros/humble/share/geometry_msgs/cmake)
+[0.215s] -- Found sensor_msgs: 4.2.4 (/opt/ros/humble/share/sensor_msgs/cmake)
+[0.222s] -- Found nav_msgs: 4.2.4 (/opt/ros/humble/share/nav_msgs/cmake)
+[0.228s] -- Found vision_msgs: 4.1.1 (/opt/ros/humble/share/vision_msgs/cmake)
+[0.233s] -- Found robot_localization: 3.5.3 (/opt/ros/humble/share/robot_localization/cmake)
+[0.252s] -- Found tf2: 0.25.12 (/opt/ros/humble/share/tf2/cmake)
+[0.253s] -- Found tf2_ros: 0.25.12 (/opt/ros/humble/share/tf2_ros/cmake)
+[0.271s] -- Found tf2_geometry_msgs: 0.25.12 (/opt/ros/humble/share/tf2_geometry_msgs/cmake)
+[0.272s] -- Found eigen3_cmake_module: 0.1.1 (/opt/ros/humble/share/eigen3_cmake_module/cmake)
+[0.272s] -- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+[0.273s] -- Found behaviortree_cpp: 4.9.0 (/home/bobdobchob/osu-uwrt/development/software/install/behaviortree_cpp/share/behaviortree_cpp/cmake)
+[0.274s] -- Found mercury_msgs: 0.0.0 (/home/bobdobchob/osu-uwrt/development/software/install/mercury_msgs/share/mercury_msgs/cmake)
+[0.315s] -- Found ament_lint_auto: 0.12.11 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[0.349s] -- Found gtest sources under '/opt/ros/humble/src/gtest_vendor': C++ tests using 'Google Test' will be built
+[0.433s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[0.434s] -- Configured cppcheck include dirs: $<BUILD_INTERFACE:/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/mercury_autonomy/include>
+[0.434s] -- Configured cppcheck exclude dirs and/or files: 
+[0.435s] -- Added test 'flake8' to check Python code syntax and style conventions
+[0.435s] -- Added test 'lint_cmake' to check CMake code style
+[0.436s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[0.438s] -- Added test 'uncrustify' to check C / C++ code style
+[0.438s] -- Configured uncrustify additional arguments: 
+[0.438s] -- Added test 'xmllint' to check XML markup files
+[0.439s] -- Configuring done
+[0.479s] -- Generating done
+[0.496s] -- Build files have been written to: /home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy
+[0.515s] [35m[1mConsolidate compiler generated dependencies of target gtest_main[0m
+[0.515s] [35m[1mConsolidate compiler generated dependencies of target gtest[0m
+[0.515s] [35m[1mConsolidate compiler generated dependencies of target mercury_autonomy_core[0m
+[0.521s] [  2%] Built target gtest_main
+[0.521s] [  4%] Built target gtest
+[0.525s] [  8%] Built target mercury_autonomy_core
+[0.531s] [35m[1mConsolidate compiler generated dependencies of target test_tree_executor[0m
+[0.531s] [35m[1mConsolidate compiler generated dependencies of target tree_executor[0m
+[0.532s] [35m[1mConsolidate compiler generated dependencies of target test_decorator_nodes[0m
+[0.532s] [35m[1mConsolidate compiler generated dependencies of target mercury_bt_decorators[0m
+[0.533s] [35m[1mConsolidate compiler generated dependencies of target test_approx_equal_to[0m
+[0.533s] [35m[1mConsolidate compiler generated dependencies of target test_sensor_nodes[0m
+[0.533s] [35m[1mConsolidate compiler generated dependencies of target test_topic_nodes[0m
+[0.533s] [35m[1mConsolidate compiler generated dependencies of target test_transform_pose[0m
+[0.533s] [35m[1mConsolidate compiler generated dependencies of target mercury_bt_conditions[0m
+[0.533s] [35m[1mConsolidate compiler generated dependencies of target test_service_nodes[0m
+[0.534s] [35m[1mConsolidate compiler generated dependencies of target test_publish_nodes[0m
+[0.534s] [35m[1mConsolidate compiler generated dependencies of target test_condition_nodes[0m
+[0.542s] [ 11%] Built target test_tree_executor
+[0.542s] [35m[1mConsolidate compiler generated dependencies of target mercury_bt_actions[0m
+[0.544s] [ 14%] Built target tree_executor
+[0.544s] [ 17%] Built target test_decorator_nodes
+[0.547s] [ 22%] Built target mercury_bt_decorators
+[0.550s] [ 25%] Built target test_transform_pose
+[0.551s] [ 29%] Built target test_approx_equal_to
+[0.551s] [ 34%] Built target test_topic_nodes
+[0.552s] [ 40%] Built target test_service_nodes
+[0.552s] [ 45%] Built target test_sensor_nodes
+[0.552s] [ 50%] Built target test_publish_nodes
+[0.553s] [ 56%] Built target test_condition_nodes
+[0.553s] [ 65%] Built target mercury_bt_conditions
+[0.579s] [ 66%] [32mBuilding CXX object CMakeFiles/mercury_bt_actions.dir/src/bt_actions/get_covariance.cpp.o[0m
+[0.579s] [ 67%] [32mBuilding CXX object CMakeFiles/mercury_bt_actions.dir/src/bt_actions/get_float64_topic.cpp.o[0m
+[0.579s] [ 70%] [32mBuilding CXX object CMakeFiles/mercury_bt_actions.dir/src/bt_actions/compute_frame_alignment.cpp.o[0m
+[0.579s] [ 70%] [32mBuilding CXX object CMakeFiles/mercury_bt_actions.dir/src/bt_actions/get_mapping_state.cpp.o[0m
+[0.580s] [ 72%] [32mBuilding CXX object CMakeFiles/mercury_bt_actions.dir/src/bt_actions/publish_ekf_pose.cpp.o[0m
+[0.581s] [ 72%] [32mBuilding CXX object CMakeFiles/mercury_bt_actions.dir/src/bt_actions/publish_int8.cpp.o[0m
+[0.581s] [ 74%] [32mBuilding CXX object CMakeFiles/mercury_bt_actions.dir/src/bt_actions/publish_to_controller.cpp.o[0m
+[0.581s] [ 75%] [32mBuilding CXX object CMakeFiles/mercury_bt_actions.dir/src/bt_actions/set_controller_safe_mode.cpp.o[0m
+[0.582s] [ 76%] [32mBuilding CXX object CMakeFiles/mercury_bt_actions.dir/src/bt_actions/set_mapping_target.cpp.o[0m
+[0.583s] [ 77%] [32mBuilding CXX object CMakeFiles/mercury_bt_actions.dir/src/bt_actions/trigger_controller_stunt.cpp.o[0m
+[0.583s] [ 79%] [32mBuilding CXX object CMakeFiles/mercury_bt_actions.dir/src/bt_actions/set_status.cpp.o[0m
+[0.584s] [ 80%] [32mBuilding CXX object CMakeFiles/mercury_bt_actions.dir/src/bt_actions/wait_for_detection.cpp.o[0m
+[0.585s] [ 81%] [32mBuilding CXX object CMakeFiles/mercury_bt_actions.dir/src/bt_actions/wait.cpp.o[0m
+[0.586s] [ 82%] [32mBuilding CXX object CMakeFiles/mercury_bt_actions.dir/src/register_actions.cpp.o[0m
+[2.678s] [01m[K/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/mercury_autonomy/src/bt_actions/set_mapping_target.cpp:[m[K In member function ‘[01m[Kvirtual BT::NodeStatus mercury_autonomy::SetMappingTarget::onStart()[m[K’:
+[2.678s] [01m[K/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/mercury_autonomy/src/bt_actions/set_mapping_target.cpp:39:48:[m[K [01;35m[Kwarning: [m[K‘[01m[Krclcpp::Client<ServiceT>::FutureAndRequestId::operator rclcpp::Client<ServiceT>::SharedFuture() [with ServiceT = mercury_msgs::srv::MappingTarget; rclcpp::Client<ServiceT>::SharedFuture = std::shared_future<std::shared_ptr<mercury_msgs::srv::MappingTarget_Response_<std::allocator<void> > > >][m[K’ is deprecated: FutureAndRequestId: use .future.share() instead of an implicit conversion [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdeprecated-declarations-Wdeprecated-declarations]8;;[m[K]
+[2.678s]    39 |   future_ = client_->async_send_request(request[01;35m[K)[m[K;
+[2.678s]       |                                                [01;35m[K^[m[K
+[2.678s] In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+[2.678s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+[2.678s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[2.678s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[2.678s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[2.678s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[2.678s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[2.678s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[2.678s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[2.678s]                  from [01m[K/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/mercury_autonomy/include/mercury_autonomy/autonomy_base.hpp:20[m[K,
+[2.678s]                  from [01m[K/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/mercury_autonomy/include/mercury_autonomy/autonomy_lib.hpp:6[m[K,
+[2.678s]                  from [01m[K/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/mercury_autonomy/include/mercury_autonomy/bt_actions/set_mapping_target.hpp:5[m[K,
+[2.678s]                  from [01m[K/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/mercury_autonomy/src/bt_actions/set_mapping_target.cpp:3[m[K:
+[2.678s] [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:415:5:[m[K [01;36m[Knote: [m[Kdeclared here
+[2.678s]   415 |     [01;36m[Koperator[m[K SharedFuture() {return this->future.share();}
+[2.678s]       |     [01;36m[K^~~~~~~~[m[K
+[6.910s] [ 83%] [32m[1mLinking CXX shared library libmercury_bt_actions.so[0m
+[8.435s] [ 97%] Built target mercury_bt_actions
+[8.441s] [35m[1mConsolidate compiler generated dependencies of target test_legacy_action_nodes[0m
+[8.450s] [ 98%] [32mBuilding CXX object CMakeFiles/test_legacy_action_nodes.dir/test/test_legacy_action_nodes.cpp.o[0m
+[11.954s] [100%] [32m[1mLinking CXX executable test_legacy_action_nodes[0m
+[12.390s] [100%] Built target test_legacy_action_nodes
+[12.406s] Invoked command in '/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bobdobchob/osu-uwrt/development/software/install/mercury_launch:/home/bobdobchob/osu-uwrt/development/software/install/riptide_bringup2:/home/bobdobchob/osu-uwrt/development/software/install/remote_launch:/home/bobdobchob/osu-uwrt/development/software/src/install/riptide_bringup2:/home/bobdobchob/osu-uwrt/development/software/src/install/remote_launch:/opt/ros/humble /usr/bin/cmake --build /home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy -- -j24 -l24
+[12.411s] Invoking command in '/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bobdobchob/osu-uwrt/development/software/install/mercury_launch:/home/bobdobchob/osu-uwrt/development/software/install/riptide_bringup2:/home/bobdobchob/osu-uwrt/development/software/install/remote_launch:/home/bobdobchob/osu-uwrt/development/software/src/install/riptide_bringup2:/home/bobdobchob/osu-uwrt/development/software/src/install/remote_launch:/opt/ros/humble /usr/bin/cmake --install /home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy
+[12.415s] -- Install configuration: ""
+[12.415s] -- Up-to-date: /home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/install/mercury_autonomy/lib/mercury_autonomy/tree_executor
+[12.415s] -- Up-to-date: /home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/install/mercury_autonomy/lib/libmercury_autonomy_core.so
+[12.415s] -- Installing: /home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/install/mercury_autonomy/lib/libmercury_bt_actions.so
+[12.428s] -- Set runtime path of "/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/install/mercury_autonomy/lib/libmercury_bt_actions.so" to ""
+[12.428s] -- Up-to-date: /home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/install/mercury_autonomy/lib/libmercury_bt_conditions.so
+[12.428s] -- Up-to-date: /home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/install/mercury_autonomy/lib/libmercury_bt_decorators.so
+[12.428s] -- Up-to-date: /home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/install/mercury_autonomy/include
+[12.428s] -- Up-to-date: /home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/install/mercury_autonomy/include/mercury_autonomy
+[12.428s] -- Up-to-date: /home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/install/mercury_autonomy/include/mercury_autonomy/autonomy_lib.hpp
+[12.428s] -- Up-to-date: /home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/install/mercury_autonomy/include/mercury_autonomy/autonomy_base.hpp
+[12.428s] -- Up-to-date: /home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/install/mercury_autonomy/include/mercury_autonomy/bt_conditions
+[12.428s] -- Up-to-date: /home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/install/mercury_autonomy/include/mercury_autonomy/bt_conditions/example_condition.hpp
+[12.428s] -- Up-to-date: /home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/install/mercury_autonomy/include/mercury_autonomy/bt_conditions/approx_equal_to.hpp
+[12.428s] -- Up-to-date: /home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/install/mercury_autonomy/include/mercury_autonomy/bt_conditions/approx_equal_to_angle.hpp
+[12.428s] -- Up-to-date: /home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/install/mercury_autonomy/include/mercury_autonomy/bt_conditions/is_true.hpp
+[12.428s] -- Up-to-date: /home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/install/mercury_autonomy/include/mercury_autonomy/bt_conditions/compare_nums.hpp
+[12.428s] -- Up-to-date: /home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/install/mercury_autonomy/include/mercury_autonomy/bt_actions
+[12.428s] -- Installing: /home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/install/mercury_autonomy/include/mercury_autonomy/bt_actions/compute_frame_alignment.hpp
+[12.428s] -- Up-to-date: /home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/install/mercury_autonomy/include/mercury_autonomy/bt_actions/get_odometry.hpp
+[12.428s] -- Up-to-date: /home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/install/mercury_autonomy/include/mercury_autonomy/bt_actions/publish_twist.hpp
+[12.428s] -- Up-to-date: /home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/install/mercury_autonomy/include/mercury_autonomy/bt_actions/get_bool_topic.hpp
+[12.428s] -- Up-to-date: /home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/install/mercury_autonomy/include/mercury_autonomy/bt_actions/call_trigger_service.hpp
+[12.428s] -- Up-to-date: /home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/install/mercury_autonomy/include/mercury_autonomy/bt_actions/publish_bool.hpp
+[12.428s] -- Installing: /home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/install/mercury_autonomy/include/mercury_autonomy/bt_actions/get_mapping_state.hpp
+[12.428s] -- Installing: /home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/install/mercury_autonomy/include/mercury_autonomy/bt_actions/get_float64_topic.hpp
+[12.428s] -- Installing: /home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/install/mercury_autonomy/include/mercury_autonomy/bt_actions/wait.hpp
+[12.428s] -- Up-to-date: /home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/install/mercury_autonomy/include/mercury_autonomy/bt_actions/get_twist_topic.hpp
+[12.428s] -- Up-to-date: /home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/install/mercury_autonomy/include/mercury_autonomy/bt_actions/call_set_bool_service.hpp
+[12.428s] -- Up-to-date: /home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/install/mercury_autonomy/include/mercury_autonomy/bt_actions/get_imu_orientation.hpp
+[12.428s] -- Installing: /home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/install/mercury_autonomy/include/mercury_autonomy/bt_actions/set_status.hpp
+[12.428s] -- Installing: /home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/install/mercury_autonomy/include/mercury_autonomy/bt_actions/trigger_controller_stunt.hpp
+[12.428s] -- Installing: /home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/install/mercury_autonomy/include/mercury_autonomy/bt_actions/set_controller_safe_mode.hpp
+[12.428s] -- Up-to-date: /home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/install/mercury_autonomy/include/mercury_autonomy/bt_actions/transform_pose.hpp
+[12.428s] -- Installing: /home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/install/mercury_autonomy/include/mercury_autonomy/bt_actions/publish_to_controller.hpp
+[12.428s] -- Installing: /home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/install/mercury_autonomy/include/mercury_autonomy/bt_actions/wait_for_detection.hpp
+[12.429s] -- Installing: /home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/install/mercury_autonomy/include/mercury_autonomy/bt_actions/get_covariance.hpp
+[12.429s] -- Up-to-date: /home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/install/mercury_autonomy/include/mercury_autonomy/bt_actions/get_float_topic.hpp
+[12.429s] -- Installing: /home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/install/mercury_autonomy/include/mercury_autonomy/bt_actions/publish_int8.hpp
+[12.429s] -- Installing: /home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/install/mercury_autonomy/include/mercury_autonomy/bt_actions/set_mapping_target.hpp
+[12.429s] -- Up-to-date: /home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/install/mercury_autonomy/include/mercury_autonomy/bt_actions/example_action.hpp
+[12.429s] -- Installing: /home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/install/mercury_autonomy/include/mercury_autonomy/bt_actions/publish_ekf_pose.hpp
+[12.429s] -- Up-to-date: /home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/install/mercury_autonomy/include/mercury_autonomy/mercury_bt_node.hpp
+[12.429s] -- Up-to-date: /home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/install/mercury_autonomy/include/mercury_autonomy/bt_decorators
+[12.429s] -- Up-to-date: /home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/install/mercury_autonomy/include/mercury_autonomy/bt_decorators/example_decorator.hpp
+[12.429s] -- Up-to-date: /home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/install/mercury_autonomy/include/mercury_autonomy/bt_decorators/retry_until_successful_or_timeout.hpp
+[12.429s] -- Up-to-date: /home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/install/mercury_autonomy/include/mercury_autonomy/autonomy_util.hpp
+[12.429s] -- Up-to-date: /home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/install/mercury_autonomy/share/mercury_autonomy/trees
+[12.429s] -- Up-to-date: /home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/install/mercury_autonomy/share/mercury_autonomy/trees/action_server_demo.xml
+[12.429s] -- Up-to-date: /home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/install/mercury_autonomy/share/mercury_autonomy/trees/example_tree.xml
+[12.429s] -- Up-to-date: /home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/install/mercury_autonomy/share/mercury_autonomy/launch
+[12.429s] -- Up-to-date: /home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/install/mercury_autonomy/share/mercury_autonomy/launch/autonomy.launch.py
+[12.429s] -- Up-to-date: /home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/install/mercury_autonomy/share/ament_index/resource_index/package_run_dependencies/mercury_autonomy
+[12.429s] -- Up-to-date: /home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/install/mercury_autonomy/share/ament_index/resource_index/parent_prefix_path/mercury_autonomy
+[12.429s] -- Up-to-date: /home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/install/mercury_autonomy/share/mercury_autonomy/environment/ament_prefix_path.sh
+[12.429s] -- Installing: /home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/install/mercury_autonomy/share/mercury_autonomy/environment/ament_prefix_path.dsv
+[12.429s] -- Up-to-date: /home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/install/mercury_autonomy/share/mercury_autonomy/environment/path.sh
+[12.429s] -- Installing: /home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/install/mercury_autonomy/share/mercury_autonomy/environment/path.dsv
+[12.429s] -- Up-to-date: /home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/install/mercury_autonomy/share/mercury_autonomy/local_setup.bash
+[12.429s] -- Up-to-date: /home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/install/mercury_autonomy/share/mercury_autonomy/local_setup.sh
+[12.429s] -- Up-to-date: /home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/install/mercury_autonomy/share/mercury_autonomy/local_setup.zsh
+[12.429s] -- Installing: /home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/install/mercury_autonomy/share/mercury_autonomy/local_setup.dsv
+[12.429s] -- Installing: /home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/install/mercury_autonomy/share/mercury_autonomy/package.dsv
+[12.429s] -- Up-to-date: /home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/install/mercury_autonomy/share/ament_index/resource_index/packages/mercury_autonomy
+[12.429s] -- Up-to-date: /home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/install/mercury_autonomy/share/mercury_autonomy/cmake/mercury_autonomyConfig.cmake
+[12.429s] -- Up-to-date: /home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/install/mercury_autonomy/share/mercury_autonomy/cmake/mercury_autonomyConfig-version.cmake
+[12.429s] -- Installing: /home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/install/mercury_autonomy/share/mercury_autonomy/package.xml
+[12.431s] Invoked command in '/home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bobdobchob/osu-uwrt/development/software/install/mercury_launch:/home/bobdobchob/osu-uwrt/development/software/install/riptide_bringup2:/home/bobdobchob/osu-uwrt/development/software/install/remote_launch:/home/bobdobchob/osu-uwrt/development/software/src/install/riptide_bringup2:/home/bobdobchob/osu-uwrt/development/software/src/install/remote_launch:/opt/ros/humble /usr/bin/cmake --install /home/bobdobchob/osu-uwrt/development/software/src/mercury_autonomy/build/mercury_autonomy
