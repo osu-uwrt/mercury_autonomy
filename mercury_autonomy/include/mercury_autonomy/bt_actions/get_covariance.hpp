@@ -1,4 +1,4 @@
-// getCovariance -- computes a scalar covariance score for a mapping pose.
+// GetCovariance -- computes a scalar covariance score for a mapping pose.
 //
 // Ports:
 //   Input:  Target      -- Mapping target name.

@@ -1,4 +1,4 @@
-// Registration and port checks for legacy riptide action node names.
+// Registration and port checks for ported custom action nodes.
 
 #include <gtest/gtest.h>
 
@@ -13,10 +13,9 @@
 #include "mercury_autonomy/bt_actions/publish_to_controller.hpp"
 #include "mercury_autonomy/bt_actions/set_mapping_target.hpp"
 #include "mercury_autonomy/bt_actions/set_status.hpp"
-#include "mercury_autonomy/bt_actions/wait.hpp"
 #include "mercury_autonomy/bt_actions/wait_for_detection.hpp"
 
-class LegacyActionNodeTest : public ::testing::Test
+class PortedActionNodeTest : public ::testing::Test
 {
 protected:
   void SetUp() override
@@ -27,16 +26,15 @@ protected:
     factory_.registerNodeType<mercury_autonomy::PublishEKFPose>("PublishEKFPose");
     factory_.registerNodeType<mercury_autonomy::PublishToController>("PublishToController");
     factory_.registerNodeType<mercury_autonomy::SetStatus>("SetStatus");
-    factory_.registerNodeType<mercury_autonomy::Wait>("Wait");
     factory_.registerNodeType<mercury_autonomy::WaitForDetection>("WaitForDetection");
     factory_.registerNodeType<mercury_autonomy::ComputeFrameAlignment>("ComputeFrameAlignment");
-    factory_.registerNodeType<mercury_autonomy::GetCovariance>("getCovariance");
+    factory_.registerNodeType<mercury_autonomy::GetCovariance>("GetCovariance");
   }
 
   BT::BehaviorTreeFactory factory_;
 };
 
-TEST_F(LegacyActionNodeTest, RegistersAllLegacyNodes)
+TEST_F(PortedActionNodeTest, RegistersAllPortedNodes)
 {
   const auto manifests = factory_.manifests();
   EXPECT_TRUE(manifests.count("PublishInt8") > 0);
@@ -45,20 +43,19 @@ TEST_F(LegacyActionNodeTest, RegistersAllLegacyNodes)
   EXPECT_TRUE(manifests.count("PublishEKFPose") > 0);
   EXPECT_TRUE(manifests.count("PublishToController") > 0);
   EXPECT_TRUE(manifests.count("SetStatus") > 0);
-  EXPECT_TRUE(manifests.count("Wait") > 0);
   EXPECT_TRUE(manifests.count("WaitForDetection") > 0);
   EXPECT_TRUE(manifests.count("ComputeFrameAlignment") > 0);
-  EXPECT_TRUE(manifests.count("getCovariance") > 0);
+  EXPECT_TRUE(manifests.count("GetCovariance") > 0);
 }
 
-TEST_F(LegacyActionNodeTest, PublishInt8Ports)
+TEST_F(PortedActionNodeTest, PublishInt8Ports)
 {
   const auto & ports = factory_.manifests().at("PublishInt8").ports;
   EXPECT_TRUE(ports.count("topic") > 0);
   EXPECT_TRUE(ports.count("data") > 0);
 }
 
-TEST_F(LegacyActionNodeTest, SetMappingTargetPorts)
+TEST_F(PortedActionNodeTest, SetMappingTargetPorts)
 {
   const auto & ports = factory_.manifests().at("SetMappingTarget").ports;
   EXPECT_TRUE(ports.count("target_object") > 0);
@@ -66,7 +63,7 @@ TEST_F(LegacyActionNodeTest, SetMappingTargetPorts)
   EXPECT_TRUE(ports.count("time_limit_secs") > 0);
 }
 
-TEST_F(LegacyActionNodeTest, PublishToControllerPorts)
+TEST_F(PortedActionNodeTest, PublishToControllerPorts)
 {
   const auto & ports = factory_.manifests().at("PublishToController").ports;
   EXPECT_TRUE(ports.count("isOrientation") > 0);
@@ -76,7 +73,7 @@ TEST_F(LegacyActionNodeTest, PublishToControllerPorts)
   EXPECT_TRUE(ports.count("z") > 0);
 }
 
-TEST_F(LegacyActionNodeTest, ComputeFrameAlignmentPorts)
+TEST_F(PortedActionNodeTest, ComputeFrameAlignmentPorts)
 {
   const auto & ports = factory_.manifests().at("ComputeFrameAlignment").ports;
   EXPECT_TRUE(ports.count("x") > 0);

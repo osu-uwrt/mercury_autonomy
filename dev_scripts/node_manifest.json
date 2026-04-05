@@ -226,7 +226,7 @@
       "type": "GetCovariance",
       "category": "action",
       "name": "Get Covariance",
-      "description": "getCovariance -- computes a scalar covariance score for a mapping pose",
+      "description": "GetCovariance -- computes a scalar covariance score for a mapping pose",
       "fields": [
         {
           "name": "Target",
@@ -618,7 +618,7 @@
       "type": "PublishInt8",
       "category": "action",
       "name": "Publish Int8",
-      "description": "PublishInt8 -- publishes a legacy integer command topic",
+      "description": "PublishInt8 -- publishes an integer command topic",
       "fields": [
         {
           "name": "topic",
@@ -790,7 +790,7 @@
       "type": "SetStatus",
       "category": "action",
       "name": "Set Status",
-      "description": "SetStatus -- publishes a legacy LED status command",
+      "description": "SetStatus -- publishes a LED status command",
       "fields": [
         {
           "name": "status",
@@ -928,23 +928,6 @@
           "value": "",
           "description": "Transformed yaw",
           "portDirection": "output"
-        }
-      ]
-    },
-    {
-      "id": "mercury-wait",
-      "type": "Wait",
-      "category": "action",
-      "name": "Wait",
-      "description": "Wait -- blocks until the requested number of seconds elapse",
-      "fields": [
-        {
-          "name": "seconds",
-          "type": "number",
-          "valueType": "literal",
-          "value": 0.0,
-          "description": "Duration to wait",
-          "portDirection": "input"
         }
       ]
     },

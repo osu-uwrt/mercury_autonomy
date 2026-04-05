@@ -276,13 +276,13 @@ if(BUILD_TESTING)
   ament_target_dependencies(test_publish_nodes ${THIS_PACKAGE_DEPS})
   target_link_libraries(test_publish_nodes mercury_autonomy_core)
 
-  # Legacy riptide node compatibility tests
-  ament_add_gtest(test_legacy_action_nodes test/test_legacy_action_nodes.cpp)
-  target_include_directories(test_legacy_action_nodes PRIVATE
+  # Ported action node registration and port tests
+  ament_add_gtest(test_ported_action_nodes test/test_ported_action_nodes.cpp)
+  target_include_directories(test_ported_action_nodes PRIVATE
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
   )
-  ament_target_dependencies(test_legacy_action_nodes ${THIS_PACKAGE_DEPS})
-  target_link_libraries(test_legacy_action_nodes mercury_autonomy_core mercury_bt_actions)
+  ament_target_dependencies(test_ported_action_nodes ${THIS_PACKAGE_DEPS})
+  target_link_libraries(test_ported_action_nodes mercury_autonomy_core mercury_bt_actions)
 endif()
 
 ament_package()

@@ -1,4 +1,4 @@
-// PublishInt8 -- publishes a legacy integer command topic and returns SUCCESS.
+// PublishInt8 -- publishes an integer command topic and returns SUCCESS.
 
 #include "mercury_autonomy/bt_actions/publish_int8.hpp"
 

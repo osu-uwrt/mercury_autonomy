@@ -78,7 +78,7 @@ export const mercuryAutonomyNodes: BTNodeDefinition[] = [
     type: 'GetCovariance',
     category: 'action',
     name: 'Get Covariance',
-    description: 'getCovariance -- computes a scalar covariance score for a mapping pose',
+    description: 'GetCovariance -- computes a scalar covariance score for a mapping pose',
     fields: [
       { name: 'Target', type: 'string', valueType: 'literal', value: '', description: 'Mapping target name', portDirection: 'input' },
       { name: 'Covariance', type: 'number', valueType: 'variable', value: '', description: 'Computed covariance score', portDirection: 'output' },
@@ -198,7 +198,7 @@ export const mercuryAutonomyNodes: BTNodeDefinition[] = [
     type: 'PublishInt8',
     category: 'action',
     name: 'Publish Int8',
-    description: 'PublishInt8 -- publishes a legacy integer command topic',
+    description: 'PublishInt8 -- publishes an integer command topic',
     fields: [
       { name: 'topic', type: 'string', valueType: 'literal', value: '', description: 'ROS2 topic name to publish to', portDirection: 'input' },
       { name: 'data', type: 'number', valueType: 'literal', value: 0, description: 'Integer value to publish', portDirection: 'input' },
@@ -255,7 +255,7 @@ export const mercuryAutonomyNodes: BTNodeDefinition[] = [
     type: 'SetStatus',
     category: 'action',
     name: 'Set Status',
-    description: 'SetStatus -- publishes a legacy LED status command',
+    description: 'SetStatus -- publishes a LED status command',
     fields: [
       { name: 'status', type: 'string', valueType: 'literal', value: '', description: 'Behavior status name', portDirection: 'input' },
     ],
@@ -283,17 +283,6 @@ export const mercuryAutonomyNodes: BTNodeDefinition[] = [
       { name: 'out_roll', type: 'number', valueType: 'variable', value: '', description: 'Transformed roll', portDirection: 'output' },
       { name: 'out_pitch', type: 'number', valueType: 'variable', value: '', description: 'Transformed pitch', portDirection: 'output' },
       { name: 'out_yaw', type: 'number', valueType: 'variable', value: '', description: 'Transformed yaw', portDirection: 'output' },
-    ],
-  },
-
-  {
-    id: 'mercury-wait',
-    type: 'Wait',
-    category: 'action',
-    name: 'Wait',
-    description: 'Wait -- blocks until the requested number of seconds elapse',
-    fields: [
-      { name: 'seconds', type: 'number', valueType: 'literal', value: 0.0, description: 'Duration to wait', portDirection: 'input' },
     ],
   },
 

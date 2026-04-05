@@ -1,4 +1,4 @@
-// getCovariance -- computes a single scalar from pose covariance entries.
+// GetCovariance -- computes a single scalar from pose covariance entries.
 
 #include "mercury_autonomy/bt_actions/get_covariance.hpp"
 
@@ -39,7 +39,7 @@ BT::NodeStatus GetCovariance::onRunning()
 
   if ((rosNode()->now() - start_time_).seconds() > 5.0) {
     RCLCPP_ERROR(
-      rosNode()->get_logger(), "getCovariance: timed out waiting on %s", topic_name_.c_str());
+      rosNode()->get_logger(), "GetCovariance: timed out waiting on %s", topic_name_.c_str());
     return BT::NodeStatus::FAILURE;
   }
 

@@ -243,6 +243,7 @@ colcon test-result --verbose
 | test_condition_nodes.cpp  | ApproxEqualToAngle / CompareNums / IsTrue           |
 | test_decorator_nodes.cpp  | RetryUntilSuccessfulOrTimeout reg. & ports          |
 | test_publish_nodes.cpp    | PublishTwist / PublishBool registration & ports      |
+| test_ported_action_nodes.cpp | Registration and port checks for ported action nodes |
 
 ### Adding a new test
 
@@ -263,25 +264,32 @@ colcon test-result --verbose
 | GetOdometry         | Subscribe to an Odometry topic and output pose as XYZ/RPY|
 | GetImuOrientation   | Subscribe to an IMU topic and output orientation as RPY  |
 | GetMappingState     | Subscribe to mapping state and output the target name    |
-| getCovariance       | Compute a scalar covariance score from pose covariance   |
+| GetCovariance       | Compute a scalar covariance score from pose covariance   |
 | CallSetBoolService  | Asynchronously call a SetBool service with timeout       |
 | CallTriggerService  | Asynchronously call a Trigger service with timeout       |
 | SetMappingTarget    | Call the mapping target service with target and lock     |
 | PublishToController | Publish controller setpoints to the linear/angular topics|
 | PublishEKFPose      | Push a pose update to robot_localization/set_pose         |
-| PublishInt8         | Publish an integer command topic for legacy trees        |
+| PublishInt8         | Publish an integer command topic                         |
 | SetStatus           | Publish a LED status command                              |
-| Wait                | Wait for a fixed number of seconds                        |
 | WaitForDetection    | Wait until a detection for a named object arrives        |
 | ComputeFrameAlignment | Compute a controller pose by chaining TF transforms     |
 | TransformPose       | Look up a TF2 transform and apply it to a pose          |
 | PublishTwist        | Publish a Twist message with configurable velocity fields|
 | PublishBool         | Publish a Bool message to a topic                        |
 
-Mission-specific legacy nodes are intentionally excluded from Mercury parity.
+Mission-specific nodes are intentionally excluded from Mercury parity scope.
 `GetActuatorStatus`, `TriggerControllerStunt`, and `SetControllerSafeMode` are
 not included because they are tightly coupled to mission-specific controller and
 actuator workflows.
+
+### Removed Redundant Nodes and Equivalents
+
+| Removed Node        | Equivalent to Use     | Rationale |
+|---------------------|-----------------------|-----------|
+| GetFloat64Topic     | GetFloatTopic         | Same Float64 topic subscription behavior. |
+| PublishUInt16       | PublishInt8           | Same UInt16 command publication behavior. |
+| Wait                | BT.CPP `Sleep`        | Built-in action already provides time-based waiting (`msec` input). |
 
 ### Conditions
 
