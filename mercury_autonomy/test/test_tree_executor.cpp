@@ -90,12 +90,8 @@ TEST_F(TreeExecutorTest, GoalMessageHasExpectedFields)
 TEST_F(TreeExecutorTest, ResultMessageHasExpectedFields)
 {
   auto result_msg = ExecuteTree::Result();
-  result_msg.result_status = 0;
-  result_msg.message = "Tree completed with SUCCESS.";
-  result_msg.elapsed_seconds = 1.5;
-  EXPECT_EQ(result_msg.result_status, 0);
-  EXPECT_EQ(result_msg.message, "Tree completed with SUCCESS.");
-  EXPECT_DOUBLE_EQ(result_msg.elapsed_seconds, 1.5);
+  result_msg.return_code = 0;
+  EXPECT_EQ(result_msg.return_code, 0);
 }
 
 // Verify feedback message has the expected fields
@@ -103,8 +99,14 @@ TEST_F(TreeExecutorTest, FeedbackMessageHasExpectedFields)
 {
   auto feedback_msg = ExecuteTree::Feedback();
   feedback_msg.current_status = "RUNNING";
+  feedback_msg.stack.stack = {"ActionServerDemo", "RUNNING"};
+  feedback_msg.stack.node_id = 3;
   feedback_msg.elapsed_seconds = 0.5;
   EXPECT_EQ(feedback_msg.current_status, "RUNNING");
+  ASSERT_EQ(feedback_msg.stack.stack.size(), 2U);
+  EXPECT_EQ(feedback_msg.stack.stack[0], "ActionServerDemo");
+  EXPECT_EQ(feedback_msg.stack.stack[1], "RUNNING");
+  EXPECT_EQ(feedback_msg.stack.node_id, 3U);
   EXPECT_DOUBLE_EQ(feedback_msg.elapsed_seconds, 0.5);
 }
 

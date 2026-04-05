@@ -119,11 +119,10 @@ Three concrete base classes are provided:
 | **Goal**               |         |                                              |
 | tree_path              | string  | BT XML filename or absolute path             |
 | **Result**             |         |                                              |
-| result_status          | int32   | 0=SUCCESS, 1=FAILURE, 2=CANCELED, 3=ERROR    |
-| message                | string  | Human-readable outcome                       |
-| elapsed_seconds        | float64 | Total execution time                         |
+| return_code            | int32   | 0=SUCCESS, 1=FAILURE, 2=CANCELED, 3=ERROR    |
 | **Feedback**           |         |                                              |
 | current_status         | string  | Current BT status (e.g., "RUNNING")          |
+| stack                  | TreeStack | Active tree call stack and node id         |
 | elapsed_seconds        | float64 | Time since execution started                 |
 
 #### Triggering a Tree
