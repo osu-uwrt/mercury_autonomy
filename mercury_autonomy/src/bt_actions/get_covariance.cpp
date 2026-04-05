@@ -15,6 +15,7 @@ BT::NodeStatus GetCovariance::onStart()
 {
   std::string target;
   getInput("Target", target);
+  // Mapping publishes each target pose on a dedicated topic.
   topic_name_ = "mapping/" + target;
 
   subscriber_ = rosNode()->create_subscription<geometry_msgs::msg::PoseWithCovarianceStamped>(
@@ -55,6 +56,7 @@ void GetCovariance::topicCallback(
   constexpr double kTwoPi = 6.28318530717958647692;
   covariance_ = 0.0;
 
+  // Use translation and rotation diagonal covariance terms as a compact confidence metric.
   for (int i = 0; i < 3; ++i) {
     covariance_ += std::pow(msg->pose.covariance.at((6 * i) + i), 2);
   }

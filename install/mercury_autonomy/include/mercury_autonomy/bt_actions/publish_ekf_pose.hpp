@@ -1,4 +1,10 @@
 // PublishEKFPose -- updates robot_localization pose from the current odometry.
+//
+// Ports:
+//   Input:  x,y,z           -- Requested position components.
+//   Input:  setX,setY,setZ  -- Whether each position component should be overridden.
+//   Input:  roll,pitch,yaw  -- Requested orientation components.
+//   Input:  setOrientation  -- Whether orientation should be overridden.
 
 #pragma once
 

@@ -1,4 +1,9 @@
 // SetMappingTarget -- calls the mapping target service with a target object.
+//
+// Ports:
+//   Input: target_object   -- Mapping target object identifier.
+//   Input: lock_map        -- Whether mapping should remain locked.
+//   Input: time_limit_secs -- Service timeout.
 
 #pragma once
 

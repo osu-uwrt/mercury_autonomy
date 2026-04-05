@@ -1,4 +1,8 @@
 // PublishInt8 -- publishes a legacy integer command topic.
+//
+// Ports:
+//   Input: topic  -- Topic name for the command publisher.
+//   Input: data   -- Integer payload (published as UInt16 for compatibility).
 
 #pragma once
 

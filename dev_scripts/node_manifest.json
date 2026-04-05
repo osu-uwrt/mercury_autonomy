@@ -70,48 +70,48 @@
           "name": "x",
           "type": "number",
           "valueType": "literal",
-          "value": 0,
-          "description": "",
+          "value": 0.0,
+          "description": "Input X",
           "portDirection": "input"
         },
         {
           "name": "y",
           "type": "number",
           "valueType": "literal",
-          "value": 0,
-          "description": "",
+          "value": 0.0,
+          "description": "Input Y",
           "portDirection": "input"
         },
         {
           "name": "z",
           "type": "number",
           "valueType": "literal",
-          "value": 0,
-          "description": "",
+          "value": 0.0,
+          "description": "Input Z",
           "portDirection": "input"
         },
         {
           "name": "or",
           "type": "number",
           "valueType": "literal",
-          "value": 0,
-          "description": "",
+          "value": 0.0,
+          "description": "Input roll",
           "portDirection": "input"
         },
         {
           "name": "op",
           "type": "number",
           "valueType": "literal",
-          "value": 0,
-          "description": "",
+          "value": 0.0,
+          "description": "Input pitch",
           "portDirection": "input"
         },
         {
           "name": "oy",
           "type": "number",
           "valueType": "literal",
-          "value": 0,
-          "description": "",
+          "value": 0.0,
+          "description": "Input yaw",
           "portDirection": "input"
         },
         {
@@ -242,39 +242,6 @@
           "valueType": "variable",
           "value": "",
           "description": "Computed covariance score",
-          "portDirection": "output"
-        }
-      ]
-    },
-    {
-      "id": "mercury-get-float64-topic",
-      "type": "GetFloat64Topic",
-      "category": "action",
-      "name": "Get Float64Topic",
-      "description": "GetFloat64Topic -- legacy alias that subscribes to a Float64 topic",
-      "fields": [
-        {
-          "name": "topic",
-          "type": "string",
-          "valueType": "literal",
-          "value": "",
-          "description": "ROS2 topic name to subscribe to",
-          "portDirection": "input"
-        },
-        {
-          "name": "timeout",
-          "type": "number",
-          "valueType": "literal",
-          "value": 3.0,
-          "description": "Timeout in seconds",
-          "portDirection": "input"
-        },
-        {
-          "name": "value",
-          "type": "number",
-          "valueType": "variable",
-          "value": "",
-          "description": "Received floating-point value",
           "portDirection": "output"
         }
       ]
@@ -568,8 +535,8 @@
           "name": "x",
           "type": "number",
           "valueType": "literal",
-          "value": 0,
-          "description": "",
+          "value": 0.0,
+          "description": "Position X",
           "portDirection": "input"
         },
         {
@@ -577,15 +544,15 @@
           "type": "boolean",
           "valueType": "literal",
           "value": false,
-          "description": "",
+          "description": "Apply X position",
           "portDirection": "input"
         },
         {
           "name": "y",
           "type": "number",
           "valueType": "literal",
-          "value": 0,
-          "description": "",
+          "value": 0.0,
+          "description": "Position Y",
           "portDirection": "input"
         },
         {
@@ -593,15 +560,15 @@
           "type": "boolean",
           "valueType": "literal",
           "value": false,
-          "description": "",
+          "description": "Apply Y position",
           "portDirection": "input"
         },
         {
           "name": "z",
           "type": "number",
           "valueType": "literal",
-          "value": 0,
-          "description": "",
+          "value": 0.0,
+          "description": "Position Z",
           "portDirection": "input"
         },
         {
@@ -609,31 +576,31 @@
           "type": "boolean",
           "valueType": "literal",
           "value": false,
-          "description": "",
+          "description": "Apply Z position",
           "portDirection": "input"
         },
         {
           "name": "roll",
           "type": "number",
           "valueType": "literal",
-          "value": 0,
-          "description": "",
+          "value": 0.0,
+          "description": "Orientation roll",
           "portDirection": "input"
         },
         {
           "name": "pitch",
           "type": "number",
           "valueType": "literal",
-          "value": 0,
-          "description": "",
+          "value": 0.0,
+          "description": "Orientation pitch",
           "portDirection": "input"
         },
         {
           "name": "yaw",
           "type": "number",
           "valueType": "literal",
-          "value": 0,
-          "description": "",
+          "value": 0.0,
+          "description": "Orientation yaw",
           "portDirection": "input"
         },
         {
@@ -641,7 +608,7 @@
           "type": "boolean",
           "valueType": "literal",
           "value": false,
-          "description": "",
+          "description": "Apply orientation",
           "portDirection": "input"
         }
       ]
@@ -683,39 +650,39 @@
           "type": "boolean",
           "valueType": "literal",
           "value": false,
-          "description": "",
+          "description": "Publish orientation command",
           "portDirection": "input"
         },
         {
           "name": "mode",
           "type": "number",
           "valueType": "literal",
-          "value": 0,
-          "description": "",
+          "value": 3,
+          "description": "Controller mode",
           "portDirection": "input"
         },
         {
           "name": "x",
           "type": "number",
           "valueType": "literal",
-          "value": 0,
-          "description": "",
+          "value": 0.0,
+          "description": "X command value",
           "portDirection": "input"
         },
         {
           "name": "y",
           "type": "number",
           "valueType": "literal",
-          "value": 0,
-          "description": "",
+          "value": 0.0,
+          "description": "Y command value",
           "portDirection": "input"
         },
         {
           "name": "z",
           "type": "number",
           "valueType": "literal",
-          "value": 0,
-          "description": "",
+          "value": 0.0,
+          "description": "Z command value",
           "portDirection": "input"
         }
       ]
@@ -781,31 +748,6 @@
           "valueType": "literal",
           "value": 0.0,
           "description": "Angular velocity Z",
-          "portDirection": "input"
-        }
-      ]
-    },
-    {
-      "id": "mercury-set-controller-safe-mode",
-      "type": "SetControllerSafeMode",
-      "category": "action",
-      "name": "Set Controller Safe Mode",
-      "description": "SetControllerSafeMode -- toggles the controller stunt safe mode parameter",
-      "fields": [
-        {
-          "name": "safe",
-          "type": "boolean",
-          "valueType": "literal",
-          "value": false,
-          "description": "",
-          "portDirection": "input"
-        },
-        {
-          "name": "timeout_secs",
-          "type": "number",
-          "valueType": "literal",
-          "value": 0,
-          "description": "",
           "portDirection": "input"
         }
       ]
@@ -986,23 +928,6 @@
           "value": "",
           "description": "Transformed yaw",
           "portDirection": "output"
-        }
-      ]
-    },
-    {
-      "id": "mercury-trigger-controller-stunt",
-      "type": "TriggerControllerStunt",
-      "category": "action",
-      "name": "Trigger Controller Stunt",
-      "description": "TriggerControllerStunt -- requests a stunt state and waits for confirmation",
-      "fields": [
-        {
-          "name": "targetStuntState",
-          "type": "number",
-          "valueType": "literal",
-          "value": 0,
-          "description": "Target stunt state",
-          "portDirection": "input"
         }
       ]
     },

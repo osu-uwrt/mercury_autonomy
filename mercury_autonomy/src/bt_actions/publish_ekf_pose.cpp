@@ -36,6 +36,7 @@ BT::NodeStatus PublishEKFPose::onStart()
 BT::NodeStatus PublishEKFPose::onRunning()
 {
   if (!odom_received_) {
+    // Keep the action running until we have a baseline pose to merge with overrides.
     return BT::NodeStatus::RUNNING;
   }
 
@@ -60,6 +61,7 @@ BT::NodeStatus PublishEKFPose::onRunning()
     rpy.z = yaw;
     request->pose.pose.pose.orientation = toQuat(rpy);
   } else {
+    // Preserve the current EKF orientation when no override was requested.
     request->pose.pose.pose.orientation = odom_msg_.pose.pose.orientation;
   }
 

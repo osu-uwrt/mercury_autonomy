@@ -1,4 +1,7 @@
 // Wait -- blocks until the requested number of seconds elapse.
+//
+// Ports:
+//   Input: seconds -- Duration to wait before returning SUCCESS.
 
 #pragma once
 

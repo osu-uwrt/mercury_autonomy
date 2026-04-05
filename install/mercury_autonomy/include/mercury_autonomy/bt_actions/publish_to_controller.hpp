@@ -1,4 +1,9 @@
 // PublishToController -- publishes controller commands to the linear or angular topic.
+//
+// Ports:
+//   Input: isOrientation -- True routes to angular controller topic.
+//   Input: mode          -- Controller command mode.
+//   Input: x,y,z         -- Requested setpoint vector components.
 
 #pragma once
 

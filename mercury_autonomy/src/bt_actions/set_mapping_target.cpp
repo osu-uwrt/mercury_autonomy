@@ -33,10 +33,12 @@ BT::NodeStatus SetMappingTarget::onStart()
   getInput("lock_map", lock_map);
 
   auto request = std::make_shared<mercury_msgs::srv::MappingTarget::Request>();
+  // Keep request fields aligned with mapping state semantics used by GetMappingState.
   request->target_info.target_object = target_object;
   request->target_info.lock_map = lock_map;
 
-  future_ = client_->async_send_request(request);
+  auto response_future = client_->async_send_request(request);
+  future_ = response_future.future.share();
   start_time_ = rosNode()->now();
   return BT::NodeStatus::RUNNING;
 }

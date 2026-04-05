@@ -1,4 +1,7 @@
 // SetStatus -- publishes a legacy LED status command.
+//
+// Ports:
+//   Input: status -- Named tree status mapped to a LED color/mode preset.
 
 #pragma once
 

@@ -33,6 +33,7 @@ BT::NodeStatus ComputeFrameAlignment::onStart()
 
 BT::NodeStatus ComputeFrameAlignment::onRunning()
 {
+  // Resolve both transforms before computing the final chained pose.
   if (!have_ttb_) {
     have_ttb_ = lookupTransform(base_frame_, link_frame_, geom_ttb_);
   }
@@ -42,6 +43,7 @@ BT::NodeStatus ComputeFrameAlignment::onRunning()
   }
 
   if (have_ttb_ && have_twr_) {
+    // Compose world<-reference<-input<-base to align controller commands to world.
     tf2::Transform tf_ttb;
     tf2::fromMsg(geom_ttb_.transform, tf_ttb);
 

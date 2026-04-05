@@ -1,4 +1,8 @@
 // getCovariance -- computes a scalar covariance score for a mapping pose.
+//
+// Ports:
+//   Input:  Target      -- Mapping target name.
+//   Output: Covariance  -- Scalar uncertainty score from covariance diagonals.
 
 #pragma once
 
@@ -31,6 +35,7 @@ protected:
   void rosInit() override;
 
 private:
+  // Converts the latest mapping pose covariance matrix into a scalar score.
   void topicCallback(const geometry_msgs::msg::PoseWithCovarianceStamped::SharedPtr msg);
 
   rclcpp::Subscription<geometry_msgs::msg::PoseWithCovarianceStamped>::SharedPtr subscriber_;

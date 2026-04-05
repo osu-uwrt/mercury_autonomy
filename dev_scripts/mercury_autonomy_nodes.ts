@@ -42,12 +42,12 @@ export const mercuryAutonomyNodes: BTNodeDefinition[] = [
     name: 'Compute Frame Alignment',
     description: 'ComputeFrameAlignment -- computes a world-aligned controller pose from TF data',
     fields: [
-      { name: 'x', type: 'number', valueType: 'literal', value: 0, description: '', portDirection: 'input' },
-      { name: 'y', type: 'number', valueType: 'literal', value: 0, description: '', portDirection: 'input' },
-      { name: 'z', type: 'number', valueType: 'literal', value: 0, description: '', portDirection: 'input' },
-      { name: 'or', type: 'number', valueType: 'literal', value: 0, description: '', portDirection: 'input' },
-      { name: 'op', type: 'number', valueType: 'literal', value: 0, description: '', portDirection: 'input' },
-      { name: 'oy', type: 'number', valueType: 'literal', value: 0, description: '', portDirection: 'input' },
+      { name: 'x', type: 'number', valueType: 'literal', value: 0.0, description: 'Input X', portDirection: 'input' },
+      { name: 'y', type: 'number', valueType: 'literal', value: 0.0, description: 'Input Y', portDirection: 'input' },
+      { name: 'z', type: 'number', valueType: 'literal', value: 0.0, description: 'Input Z', portDirection: 'input' },
+      { name: 'or', type: 'number', valueType: 'literal', value: 0.0, description: 'Input roll', portDirection: 'input' },
+      { name: 'op', type: 'number', valueType: 'literal', value: 0.0, description: 'Input pitch', portDirection: 'input' },
+      { name: 'oy', type: 'number', valueType: 'literal', value: 0.0, description: 'Input yaw', portDirection: 'input' },
       { name: 'reference_frame', type: 'string', valueType: 'literal', value: '', description: 'Reference TF frame', portDirection: 'input' },
       { name: 'link_frame', type: 'string', valueType: 'literal', value: '', description: 'Link TF frame', portDirection: 'input' },
       { name: 'base_frame', type: 'string', valueType: 'literal', value: '', description: 'Base TF frame', portDirection: 'input' },
@@ -82,19 +82,6 @@ export const mercuryAutonomyNodes: BTNodeDefinition[] = [
     fields: [
       { name: 'Target', type: 'string', valueType: 'literal', value: '', description: 'Mapping target name', portDirection: 'input' },
       { name: 'Covariance', type: 'number', valueType: 'variable', value: '', description: 'Computed covariance score', portDirection: 'output' },
-    ],
-  },
-
-  {
-    id: 'mercury-get-float64-topic',
-    type: 'GetFloat64Topic',
-    category: 'action',
-    name: 'Get Float64Topic',
-    description: 'GetFloat64Topic -- legacy alias that subscribes to a Float64 topic',
-    fields: [
-      { name: 'topic', type: 'string', valueType: 'literal', value: '', description: 'ROS2 topic name to subscribe to', portDirection: 'input' },
-      { name: 'timeout', type: 'number', valueType: 'literal', value: 3.0, description: 'Timeout in seconds', portDirection: 'input' },
-      { name: 'value', type: 'number', valueType: 'variable', value: '', description: 'Received floating-point value', portDirection: 'output' },
     ],
   },
 
@@ -193,16 +180,16 @@ export const mercuryAutonomyNodes: BTNodeDefinition[] = [
     name: 'Publish EKFPose',
     description: 'PublishEKFPose -- updates robot_localization pose from the current odometry',
     fields: [
-      { name: 'x', type: 'number', valueType: 'literal', value: 0, description: '', portDirection: 'input' },
-      { name: 'setX', type: 'boolean', valueType: 'literal', value: false, description: '', portDirection: 'input' },
-      { name: 'y', type: 'number', valueType: 'literal', value: 0, description: '', portDirection: 'input' },
-      { name: 'setY', type: 'boolean', valueType: 'literal', value: false, description: '', portDirection: 'input' },
-      { name: 'z', type: 'number', valueType: 'literal', value: 0, description: '', portDirection: 'input' },
-      { name: 'setZ', type: 'boolean', valueType: 'literal', value: false, description: '', portDirection: 'input' },
-      { name: 'roll', type: 'number', valueType: 'literal', value: 0, description: '', portDirection: 'input' },
-      { name: 'pitch', type: 'number', valueType: 'literal', value: 0, description: '', portDirection: 'input' },
-      { name: 'yaw', type: 'number', valueType: 'literal', value: 0, description: '', portDirection: 'input' },
-      { name: 'setOrientation', type: 'boolean', valueType: 'literal', value: false, description: '', portDirection: 'input' },
+      { name: 'x', type: 'number', valueType: 'literal', value: 0.0, description: 'Position X', portDirection: 'input' },
+      { name: 'setX', type: 'boolean', valueType: 'literal', value: false, description: 'Apply X position', portDirection: 'input' },
+      { name: 'y', type: 'number', valueType: 'literal', value: 0.0, description: 'Position Y', portDirection: 'input' },
+      { name: 'setY', type: 'boolean', valueType: 'literal', value: false, description: 'Apply Y position', portDirection: 'input' },
+      { name: 'z', type: 'number', valueType: 'literal', value: 0.0, description: 'Position Z', portDirection: 'input' },
+      { name: 'setZ', type: 'boolean', valueType: 'literal', value: false, description: 'Apply Z position', portDirection: 'input' },
+      { name: 'roll', type: 'number', valueType: 'literal', value: 0.0, description: 'Orientation roll', portDirection: 'input' },
+      { name: 'pitch', type: 'number', valueType: 'literal', value: 0.0, description: 'Orientation pitch', portDirection: 'input' },
+      { name: 'yaw', type: 'number', valueType: 'literal', value: 0.0, description: 'Orientation yaw', portDirection: 'input' },
+      { name: 'setOrientation', type: 'boolean', valueType: 'literal', value: false, description: 'Apply orientation', portDirection: 'input' },
     ],
   },
 
@@ -225,11 +212,11 @@ export const mercuryAutonomyNodes: BTNodeDefinition[] = [
     name: 'Publish To Controller',
     description: 'PublishToController -- publishes controller commands to the linear or angular topic',
     fields: [
-      { name: 'isOrientation', type: 'boolean', valueType: 'literal', value: false, description: '', portDirection: 'input' },
-      { name: 'mode', type: 'number', valueType: 'literal', value: 0, description: '', portDirection: 'input' },
-      { name: 'x', type: 'number', valueType: 'literal', value: 0, description: '', portDirection: 'input' },
-      { name: 'y', type: 'number', valueType: 'literal', value: 0, description: '', portDirection: 'input' },
-      { name: 'z', type: 'number', valueType: 'literal', value: 0, description: '', portDirection: 'input' },
+      { name: 'isOrientation', type: 'boolean', valueType: 'literal', value: false, description: 'Publish orientation command', portDirection: 'input' },
+      { name: 'mode', type: 'number', valueType: 'literal', value: 3, description: 'Controller mode', portDirection: 'input' },
+      { name: 'x', type: 'number', valueType: 'literal', value: 0.0, description: 'X command value', portDirection: 'input' },
+      { name: 'y', type: 'number', valueType: 'literal', value: 0.0, description: 'Y command value', portDirection: 'input' },
+      { name: 'z', type: 'number', valueType: 'literal', value: 0.0, description: 'Z command value', portDirection: 'input' },
     ],
   },
 
@@ -247,18 +234,6 @@ export const mercuryAutonomyNodes: BTNodeDefinition[] = [
       { name: 'angular_x', type: 'number', valueType: 'literal', value: 0.0, description: 'Angular velocity X', portDirection: 'input' },
       { name: 'angular_y', type: 'number', valueType: 'literal', value: 0.0, description: 'Angular velocity Y', portDirection: 'input' },
       { name: 'angular_z', type: 'number', valueType: 'literal', value: 0.0, description: 'Angular velocity Z', portDirection: 'input' },
-    ],
-  },
-
-  {
-    id: 'mercury-set-controller-safe-mode',
-    type: 'SetControllerSafeMode',
-    category: 'action',
-    name: 'Set Controller Safe Mode',
-    description: 'SetControllerSafeMode -- toggles the controller stunt safe mode parameter',
-    fields: [
-      { name: 'safe', type: 'boolean', valueType: 'literal', value: false, description: '', portDirection: 'input' },
-      { name: 'timeout_secs', type: 'number', valueType: 'literal', value: 0, description: '', portDirection: 'input' },
     ],
   },
 
@@ -308,17 +283,6 @@ export const mercuryAutonomyNodes: BTNodeDefinition[] = [
       { name: 'out_roll', type: 'number', valueType: 'variable', value: '', description: 'Transformed roll', portDirection: 'output' },
       { name: 'out_pitch', type: 'number', valueType: 'variable', value: '', description: 'Transformed pitch', portDirection: 'output' },
       { name: 'out_yaw', type: 'number', valueType: 'variable', value: '', description: 'Transformed yaw', portDirection: 'output' },
-    ],
-  },
-
-  {
-    id: 'mercury-trigger-controller-stunt',
-    type: 'TriggerControllerStunt',
-    category: 'action',
-    name: 'Trigger Controller Stunt',
-    description: 'TriggerControllerStunt -- requests a stunt state and waits for confirmation',
-    fields: [
-      { name: 'targetStuntState', type: 'number', valueType: 'literal', value: 0, description: 'Target stunt state', portDirection: 'input' },
     ],
   },
 

@@ -1,4 +1,8 @@
 // WaitForDetection -- waits for a matching detection message.
+//
+// Ports:
+//   Input: object_name  -- Target detection class id.
+//   Input: timeout_secs -- Maximum wait duration.
 
 #pragma once
 

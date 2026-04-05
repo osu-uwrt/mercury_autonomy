@@ -1,4 +1,8 @@
 // GetMappingState -- subscribes to mapping state and outputs the current target.
+//
+// Ports:
+//   Output: map_locked   -- True when mapping is currently locked.
+//   Output: target_name  -- Active target object name from mapping state.
 
 #pragma once
 

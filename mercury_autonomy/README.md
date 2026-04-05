@@ -75,10 +75,9 @@ This creates:
 - Registration line in `src/register_actions.cpp`
 
 The package also includes legacy riptide node names for tree compatibility,
-including `GetFloat64Topic`, `PublishInt8`, `SetStatus`, `SetMappingTarget`,
-`PublishToController`, `PublishEKFPose`, `TriggerControllerStunt`, `Wait`,
-`WaitForDetection`, `ComputeFrameAlignment`, `GetMappingState`, and
-`getCovariance`.
+including `PublishInt8`, `SetStatus`, `SetMappingTarget`,
+`PublishToController`, `PublishEKFPose`, `Wait`, `WaitForDetection`,
+`ComputeFrameAlignment`, `GetMappingState`, and `getCovariance`.
 
 ### Listing existing nodes
 

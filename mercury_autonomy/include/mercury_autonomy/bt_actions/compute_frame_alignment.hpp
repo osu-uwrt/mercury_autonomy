@@ -1,4 +1,13 @@
 // ComputeFrameAlignment -- computes a world-aligned controller pose from TF data.
+//
+// Ports:
+//   Input:  x,y,z             -- Position in the reference frame.
+//   Input:  or,op,oy          -- Roll/pitch/yaw in the reference frame.
+//   Input:  reference_frame   -- Frame that defines the input pose.
+//   Input:  link_frame        -- Frame rigidly attached to the controlled link.
+//   Input:  base_frame        -- Base frame used for controller setpoints.
+//   Output: out_x,out_y,out_z -- Position in the world frame.
+//   Output: out_or,out_op,out_oy -- Orientation in roll/pitch/yaw.
 
 #pragma once
 
