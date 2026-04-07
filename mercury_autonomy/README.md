@@ -74,6 +74,10 @@ This creates:
 - `src/bt_actions/move_to_waypoint.cpp`
 - Registration line in `src/register_actions.cpp`
 
+The package keeps ported nodes that provide unique functionality not already
+covered by BehaviorTree.CPP built-ins or another custom node implementation.
+See `Project.md` for the current node catalog and equivalent-node guidance.
+
 ### Listing existing nodes
 
 ```bash

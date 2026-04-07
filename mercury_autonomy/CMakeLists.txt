@@ -19,6 +19,8 @@ find_package(std_srvs REQUIRED)
 find_package(geometry_msgs REQUIRED)
 find_package(sensor_msgs REQUIRED)
 find_package(nav_msgs REQUIRED)
+find_package(vision_msgs REQUIRED)
+find_package(robot_localization REQUIRED)
 find_package(tf2 REQUIRED)
 find_package(tf2_ros REQUIRED)
 find_package(tf2_geometry_msgs REQUIRED)
@@ -34,6 +36,8 @@ set(THIS_PACKAGE_DEPS
   geometry_msgs
   sensor_msgs
   nav_msgs
+  vision_msgs
+  robot_localization
   tf2
   tf2_ros
   tf2_geometry_msgs
@@ -271,6 +275,14 @@ if(BUILD_TESTING)
   )
   ament_target_dependencies(test_publish_nodes ${THIS_PACKAGE_DEPS})
   target_link_libraries(test_publish_nodes mercury_autonomy_core)
+
+  # Ported action node registration and port tests
+  ament_add_gtest(test_ported_action_nodes test/test_ported_action_nodes.cpp)
+  target_include_directories(test_ported_action_nodes PRIVATE
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+  )
+  ament_target_dependencies(test_ported_action_nodes ${THIS_PACKAGE_DEPS})
+  target_link_libraries(test_ported_action_nodes mercury_autonomy_core mercury_bt_actions)
 endif()
 
 ament_package()

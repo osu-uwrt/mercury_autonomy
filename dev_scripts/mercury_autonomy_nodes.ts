@@ -36,6 +36,31 @@ export const mercuryAutonomyNodes: BTNodeDefinition[] = [
   },
 
   {
+    id: 'mercury-compute-frame-alignment',
+    type: 'ComputeFrameAlignment',
+    category: 'action',
+    name: 'Compute Frame Alignment',
+    description: 'ComputeFrameAlignment -- computes a world-aligned controller pose from TF data',
+    fields: [
+      { name: 'x', type: 'number', valueType: 'literal', value: 0.0, description: 'Input X', portDirection: 'input' },
+      { name: 'y', type: 'number', valueType: 'literal', value: 0.0, description: 'Input Y', portDirection: 'input' },
+      { name: 'z', type: 'number', valueType: 'literal', value: 0.0, description: 'Input Z', portDirection: 'input' },
+      { name: 'or', type: 'number', valueType: 'literal', value: 0.0, description: 'Input roll', portDirection: 'input' },
+      { name: 'op', type: 'number', valueType: 'literal', value: 0.0, description: 'Input pitch', portDirection: 'input' },
+      { name: 'oy', type: 'number', valueType: 'literal', value: 0.0, description: 'Input yaw', portDirection: 'input' },
+      { name: 'reference_frame', type: 'string', valueType: 'literal', value: '', description: 'Reference TF frame', portDirection: 'input' },
+      { name: 'link_frame', type: 'string', valueType: 'literal', value: '', description: 'Link TF frame', portDirection: 'input' },
+      { name: 'base_frame', type: 'string', valueType: 'literal', value: '', description: 'Base TF frame', portDirection: 'input' },
+      { name: 'out_x', type: 'number', valueType: 'variable', value: '', description: 'Aligned X', portDirection: 'output' },
+      { name: 'out_y', type: 'number', valueType: 'variable', value: '', description: 'Aligned Y', portDirection: 'output' },
+      { name: 'out_z', type: 'number', valueType: 'variable', value: '', description: 'Aligned Z', portDirection: 'output' },
+      { name: 'out_or', type: 'number', valueType: 'variable', value: '', description: 'Aligned roll', portDirection: 'output' },
+      { name: 'out_op', type: 'number', valueType: 'variable', value: '', description: 'Aligned pitch', portDirection: 'output' },
+      { name: 'out_oy', type: 'number', valueType: 'variable', value: '', description: 'Aligned yaw', portDirection: 'output' },
+    ],
+  },
+
+  {
     id: 'mercury-get-bool-topic',
     type: 'GetBoolTopic',
     category: 'action',
@@ -45,6 +70,18 @@ export const mercuryAutonomyNodes: BTNodeDefinition[] = [
       { name: 'topic', type: 'string', valueType: 'literal', value: '', description: 'ROS2 topic name to subscribe to', portDirection: 'input' },
       { name: 'timeout', type: 'number', valueType: 'literal', value: 3.0, description: 'Timeout in seconds', portDirection: 'input' },
       { name: 'value', type: 'boolean', valueType: 'variable', value: '', description: 'Received boolean value', portDirection: 'output' },
+    ],
+  },
+
+  {
+    id: 'mercury-get-covariance',
+    type: 'GetCovariance',
+    category: 'action',
+    name: 'Get Covariance',
+    description: 'GetCovariance -- computes a scalar covariance score for a mapping pose',
+    fields: [
+      { name: 'Target', type: 'string', valueType: 'literal', value: '', description: 'Mapping target name', portDirection: 'input' },
+      { name: 'Covariance', type: 'number', valueType: 'variable', value: '', description: 'Computed covariance score', portDirection: 'output' },
     ],
   },
 
@@ -73,6 +110,18 @@ export const mercuryAutonomyNodes: BTNodeDefinition[] = [
       { name: 'roll', type: 'number', valueType: 'variable', value: '', description: 'Orientation roll (rad)', portDirection: 'output' },
       { name: 'pitch', type: 'number', valueType: 'variable', value: '', description: 'Orientation pitch (rad)', portDirection: 'output' },
       { name: 'yaw', type: 'number', valueType: 'variable', value: '', description: 'Orientation yaw (rad)', portDirection: 'output' },
+    ],
+  },
+
+  {
+    id: 'mercury-get-mapping-state',
+    type: 'GetMappingState',
+    category: 'action',
+    name: 'Get Mapping State',
+    description: 'GetMappingState -- subscribes to mapping state and outputs the current target',
+    fields: [
+      { name: 'map_locked', type: 'boolean', valueType: 'variable', value: '', description: 'Whether mapping is locked', portDirection: 'output' },
+      { name: 'target_name', type: 'string', valueType: 'variable', value: '', description: 'Current mapping target', portDirection: 'output' },
     ],
   },
 
@@ -125,6 +174,53 @@ export const mercuryAutonomyNodes: BTNodeDefinition[] = [
   },
 
   {
+    id: 'mercury-publish-e-k-f-pose',
+    type: 'PublishEKFPose',
+    category: 'action',
+    name: 'Publish EKFPose',
+    description: 'PublishEKFPose -- updates robot_localization pose from the current odometry',
+    fields: [
+      { name: 'x', type: 'number', valueType: 'literal', value: 0.0, description: 'Position X', portDirection: 'input' },
+      { name: 'setX', type: 'boolean', valueType: 'literal', value: false, description: 'Apply X position', portDirection: 'input' },
+      { name: 'y', type: 'number', valueType: 'literal', value: 0.0, description: 'Position Y', portDirection: 'input' },
+      { name: 'setY', type: 'boolean', valueType: 'literal', value: false, description: 'Apply Y position', portDirection: 'input' },
+      { name: 'z', type: 'number', valueType: 'literal', value: 0.0, description: 'Position Z', portDirection: 'input' },
+      { name: 'setZ', type: 'boolean', valueType: 'literal', value: false, description: 'Apply Z position', portDirection: 'input' },
+      { name: 'roll', type: 'number', valueType: 'literal', value: 0.0, description: 'Orientation roll', portDirection: 'input' },
+      { name: 'pitch', type: 'number', valueType: 'literal', value: 0.0, description: 'Orientation pitch', portDirection: 'input' },
+      { name: 'yaw', type: 'number', valueType: 'literal', value: 0.0, description: 'Orientation yaw', portDirection: 'input' },
+      { name: 'setOrientation', type: 'boolean', valueType: 'literal', value: false, description: 'Apply orientation', portDirection: 'input' },
+    ],
+  },
+
+  {
+    id: 'mercury-publish-int8',
+    type: 'PublishInt8',
+    category: 'action',
+    name: 'Publish Int8',
+    description: 'PublishInt8 -- publishes an integer command topic',
+    fields: [
+      { name: 'topic', type: 'string', valueType: 'literal', value: '', description: 'ROS2 topic name to publish to', portDirection: 'input' },
+      { name: 'data', type: 'number', valueType: 'literal', value: 0, description: 'Integer value to publish', portDirection: 'input' },
+    ],
+  },
+
+  {
+    id: 'mercury-publish-to-controller',
+    type: 'PublishToController',
+    category: 'action',
+    name: 'Publish To Controller',
+    description: 'PublishToController -- publishes controller commands to the linear or angular topic',
+    fields: [
+      { name: 'isOrientation', type: 'boolean', valueType: 'literal', value: false, description: 'Publish orientation command', portDirection: 'input' },
+      { name: 'mode', type: 'number', valueType: 'literal', value: 3, description: 'Controller mode', portDirection: 'input' },
+      { name: 'x', type: 'number', valueType: 'literal', value: 0.0, description: 'X command value', portDirection: 'input' },
+      { name: 'y', type: 'number', valueType: 'literal', value: 0.0, description: 'Y command value', portDirection: 'input' },
+      { name: 'z', type: 'number', valueType: 'literal', value: 0.0, description: 'Z command value', portDirection: 'input' },
+    ],
+  },
+
+  {
     id: 'mercury-publish-twist',
     type: 'PublishTwist',
     category: 'action',
@@ -138,6 +234,30 @@ export const mercuryAutonomyNodes: BTNodeDefinition[] = [
       { name: 'angular_x', type: 'number', valueType: 'literal', value: 0.0, description: 'Angular velocity X', portDirection: 'input' },
       { name: 'angular_y', type: 'number', valueType: 'literal', value: 0.0, description: 'Angular velocity Y', portDirection: 'input' },
       { name: 'angular_z', type: 'number', valueType: 'literal', value: 0.0, description: 'Angular velocity Z', portDirection: 'input' },
+    ],
+  },
+
+  {
+    id: 'mercury-set-mapping-target',
+    type: 'SetMappingTarget',
+    category: 'action',
+    name: 'Set Mapping Target',
+    description: 'SetMappingTarget -- calls the mapping target service with a target object',
+    fields: [
+      { name: 'target_object', type: 'string', valueType: 'literal', value: '', description: 'Target object name', portDirection: 'input' },
+      { name: 'lock_map', type: 'boolean', valueType: 'literal', value: false, description: 'Lock or unlock the map', portDirection: 'input' },
+      { name: 'time_limit_secs', type: 'number', valueType: 'literal', value: 0.0, description: 'Timeout in seconds', portDirection: 'input' },
+    ],
+  },
+
+  {
+    id: 'mercury-set-status',
+    type: 'SetStatus',
+    category: 'action',
+    name: 'Set Status',
+    description: 'SetStatus -- publishes a LED status command',
+    fields: [
+      { name: 'status', type: 'string', valueType: 'literal', value: '', description: 'Behavior status name', portDirection: 'input' },
     ],
   },
 
@@ -163,6 +283,18 @@ export const mercuryAutonomyNodes: BTNodeDefinition[] = [
       { name: 'out_roll', type: 'number', valueType: 'variable', value: '', description: 'Transformed roll', portDirection: 'output' },
       { name: 'out_pitch', type: 'number', valueType: 'variable', value: '', description: 'Transformed pitch', portDirection: 'output' },
       { name: 'out_yaw', type: 'number', valueType: 'variable', value: '', description: 'Transformed yaw', portDirection: 'output' },
+    ],
+  },
+
+  {
+    id: 'mercury-wait-for-detection',
+    type: 'WaitForDetection',
+    category: 'action',
+    name: 'Wait For Detection',
+    description: 'WaitForDetection -- waits for a matching detection message',
+    fields: [
+      { name: 'object_name', type: 'string', valueType: 'literal', value: '', description: 'Target class id', portDirection: 'input' },
+      { name: 'timeout_secs', type: 'number', valueType: 'literal', value: 0.0, description: 'Timeout in seconds', portDirection: 'input' },
     ],
   },
   // -- CONDITIONS -----------------------------------------------------------

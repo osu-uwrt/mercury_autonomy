@@ -17,6 +17,8 @@
   <depend>geometry_msgs</depend>
   <depend>sensor_msgs</depend>
   <depend>nav_msgs</depend>
+  <depend>vision_msgs</depend>
+  <depend>robot_localization</depend>
 
   <!-- TF2 -->
   <depend>tf2</depend>

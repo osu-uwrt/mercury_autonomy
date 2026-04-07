@@ -98,7 +98,7 @@ public:
       std::bind(&TreeExecutor::handleListTrees, this, _1, _2));
 
     // Status publisher (tree state as string for debugging / monitoring)
-    status_pub_ = create_publisher<std_msgs::msg::String>("autonomy/status", 10);
+    status_pub_ = create_publisher<std_msgs::msg::String>("autonomy/current_status", 10);
 
     RCLCPP_INFO(
       get_logger(), "TreeExecutor ready (tick rate: %.1f Hz). "
@@ -193,6 +193,8 @@ private:
 
       publishStatus("RUNNING");
       feedback->current_status = "RUNNING";
+      feedback->stack.stack = {tree_path};
+      feedback->stack.node_id = 0;
 
       // Tick loop at configured rate
       rclcpp::Rate loop_rate{tick_rate_hz_};
@@ -204,10 +206,7 @@ private:
           RCLCPP_INFO(get_logger(), "Canceling tree execution.");
           tree.haltTree();
 
-          auto elapsed = elapsedSeconds(start_time);
-          result->result_status = RESULT_CANCELED;
-          result->message = "Tree execution canceled.";
-          result->elapsed_seconds = elapsed;
+          result->return_code = RESULT_CANCELED;
 
           MercuryBtNode::staticDeinit();
           tree_running_.store(false);
@@ -222,6 +221,8 @@ private:
         // Publish feedback with elapsed time
         feedback->elapsed_seconds = elapsedSeconds(start_time);
         feedback->current_status = BT::toStr(bt_status);
+        feedback->stack.stack = {tree_path, std::string(BT::toStr(bt_status))};
+        feedback->stack.node_id = 0;
         goal_handle->publish_feedback(feedback);
 
         loop_rate.sleep();
@@ -231,17 +232,14 @@ private:
       MercuryBtNode::staticDeinit();
       tree_running_.store(false);
 
-      auto elapsed = elapsedSeconds(start_time);
       if (bt_status == BT::NodeStatus::SUCCESS) {
-        result->result_status = RESULT_SUCCESS;
-        result->message = "Tree completed with SUCCESS.";
+        result->return_code = RESULT_SUCCESS;
       } else {
-        result->result_status = RESULT_FAILURE;
-        result->message = "Tree completed with " + std::string(BT::toStr(bt_status)) + ".";
+        result->return_code = RESULT_FAILURE;
       }
-      result->elapsed_seconds = elapsed;
 
       publishStatus(BT::toStr(bt_status));
+      const auto elapsed = elapsedSeconds(start_time);
       RCLCPP_INFO(
         get_logger(), "Tree finished: %s (%.2fs)",
         BT::toStr(bt_status).c_str(), elapsed);
@@ -249,17 +247,16 @@ private:
 
     } catch (const std::exception & e) {
       RCLCPP_ERROR(get_logger(), "Tree execution error: %s", e.what());
-      finishWithError(goal_handle, start_time, e.what());
+      finishWithError(goal_handle, e.what());
     } catch (...) {
       RCLCPP_ERROR(get_logger(), "Unknown error during tree execution.");
-      finishWithError(goal_handle, start_time, "Unknown error");
+      finishWithError(goal_handle, "Unknown error");
     }
   }
 
   /// Helper: abort goal with ERROR status after an exception.
   void finishWithError(
     const std::shared_ptr<GoalHandle> & goal_handle,
-    const std::chrono::steady_clock::time_point & start_time,
     const std::string & error_msg)
   {
     MercuryBtNode::staticDeinit();
@@ -268,9 +265,8 @@ private:
     publishStatus("ERROR");
 
     auto result = std::make_shared<ExecuteTree::Result>();
-    result->result_status = RESULT_ERROR;
-    result->message = error_msg;
-    result->elapsed_seconds = elapsedSeconds(start_time);
+    result->return_code = RESULT_ERROR;
+    RCLCPP_ERROR(get_logger(), "Tree execution aborted with ERROR: %s", error_msg.c_str());
     goal_handle->abort(result);
   }
 
