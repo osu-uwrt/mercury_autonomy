@@ -15,7 +15,7 @@
 
 #include <rclcpp/rclcpp.hpp>
 #include <rclcpp_action/rclcpp_action.hpp>
-#include <std_srvs/srv/trigger.hpp>
+#include <mercury_msgs/srv/list_trees.hpp>
 #include <mercury_msgs/action/execute_tree.hpp>
 #include <behaviortree_cpp/behavior_tree.h>
 #include <behaviortree_cpp/bt_factory.h>
@@ -113,7 +113,7 @@ TEST_F(TreeExecutorTest, FeedbackMessageHasExpectedFields)
 // Verify the list_trees service client can be created
 TEST_F(TreeExecutorTest, ListTreesServiceClientCanBeCreated)
 {
-  auto client = test_node_->create_client<std_srvs::srv::Trigger>("autonomy/list_trees");
+  auto client = test_node_->create_client<mercury_msgs::srv::ListTrees>("autonomy/list_trees");
   ASSERT_NE(client, nullptr);
 }
 

@@ -18,7 +18,7 @@
 
 #include <mercury_msgs/action/execute_tree.hpp>
 #include <std_msgs/msg/string.hpp>
-#include <std_srvs/srv/trigger.hpp>
+#include <mercury_msgs/srv/list_trees.hpp>
 
 #ifndef AUTONOMY_PKG_NAME
 #define AUTONOMY_PKG_NAME "mercury_autonomy"
@@ -93,7 +93,7 @@ public:
       std::bind(&TreeExecutor::handleAccepted, this, _1));
 
     // Service: list available tree XML files
-    list_trees_srv_ = create_service<std_srvs::srv::Trigger>(
+    list_trees_srv_ = create_service<mercury_msgs::srv::ListTrees>(
       "autonomy/list_trees",
       std::bind(&TreeExecutor::handleListTrees, this, _1, _2));
 
@@ -276,10 +276,10 @@ private:
 
   /// Enumerate all .xml tree files across configured directories.
   void handleListTrees(
-    const std_srvs::srv::Trigger::Request::SharedPtr /*request*/,
-    std_srvs::srv::Trigger::Response::SharedPtr response)
+    const mercury_msgs::srv::ListTrees::Request::SharedPtr /*request*/,
+    mercury_msgs::srv::ListTrees::Response::SharedPtr response)
   {
-    std::string listing;
+    std::vector<std::string> tree_files;
     for (const auto & dir : tree_dirs_) {
       if (!std::filesystem::is_directory(dir)) {
         continue;
@@ -287,12 +287,11 @@ private:
       for (const auto & entry : std::filesystem::directory_iterator(dir)) {
         const std::string path = entry.path().string();
         if (path.size() >= 4 && path.substr(path.size() - 4) == ".xml") {
-          listing += path + "\n";
+          tree_files.push_back(path);
         }
       }
     }
-    response->success = true;
-    response->message = listing;
+    response->trees = tree_files;
   }
 
   // ---------------------------------------------------------------------------
@@ -347,7 +346,7 @@ private:
   std::thread exec_thread_;
 
   rclcpp_action::Server<ExecuteTree>::SharedPtr action_server_;
-  rclcpp::Service<std_srvs::srv::Trigger>::SharedPtr list_trees_srv_;
+  rclcpp::Service<mercury_msgs::srv::ListTrees>::SharedPtr list_trees_srv_;
   rclcpp::Publisher<std_msgs::msg::String>::SharedPtr status_pub_;
 };
 
