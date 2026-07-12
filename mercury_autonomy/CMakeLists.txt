@@ -199,10 +199,10 @@ if(BUILD_TESTING)
   ament_target_dependencies(test_approx_equal_to ${THIS_PACKAGE_DEPS})
   target_link_libraries(test_approx_equal_to mercury_autonomy_core)
 
-  # Topic node (GetBoolTopic / GetFloatTopic) unit test
   ament_add_gtest(test_topic_nodes test/test_topic_nodes.cpp
     src/bt_actions/get_bool_topic.cpp
     src/bt_actions/get_float_topic.cpp
+    src/bt_actions/wait_for_kill_switch.cpp
   )
   target_include_directories(test_topic_nodes PRIVATE
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>

@@ -5,7 +5,7 @@
 #pragma once
 
 #include "mercury_autonomy/autonomy_lib.hpp"
-#include <mercury_msgs/msg/controller_command.hpp>
+#include <geometry_msgs/msg/twist.hpp>
 
 namespace mercury_autonomy
 {
@@ -33,7 +33,11 @@ protected:
   void rosInit() override;
 
 private:
-  rclcpp::Publisher<mercury_msgs::msg::ControllerCommand>::SharedPtr pub_;
+  rclcpp::Publisher<geometry_msgs::msg::Twist>::SharedPtr pub_;
+  rclcpp::Subscription<geometry_msgs::msg::Twist>::SharedPtr sub_;
+  geometry_msgs::msg::Twist last_msg_;
+  geometry_msgs::msg::Twist baseline_msg_;
+  bool has_last_msg_ = false;
   rclcpp::Time start_time_;
   double duration_;
 };

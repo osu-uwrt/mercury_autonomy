@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root BTCPP_format="4"
+      main_tree_to_execute="Move">
+  <BehaviorTree ID="Move">
+    <Sequence>
+      <WaitForKillSwitch/>
+      <Sleep msec="5000"/>
+      <ApplyFeedforwardForce axis="z"
+                             force="-3"
+                             duration="5"/>
+      <ApplyFeedforwardForce axis="x"
+                             force="3"
+                             duration="10"/>
+      <Sleep msec="10000"/>
+    </Sequence>
+  </BehaviorTree>
+
+  <!-- Description of Node Models (used by Groot) -->
+  <TreeNodesModel>
+    <Action ID="ApplyFeedforwardForce"
+            editable="true">
+      <input_port name="axis"
+                  type="std::string"/>
+      <input_port name="force"
+                  type="double"/>
+      <input_port name="duration"
+                  type="double"/>
+    </Action>
+    <Action ID="WaitForKillSwitch"
+            editable="true"/>
+  </TreeNodesModel>
+
+</root>

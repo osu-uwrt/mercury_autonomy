@@ -6,6 +6,7 @@
 #include <behaviortree_cpp/bt_factory.h>
 
 #include "mercury_autonomy/bt_actions/compute_frame_alignment.hpp"
+#include "mercury_autonomy/bt_actions/apply_feedforward_force.hpp"
 #include "mercury_autonomy/bt_actions/get_covariance.hpp"
 #include "mercury_autonomy/bt_actions/get_mapping_state.hpp"
 #include "mercury_autonomy/bt_actions/publish_ekf_pose.hpp"
@@ -20,6 +21,7 @@ class PortedActionNodeTest : public ::testing::Test
 protected:
   void SetUp() override
   {
+    factory_.registerNodeType<mercury_autonomy::ApplyFeedforwardForce>("ApplyFeedforwardForce");
     factory_.registerNodeType<mercury_autonomy::PublishInt8>("PublishInt8");
     factory_.registerNodeType<mercury_autonomy::GetMappingState>("GetMappingState");
     factory_.registerNodeType<mercury_autonomy::SetMappingTarget>("SetMappingTarget");
@@ -37,6 +39,7 @@ protected:
 TEST_F(PortedActionNodeTest, RegistersAllPortedNodes)
 {
   const auto manifests = factory_.manifests();
+  EXPECT_TRUE(manifests.count("ApplyFeedforwardForce") > 0);
   EXPECT_TRUE(manifests.count("PublishInt8") > 0);
   EXPECT_TRUE(manifests.count("GetMappingState") > 0);
   EXPECT_TRUE(manifests.count("SetMappingTarget") > 0);
@@ -91,4 +94,12 @@ TEST_F(PortedActionNodeTest, ComputeFrameAlignmentPorts)
   EXPECT_TRUE(ports.count("out_or") > 0);
   EXPECT_TRUE(ports.count("out_op") > 0);
   EXPECT_TRUE(ports.count("out_oy") > 0);
+}
+
+TEST_F(PortedActionNodeTest, ApplyFeedforwardForcePorts)
+{
+  const auto & ports = factory_.manifests().at("ApplyFeedforwardForce").ports;
+  EXPECT_TRUE(ports.count("axis") > 0);
+  EXPECT_TRUE(ports.count("force") > 0);
+  EXPECT_TRUE(ports.count("duration") > 0);
 }

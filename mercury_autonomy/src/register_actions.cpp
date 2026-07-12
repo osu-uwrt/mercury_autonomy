@@ -22,6 +22,7 @@
 #include "mercury_autonomy/bt_actions/set_mapping_target.hpp"
 #include "mercury_autonomy/bt_actions/set_status.hpp"
 #include "mercury_autonomy/bt_actions/wait_for_detection.hpp"
+#include "mercury_autonomy/bt_actions/wait_for_kill_switch.hpp"
 
 // This macro exports the registration function for the shared library plugin.
 BT_REGISTER_NODES(factory)
@@ -47,6 +48,7 @@ BT_REGISTER_NODES(factory)
   factory.registerNodeType<mercury_autonomy::SetMappingTarget>("SetMappingTarget");
   factory.registerNodeType<mercury_autonomy::SetStatus>("SetStatus");
   factory.registerNodeType<mercury_autonomy::WaitForDetection>("WaitForDetection");
+  factory.registerNodeType<mercury_autonomy::WaitForKillSwitch>("WaitForKillSwitch");
 
   // Register additional action nodes below:
   // factory.registerNodeType<mercury_autonomy::MyNewAction>("MyNewAction");
