@@ -99,7 +99,11 @@ TEST_F(PortedActionNodeTest, ComputeFrameAlignmentPorts)
 TEST_F(PortedActionNodeTest, ApplyFeedforwardForcePorts)
 {
   const auto & ports = factory_.manifests().at("ApplyFeedforwardForce").ports;
-  EXPECT_TRUE(ports.count("axis") > 0);
-  EXPECT_TRUE(ports.count("force") > 0);
+  EXPECT_TRUE(ports.count("linear_x") > 0);
+  EXPECT_TRUE(ports.count("linear_y") > 0);
+  EXPECT_TRUE(ports.count("linear_z") > 0);
+  EXPECT_TRUE(ports.count("angular_x") > 0);
+  EXPECT_TRUE(ports.count("angular_y") > 0);
+  EXPECT_TRUE(ports.count("angular_z") > 0);
   EXPECT_TRUE(ports.count("duration") > 0);
 }

@@ -1,6 +1,5 @@
 // ApplyFeedforwardForce BT action node implementation.
-// Applies a feed forward force for a certain translational axis (x, y, or z)
-// for a certain amount of time, then disables the force.
+// Continously publishes forces in all 6 axes for a certain duration of seconds.
 
 #pragma once
 
@@ -19,8 +18,12 @@ public:
   static BT::PortsList providedPorts()
   {
     return {
-      BT::InputPort<std::string>("axis", "Translational axis to apply force to (x, y, or z)"),
-      BT::InputPort<double>("force", "Feedforward force value to apply"),
+      BT::InputPort<double>("linear_x", 0.0, "X linear force to apply"),
+      BT::InputPort<double>("linear_y", 0.0, "Y linear force to apply"),
+      BT::InputPort<double>("linear_z", 0.0, "Z linear force to apply"),
+      BT::InputPort<double>("angular_x", 0.0, "X angular torque to apply"),
+      BT::InputPort<double>("angular_y", 0.0, "Y angular torque to apply"),
+      BT::InputPort<double>("angular_z", 0.0, "Z angular torque to apply"),
       BT::InputPort<double>("duration", "Time duration to apply force in seconds"),
     };
   }
@@ -34,10 +37,7 @@ protected:
 
 private:
   rclcpp::Publisher<geometry_msgs::msg::Twist>::SharedPtr pub_;
-  rclcpp::Subscription<geometry_msgs::msg::Twist>::SharedPtr sub_;
-  geometry_msgs::msg::Twist last_msg_;
-  geometry_msgs::msg::Twist baseline_msg_;
-  bool has_last_msg_ = false;
+  geometry_msgs::msg::Twist cmd_msg_;
   rclcpp::Time start_time_;
   double duration_;
 };
