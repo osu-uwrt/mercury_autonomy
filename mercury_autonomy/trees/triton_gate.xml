@@ -5,11 +5,19 @@
     <Sequence>
       <WaitForKillSwitch/>
       <Sleep msec="5000"/>
-      <ApplyFeedforwardForce axis="z"
-                             force="-3"
+      <ApplyFeedforwardForce linear_x="0"
+                             linear_y="0"
+                             linear_z="-3"
+                             angular_x="0"
+                             angular_y="0"
+                             angular_z="0"
                              duration="5"/>
-      <ApplyFeedforwardForce axis="x"
-                             force="3"
+      <ApplyFeedforwardForce linear_x="3"
+                             linear_y="0"
+                             linear_z="0"
+                             angular_x="0"
+                             angular_y="0"
+                             angular_z="0"
                              duration="10"/>
       <Sleep msec="10000"/>
     </Sequence>
@@ -19,9 +27,17 @@
   <TreeNodesModel>
     <Action ID="ApplyFeedforwardForce"
             editable="true">
-      <input_port name="axis"
-                  type="std::string"/>
-      <input_port name="force"
+      <input_port name="linear_x"
+                  type="double"/>
+      <input_port name="linear_y"
+                  type="double"/>
+      <input_port name="linear_z"
+                  type="double"/>
+      <input_port name="angular_x"
+                  type="double"/>
+      <input_port name="angular_y"
+                  type="double"/>
+      <input_port name="angular_z"
                   type="double"/>
       <input_port name="duration"
                   type="double"/>
