@@ -15,6 +15,7 @@
 #include "mercury_autonomy/bt_actions/set_mapping_target.hpp"
 #include "mercury_autonomy/bt_actions/set_status.hpp"
 #include "mercury_autonomy/bt_actions/wait_for_detection.hpp"
+#include "mercury_autonomy/bt_actions/set_feedforward_mode.hpp"
 
 class PortedActionNodeTest : public ::testing::Test
 {
@@ -31,6 +32,7 @@ protected:
     factory_.registerNodeType<mercury_autonomy::WaitForDetection>("WaitForDetection");
     factory_.registerNodeType<mercury_autonomy::ComputeFrameAlignment>("ComputeFrameAlignment");
     factory_.registerNodeType<mercury_autonomy::GetCovariance>("GetCovariance");
+    factory_.registerNodeType<mercury_autonomy::SetFeedforwardMode>("SetFeedforwardMode");
   }
 
   BT::BehaviorTreeFactory factory_;
@@ -49,6 +51,7 @@ TEST_F(PortedActionNodeTest, RegistersAllPortedNodes)
   EXPECT_TRUE(manifests.count("WaitForDetection") > 0);
   EXPECT_TRUE(manifests.count("ComputeFrameAlignment") > 0);
   EXPECT_TRUE(manifests.count("GetCovariance") > 0);
+  EXPECT_TRUE(manifests.count("SetFeedforwardMode") > 0);
 }
 
 TEST_F(PortedActionNodeTest, PublishInt8Ports)
