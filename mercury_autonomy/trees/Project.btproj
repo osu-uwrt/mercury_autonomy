@@ -28,5 +28,6 @@
             <input_port name="z" type="double"/>
         </Action>
         <Action ID="WaitForKillSwitch" editable="true"/>
+        <Action ID="SetFeedforwardMode" editable="true"/>
     </TreeNodesModel>
 </root>
