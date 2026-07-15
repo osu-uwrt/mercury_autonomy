@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <root BTCPP_format="4" project_name="Project">
-    <include path="../osu-uwrt/development/software/src/mercury_autonomy/mercury_autonomy/trees/triton_gate.xml"/>
+    <include path="triton_gate.xml"/>
     <!-- Description of Node Models (used by Groot) -->
     <TreeNodesModel>
         <Action ID="ApplyFeedforwardForce" editable="true">

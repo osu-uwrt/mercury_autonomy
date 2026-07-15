@@ -7,19 +7,26 @@
       <Sleep msec="5000"/>
       <ApplyFeedforwardForce linear_x="0"
                              linear_y="0"
-                             linear_z="-3"
+                             linear_z="-5"
                              angular_x="0"
                              angular_y="0"
                              angular_z="0"
                              duration="5"/>
-      <ApplyFeedforwardForce linear_x="3"
+      <ApplyFeedforwardForce linear_x="5"
                              linear_y="0"
-                             linear_z="0"
+                             linear_z="-1.1"
                              angular_x="0"
                              angular_y="0"
                              angular_z="0"
-                             duration="10"/>
-      <Sleep msec="10000"/>
+                             duration="30"/>
+      <Sleep msec="12000"/>
+      <ApplyFeedforwardForce linear_x="-5"
+                             linear_y="0"
+                             linear_z="-1.1"
+                             angular_x="0"
+                             angular_y="0"
+                             angular_z="0"
+                             duration="32"/>
     </Sequence>
   </BehaviorTree>
 
