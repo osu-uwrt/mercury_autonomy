@@ -3,30 +3,30 @@
       main_tree_to_execute="Move">
   <BehaviorTree ID="Move">
     <Sequence>
+      <SetFeedforwardMode/>
       <WaitForKillSwitch/>
-      <Sleep msec="5000"/>
+      <Sleep msec="10000"/>
       <ApplyFeedforwardForce linear_x="0"
                              linear_y="0"
-                             linear_z="-5"
+                             linear_z="-6"
                              angular_x="0"
                              angular_y="0"
                              angular_z="0"
-                             duration="5"/>
-      <ApplyFeedforwardForce linear_x="5"
+                             duration="6.5"/>
+      <ApplyFeedforwardForce linear_x="4.5"
                              linear_y="0"
-                             linear_z="-1.1"
+                             linear_z="-1.2"
                              angular_x="0"
                              angular_y="0"
-                             angular_z="0"
-                             duration="30"/>
-      <Sleep msec="12000"/>
-      <ApplyFeedforwardForce linear_x="-5"
+                             angular_z="0.01"
+                             duration="40"/>
+      <ApplyFeedforwardForce linear_x="-4.5"
                              linear_y="0"
-                             linear_z="-1.1"
+                             linear_z="-1.8"
                              angular_x="0"
-                             angular_y="0"
+                             angular_y="0.1"
                              angular_z="0"
-                             duration="32"/>
+                             duration="90"/>
     </Sequence>
   </BehaviorTree>
 
@@ -49,6 +49,8 @@
       <input_port name="duration"
                   type="double"/>
     </Action>
+    <Action ID="SetFeedforwardMode"
+            editable="true"/>
     <Action ID="WaitForKillSwitch"
             editable="true"/>
   </TreeNodesModel>
