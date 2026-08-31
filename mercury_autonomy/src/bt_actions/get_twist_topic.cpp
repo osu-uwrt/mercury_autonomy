@@ -57,4 +57,4 @@ void GetTwistTopic::onHalted() {
     msg_received_ = false;
 }
 
-}  // namespace mercury_autonomy
+} // namespace mercury_autonomy

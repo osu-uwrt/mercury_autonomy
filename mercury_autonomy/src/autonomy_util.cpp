@@ -30,7 +30,7 @@ void initRosForTree(BT::Tree & tree, rclcpp::Node::SharedPtr ros_node) {
         ns = ns.substr(1);
     }
     if (ns.empty()) {
-        ns = "mercury";  // default when no namespace is set
+        ns = "mercury"; // default when no namespace is set
     }
     for (auto & subtree : tree.subtrees) {
         subtree->blackboard->set("robot_ns", ns);
@@ -85,4 +85,4 @@ double distance(const geometry_msgs::msg::Point & a, const geometry_msgs::msg::P
     return std::sqrt(std::pow(b.x - a.x, 2) + std::pow(b.y - a.y, 2) + std::pow(b.z - a.z, 2));
 }
 
-}  // namespace mercury_autonomy
+} // namespace mercury_autonomy

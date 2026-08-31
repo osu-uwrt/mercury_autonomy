@@ -42,4 +42,4 @@ BT::NodeStatus GetMappingState::onRunning() {
 
 void GetMappingState::onHalted() {}
 
-}  // namespace mercury_autonomy
+} // namespace mercury_autonomy

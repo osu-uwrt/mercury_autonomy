@@ -60,4 +60,4 @@ void GetCovariance::topicCallback(
     msg_received_ = true;
 }
 
-}  // namespace mercury_autonomy
+} // namespace mercury_autonomy

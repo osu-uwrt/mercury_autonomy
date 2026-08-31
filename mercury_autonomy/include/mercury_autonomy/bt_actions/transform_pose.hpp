@@ -58,4 +58,4 @@ private:
     double timeout_sec_ = 3.0;
 };
 
-}  // namespace mercury_autonomy
+} // namespace mercury_autonomy

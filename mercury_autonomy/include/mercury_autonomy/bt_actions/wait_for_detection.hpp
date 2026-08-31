@@ -41,4 +41,4 @@ private:
     rclcpp::Time start_time_;
 };
 
-}  // namespace mercury_autonomy
+} // namespace mercury_autonomy

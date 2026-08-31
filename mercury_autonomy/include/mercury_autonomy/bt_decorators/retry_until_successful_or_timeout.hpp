@@ -36,4 +36,4 @@ private:
     bool started_ = false;
 };
 
-}  // namespace mercury_autonomy
+} // namespace mercury_autonomy

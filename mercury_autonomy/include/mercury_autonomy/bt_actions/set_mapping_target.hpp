@@ -40,4 +40,4 @@ private:
     double timeout_secs_ = 0.0;
 };
 
-}  // namespace mercury_autonomy
+} // namespace mercury_autonomy

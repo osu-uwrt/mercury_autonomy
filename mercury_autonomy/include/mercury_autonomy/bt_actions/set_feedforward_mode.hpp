@@ -1,4 +1,5 @@
-// SetFeedforwardMode -- sets the controller to feed forward mode for both linear and angular controllers.
+// SetFeedforwardMode -- sets the controller to feed forward mode for both linear and angular
+// controllers.
 //
 // Ports:
 //   None.
@@ -34,4 +35,4 @@ private:
     rclcpp::Client<SetBool>::SharedPtr set_teleop_client_;
 };
 
-}  // namespace mercury_autonomy
+} // namespace mercury_autonomy

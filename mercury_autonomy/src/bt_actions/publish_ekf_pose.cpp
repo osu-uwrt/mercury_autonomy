@@ -7,7 +7,7 @@ namespace mercury_autonomy {
 namespace {
 constexpr char kOdomTopic[] = "odometry/filtered";
 constexpr char kSetPoseService[] = "set_pose";
-}  // namespace
+} // namespace
 
 void PublishEKFPose::rosInit() {
     pose_client_ = rosNode()->create_client<robot_localization::srv::SetPose>(kSetPoseService);
@@ -94,4 +94,4 @@ void PublishEKFPose::odomCallback(const nav_msgs::msg::Odometry::SharedPtr msg) 
     odom_received_ = true;
 }
 
-}  // namespace mercury_autonomy
+} // namespace mercury_autonomy

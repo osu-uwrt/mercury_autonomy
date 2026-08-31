@@ -46,4 +46,4 @@ void WaitForDetection::detectionCallback(const vision_msgs::msg::Detection3DArra
     }
 }
 
-}  // namespace mercury_autonomy
+} // namespace mercury_autonomy

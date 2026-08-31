@@ -40,4 +40,4 @@ private:
     double duration_;
 };
 
-}  // namespace mercury_autonomy
+} // namespace mercury_autonomy

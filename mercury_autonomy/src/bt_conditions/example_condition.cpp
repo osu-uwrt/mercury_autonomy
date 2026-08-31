@@ -25,4 +25,4 @@ BT::NodeStatus ExampleCondition::tick() {
     return BT::NodeStatus::SUCCESS;
 }
 
-}  // namespace mercury_autonomy
+} // namespace mercury_autonomy

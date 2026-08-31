@@ -61,4 +61,4 @@ BT::NodeStatus SetMappingTarget::onRunning() {
 
 void SetMappingTarget::onHalted() {}
 
-}  // namespace mercury_autonomy
+} // namespace mercury_autonomy

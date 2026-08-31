@@ -38,4 +38,4 @@ void ExampleAction::onHalted() {
     RCLCPP_INFO(rosNode()->get_logger(), "ExampleAction halted.");
 }
 
-}  // namespace mercury_autonomy
+} // namespace mercury_autonomy

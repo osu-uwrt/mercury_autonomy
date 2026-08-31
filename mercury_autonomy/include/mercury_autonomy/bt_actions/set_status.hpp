@@ -31,4 +31,4 @@ private:
     rclcpp::Publisher<mercury_msgs::msg::LedCommand>::SharedPtr pub_;
 };
 
-}  // namespace mercury_autonomy
+} // namespace mercury_autonomy

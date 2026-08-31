@@ -52,4 +52,4 @@ void GetBoolTopic::onHalted() {
     data_received_ = false;
 }
 
-}  // namespace mercury_autonomy
+} // namespace mercury_autonomy

@@ -40,4 +40,4 @@ private:
     rclcpp::Publisher<mercury_msgs::msg::ControllerCommand>::SharedPtr orientation_pub_;
 };
 
-}  // namespace mercury_autonomy
+} // namespace mercury_autonomy

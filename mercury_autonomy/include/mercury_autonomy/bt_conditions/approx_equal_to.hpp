@@ -32,4 +32,4 @@ protected:
     void rosInit() override;
 };
 
-}  // namespace mercury_autonomy
+} // namespace mercury_autonomy

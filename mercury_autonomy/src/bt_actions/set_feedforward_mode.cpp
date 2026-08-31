@@ -5,7 +5,7 @@ namespace mercury_autonomy {
 namespace {
 constexpr char kLinearTopic[] = "controller/linear";
 constexpr char kAngularTopic[] = "controller/angular";
-}  // namespace
+} // namespace
 
 void SetFeedforwardMode::rosInit() {
     linear_pub_ =
@@ -56,4 +56,4 @@ BT::NodeStatus SetFeedforwardMode::onRunning() { return BT::NodeStatus::SUCCESS;
 
 void SetFeedforwardMode::onHalted() {}
 
-}  // namespace mercury_autonomy
+} // namespace mercury_autonomy

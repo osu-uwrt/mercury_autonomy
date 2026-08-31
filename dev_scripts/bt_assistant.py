@@ -122,7 +122,8 @@ def _build_from_example(node_type: str, file_kind: str,
             f"//\n"
             f"// TODO: Add a description of what this {type_label} does.\n\n"
         )
-        content = _replace_leading_comment(content, new_comment, "#pragma once")
+        content = _replace_leading_comment(
+            content, new_comment, "#pragma once")
     else:
         new_comment = f"// {class_name} implementation.\n\n"
         content = _replace_leading_comment(content, new_comment, "#include")
@@ -137,12 +138,14 @@ def _build_from_example(node_type: str, file_kind: str,
 def create_node(node_type: str, class_name: str) -> None:
     """Create header, source, and registration entry for a new BT node."""
     if node_type not in NODE_TYPES:
-        print(f"Error: Unknown node type '{node_type}'. Use: action, condition, decorator")
+        print(
+            f"Error: Unknown node type '{node_type}'. Use: action, condition, decorator")
         sys.exit(1)
 
     # Validate class name is PascalCase
     if not re.match(r"^[A-Z][a-zA-Z0-9]+$", class_name):
-        print(f"Error: Class name '{class_name}' must be PascalCase (e.g., MoveToWaypoint)")
+        print(
+            f"Error: Class name '{class_name}' must be PascalCase (e.g., MoveToWaypoint)")
         sys.exit(1)
 
     info = NODE_TYPES[node_type]
@@ -168,8 +171,10 @@ def create_node(node_type: str, class_name: str) -> None:
     source_dir.mkdir(parents=True, exist_ok=True)
 
     # Build content from example template files
-    header_content = _build_from_example(node_type, "header", class_name, file_name)
-    source_content = _build_from_example(node_type, "source", class_name, file_name)
+    header_content = _build_from_example(
+        node_type, "header", class_name, file_name)
+    source_content = _build_from_example(
+        node_type, "source", class_name, file_name)
 
     # Write files
     header_path.write_text(header_content)
@@ -193,7 +198,8 @@ def _add_registration(register_path: Path, class_name: str, file_name: str, bt_t
     register_line = f'  factory.registerNodeType<mercury_autonomy::{class_name}>("{class_name}");'
 
     if include_line in content:
-        print(f"  Registration include already present in {register_path.name}")
+        print(
+            f"  Registration include already present in {register_path.name}")
         return
 
     # Add include after existing includes
@@ -221,7 +227,8 @@ def _add_registration(register_path: Path, class_name: str, file_name: str, bt_t
     else:
         # Fallback: insert before the last closing brace
         last_brace = content.rfind("}")
-        content = content[:last_brace] + "  " + register_line + "\n" + content[last_brace:]
+        content = content[:last_brace] + "  " + \
+            register_line + "\n" + content[last_brace:]
 
     register_path.write_text(content)
     print(f"  Updated registration: {register_path.relative_to(PACKAGE_ROOT)}")
@@ -247,13 +254,15 @@ def check_consistency() -> None:
 
             # Check header exists
             if not header_file.exists():
-                print(f"  WARN: {node_type} source '{src_file.name}' has no matching header")
+                print(
+                    f"  WARN: {node_type} source '{src_file.name}' has no matching header")
                 all_ok = False
 
             # Check if include line exists in register file
             include_line = f'#include "mercury_autonomy/{bt_type}/{stem}.hpp"'
             if include_line not in register_content:
-                print(f"  WARN: {node_type} '{stem}' not included in {info['register_file']}")
+                print(
+                    f"  WARN: {node_type} '{stem}' not included in {info['register_file']}")
                 all_ok = False
 
     if all_ok:

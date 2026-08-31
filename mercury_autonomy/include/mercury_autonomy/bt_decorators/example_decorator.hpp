@@ -38,4 +38,4 @@ private:
     int attempt_count_ = 0;
 };
 
-}  // namespace mercury_autonomy
+} // namespace mercury_autonomy

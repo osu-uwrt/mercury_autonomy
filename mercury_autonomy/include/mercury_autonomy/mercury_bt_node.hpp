@@ -82,4 +82,4 @@ public:
     BT::TreeNode * treeNode() override { return this; }
 };
 
-}  // namespace mercury_autonomy
+} // namespace mercury_autonomy

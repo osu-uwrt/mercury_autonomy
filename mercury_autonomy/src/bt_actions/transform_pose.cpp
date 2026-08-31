@@ -82,4 +82,4 @@ void TransformPose::onHalted() {
     // Nothing to clean up.
 }
 
-}  // namespace mercury_autonomy
+} // namespace mercury_autonomy

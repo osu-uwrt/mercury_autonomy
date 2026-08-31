@@ -137,8 +137,8 @@ TEST_F(TreeExecutorTest, FactoryCanLoadAlwaysSuccess) {
 // Verify result status codes are consistent with what tree_executor uses
 TEST_F(TreeExecutorTest, ResultStatusCodes) {
     // These constants must match the values in tree_executor.cpp
-    EXPECT_EQ(0, 0);  // RESULT_SUCCESS
-    EXPECT_EQ(1, 1);  // RESULT_FAILURE
-    EXPECT_EQ(2, 2);  // RESULT_CANCELED
-    EXPECT_EQ(3, 3);  // RESULT_ERROR
+    EXPECT_EQ(0, 0); // RESULT_SUCCESS
+    EXPECT_EQ(1, 1); // RESULT_FAILURE
+    EXPECT_EQ(2, 2); // RESULT_CANCELED
+    EXPECT_EQ(3, 3); // RESULT_ERROR
 }

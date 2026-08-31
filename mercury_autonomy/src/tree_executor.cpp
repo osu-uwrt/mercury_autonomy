@@ -317,7 +317,7 @@ private:
 
     std::atomic<bool> tree_running_{false};
     std::atomic<bool> cancel_requested_{false};
-    std::string resolved_tree_path_;  ///< Set by handleGoal, read by executeTree
+    std::string resolved_tree_path_; ///< Set by handleGoal, read by executeTree
     std::thread exec_thread_;
 
     rclcpp_action::Server<ExecuteTree>::SharedPtr action_server_;
@@ -325,7 +325,7 @@ private:
     rclcpp::Publisher<std_msgs::msg::String>::SharedPtr status_pub_;
 };
 
-}  // namespace mercury_autonomy
+} // namespace mercury_autonomy
 
 int main(int argc, char * argv[]) {
     rclcpp::init(argc, argv);

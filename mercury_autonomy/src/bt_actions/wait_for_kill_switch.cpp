@@ -1,4 +1,5 @@
-// WaitForKillSwitch -- subscribes to state/kill and waits until the robot is enabled (kill switch cleared).
+// WaitForKillSwitch -- subscribes to state/kill and waits until the robot is enabled (kill switch
+// cleared).
 
 #include "mercury_autonomy/bt_actions/wait_for_kill_switch.hpp"
 
@@ -42,4 +43,4 @@ void WaitForKillSwitch::onHalted() {
     has_status_ = false;
 }
 
-}  // namespace mercury_autonomy
+} // namespace mercury_autonomy

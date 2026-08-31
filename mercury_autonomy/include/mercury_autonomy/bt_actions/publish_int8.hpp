@@ -36,4 +36,4 @@ private:
     std::string last_topic_;
 };
 
-}  // namespace mercury_autonomy
+} // namespace mercury_autonomy

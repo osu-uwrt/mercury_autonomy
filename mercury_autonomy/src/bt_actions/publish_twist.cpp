@@ -44,4 +44,4 @@ void PublishTwist::onHalted() {
     // Nothing to clean up for a single-shot publish
 }
 
-}  // namespace mercury_autonomy
+} // namespace mercury_autonomy

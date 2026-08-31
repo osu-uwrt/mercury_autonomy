@@ -19,4 +19,4 @@ BT::NodeStatus IsTrue::tick() {
     return value.value() ? BT::NodeStatus::SUCCESS : BT::NodeStatus::FAILURE;
 }
 
-}  // namespace mercury_autonomy
+} // namespace mercury_autonomy

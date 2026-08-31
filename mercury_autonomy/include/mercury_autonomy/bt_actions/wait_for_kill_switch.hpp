@@ -1,4 +1,5 @@
-// WaitForKillSwitch -- subscribes to state/kill and waits until the robot is enabled (kill switch cleared).
+// WaitForKillSwitch -- subscribes to state/kill and waits until the robot is enabled (kill switch
+// cleared).
 //
 // Ports:
 //   Input:  topic     -- The topic name to subscribe to (default "state/kill").
@@ -34,4 +35,4 @@ private:
     bool is_killed_ = true;
 };
 
-}  // namespace mercury_autonomy
+} // namespace mercury_autonomy

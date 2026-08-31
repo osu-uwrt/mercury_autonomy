@@ -42,4 +42,4 @@ BT::NodeStatus ApproxEqualToAngle::tick() {
     return result ? BT::NodeStatus::SUCCESS : BT::NodeStatus::FAILURE;
 }
 
-}  // namespace mercury_autonomy
+} // namespace mercury_autonomy

@@ -7,7 +7,7 @@ namespace mercury_autonomy {
 namespace {
 constexpr char kLinearTopic[] = "controller/linear";
 constexpr char kAngularTopic[] = "controller/angular";
-}  // namespace
+} // namespace
 
 void PublishToController::rosInit() {
     position_pub_ =
@@ -51,4 +51,4 @@ BT::NodeStatus PublishToController::onRunning() { return BT::NodeStatus::SUCCESS
 
 void PublishToController::onHalted() {}
 
-}  // namespace mercury_autonomy
+} // namespace mercury_autonomy

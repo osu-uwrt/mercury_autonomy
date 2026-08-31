@@ -49,4 +49,4 @@ BT::NodeStatus RetryUntilSuccessfulOrTimeout::tick() {
     return BT::NodeStatus::RUNNING;
 }
 
-}  // namespace mercury_autonomy
+} // namespace mercury_autonomy

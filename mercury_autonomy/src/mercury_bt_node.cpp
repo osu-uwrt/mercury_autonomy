@@ -43,4 +43,4 @@ bool MercuryBtNode::lookupTransform(
     return false;
 }
 
-}  // namespace mercury_autonomy
+} // namespace mercury_autonomy

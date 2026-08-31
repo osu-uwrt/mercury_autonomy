@@ -29,7 +29,7 @@ const std::map<std::string, TreeStatus> kStatuses = {
     {"performing", TreeStatus::Performing}, {"success", TreeStatus::Success},
     {"failure", TreeStatus::Failure},       {"panic", TreeStatus::Panic},
 };
-}  // namespace
+} // namespace
 
 void SetStatus::rosInit() {
     pub_ = rosNode()->create_publisher<mercury_msgs::msg::LedCommand>(kLedTopic, 10);
@@ -125,4 +125,4 @@ BT::NodeStatus SetStatus::onRunning() { return BT::NodeStatus::SUCCESS; }
 
 void SetStatus::onHalted() {}
 
-}  // namespace mercury_autonomy
+} // namespace mercury_autonomy

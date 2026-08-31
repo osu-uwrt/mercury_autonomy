@@ -44,4 +44,4 @@ BT::NodeStatus ExampleDecorator::tick() {
     }
 }
 
-}  // namespace mercury_autonomy
+} // namespace mercury_autonomy

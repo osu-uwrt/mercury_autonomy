@@ -32,4 +32,4 @@ BT::NodeStatus PublishInt8::onRunning() { return BT::NodeStatus::SUCCESS; }
 
 void PublishInt8::onHalted() {}
 
-}  // namespace mercury_autonomy
+} // namespace mercury_autonomy

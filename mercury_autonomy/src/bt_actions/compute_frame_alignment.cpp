@@ -72,4 +72,4 @@ BT::NodeStatus ComputeFrameAlignment::onRunning() {
 
 void ComputeFrameAlignment::onHalted() {}
 
-}  // namespace mercury_autonomy
+} // namespace mercury_autonomy

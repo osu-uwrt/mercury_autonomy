@@ -239,7 +239,8 @@ def generate_typescript(nodes, output_path):
         if not cat_nodes:
             continue
 
-        lines.append(f"  // -- {category.upper()}S " + "-" * (68 - len(category)))
+        lines.append(f"  // -- {category.upper()}S " +
+                     "-" * (68 - len(category)))
 
         for node in cat_nodes:
             if not first_node:

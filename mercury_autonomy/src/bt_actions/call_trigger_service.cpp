@@ -67,4 +67,4 @@ void CallTriggerService::onHalted() {
     client_.reset();
 }
 
-}  // namespace mercury_autonomy
+} // namespace mercury_autonomy

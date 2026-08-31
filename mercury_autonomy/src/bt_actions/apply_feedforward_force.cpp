@@ -65,4 +65,4 @@ void ApplyFeedforwardForce::onHalted() {
     RCLCPP_INFO(rosNode()->get_logger(), "Halted applying feed forward force");
 }
 
-}  // namespace mercury_autonomy
+} // namespace mercury_autonomy

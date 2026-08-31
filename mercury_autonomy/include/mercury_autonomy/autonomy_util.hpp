@@ -48,4 +48,4 @@ geometry_msgs::msg::Quaternion toQuat(const geometry_msgs::msg::Vector3 & rpy);
 /// Euclidean distance between two points.
 double distance(const geometry_msgs::msg::Point & a, const geometry_msgs::msg::Point & b);
 
-}  // namespace mercury_autonomy
+} // namespace mercury_autonomy
