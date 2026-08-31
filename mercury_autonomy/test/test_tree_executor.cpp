@@ -5,47 +5,38 @@
 //   - The ExecuteTree action type is correctly generated
 //   - Action client infrastructure can be instantiated
 
+#include <behaviortree_cpp/behavior_tree.h>
+#include <behaviortree_cpp/bt_factory.h>
 #include <gtest/gtest.h>
 
 #include <chrono>
 #include <filesystem>
 #include <fstream>
 #include <memory>
-#include <string>
-
+#include <mercury_msgs/action/execute_tree.hpp>
+#include <mercury_msgs/srv/list_trees.hpp>
 #include <rclcpp/rclcpp.hpp>
 #include <rclcpp_action/rclcpp_action.hpp>
-#include <mercury_msgs/srv/list_trees.hpp>
-#include <mercury_msgs/action/execute_tree.hpp>
-#include <behaviortree_cpp/behavior_tree.h>
-#include <behaviortree_cpp/bt_factory.h>
+#include <string>
 
 using ExecuteTree = mercury_msgs::action::ExecuteTree;
 using namespace std::chrono_literals;
 
-class TreeExecutorTest : public ::testing::Test
-{
+class TreeExecutorTest : public ::testing::Test {
 protected:
-  static void SetUpTestSuite()
-  {
-    rclcpp::init(0, nullptr);
-  }
+    static void SetUpTestSuite() { rclcpp::init(0, nullptr); }
 
-  static void TearDownTestSuite()
-  {
-    rclcpp::shutdown();
-  }
+    static void TearDownTestSuite() { rclcpp::shutdown(); }
 
-  void SetUp() override
-  {
-    // Create a minimal test tree file
-    test_tree_dir_ = std::filesystem::temp_directory_path() / "mercury_autonomy_test_trees";
-    std::filesystem::create_directories(test_tree_dir_);
+    void SetUp() override {
+        // Create a minimal test tree file
+        test_tree_dir_ = std::filesystem::temp_directory_path() / "mercury_autonomy_test_trees";
+        std::filesystem::create_directories(test_tree_dir_);
 
-    test_tree_path_ = test_tree_dir_ / "test_tree.xml";
-    std::ofstream ofs(test_tree_path_);
-    ofs <<
-      R"(
+        test_tree_path_ = test_tree_dir_ / "test_tree.xml";
+        std::ofstream ofs(test_tree_path_);
+        ofs <<
+            R"(
 <root BTCPP_format="4">
   <BehaviorTree ID="TestTree">
     <Sequence>
@@ -54,93 +45,83 @@ protected:
   </BehaviorTree>
 </root>
 )";
-    ofs.close();
+        ofs.close();
 
-    test_node_ = rclcpp::Node::make_shared("tree_executor_test_client");
-  }
+        test_node_ = rclcpp::Node::make_shared("tree_executor_test_client");
+    }
 
-  void TearDown() override
-  {
-    test_node_.reset();
-    std::filesystem::remove_all(test_tree_dir_);
-  }
+    void TearDown() override {
+        test_node_.reset();
+        std::filesystem::remove_all(test_tree_dir_);
+    }
 
-  rclcpp::Node::SharedPtr test_node_;
-  std::filesystem::path test_tree_dir_;
-  std::filesystem::path test_tree_path_;
+    rclcpp::Node::SharedPtr test_node_;
+    std::filesystem::path test_tree_dir_;
+    std::filesystem::path test_tree_path_;
 };
 
 // Verify the action type is well-formed and an action client can be created
-TEST_F(TreeExecutorTest, ActionClientCanBeCreated)
-{
-  auto action_client = rclcpp_action::create_client<ExecuteTree>(
-    test_node_, "autonomy/execute_tree");
-  ASSERT_NE(action_client, nullptr);
+TEST_F(TreeExecutorTest, ActionClientCanBeCreated) {
+    auto action_client =
+        rclcpp_action::create_client<ExecuteTree>(test_node_, "autonomy/execute_tree");
+    ASSERT_NE(action_client, nullptr);
 }
 
 // Verify a goal message can be constructed with the expected fields
-TEST_F(TreeExecutorTest, GoalMessageHasExpectedFields)
-{
-  auto goal_msg = ExecuteTree::Goal();
-  goal_msg.tree_path = "/tmp/test_tree.xml";
-  EXPECT_EQ(goal_msg.tree_path, "/tmp/test_tree.xml");
+TEST_F(TreeExecutorTest, GoalMessageHasExpectedFields) {
+    auto goal_msg = ExecuteTree::Goal();
+    goal_msg.tree_path = "/tmp/test_tree.xml";
+    EXPECT_EQ(goal_msg.tree_path, "/tmp/test_tree.xml");
 }
 
 // Verify result message has the expected fields
-TEST_F(TreeExecutorTest, ResultMessageHasExpectedFields)
-{
-  auto result_msg = ExecuteTree::Result();
-  result_msg.return_code = 0;
-  EXPECT_EQ(result_msg.return_code, 0);
+TEST_F(TreeExecutorTest, ResultMessageHasExpectedFields) {
+    auto result_msg = ExecuteTree::Result();
+    result_msg.return_code = 0;
+    EXPECT_EQ(result_msg.return_code, 0);
 }
 
 // Verify feedback message has the expected fields
-TEST_F(TreeExecutorTest, FeedbackMessageHasExpectedFields)
-{
-  auto feedback_msg = ExecuteTree::Feedback();
-  feedback_msg.current_status = "RUNNING";
-  feedback_msg.stack.stack = {"ActionServerDemo", "RUNNING"};
-  feedback_msg.stack.node_id = 3;
-  feedback_msg.elapsed_seconds = 0.5;
-  EXPECT_EQ(feedback_msg.current_status, "RUNNING");
-  ASSERT_EQ(feedback_msg.stack.stack.size(), 2U);
-  EXPECT_EQ(feedback_msg.stack.stack[0], "ActionServerDemo");
-  EXPECT_EQ(feedback_msg.stack.stack[1], "RUNNING");
-  EXPECT_EQ(feedback_msg.stack.node_id, 3U);
-  EXPECT_DOUBLE_EQ(feedback_msg.elapsed_seconds, 0.5);
+TEST_F(TreeExecutorTest, FeedbackMessageHasExpectedFields) {
+    auto feedback_msg = ExecuteTree::Feedback();
+    feedback_msg.current_status = "RUNNING";
+    feedback_msg.stack.stack = {"ActionServerDemo", "RUNNING"};
+    feedback_msg.stack.node_id = 3;
+    feedback_msg.elapsed_seconds = 0.5;
+    EXPECT_EQ(feedback_msg.current_status, "RUNNING");
+    ASSERT_EQ(feedback_msg.stack.stack.size(), 2U);
+    EXPECT_EQ(feedback_msg.stack.stack[0], "ActionServerDemo");
+    EXPECT_EQ(feedback_msg.stack.stack[1], "RUNNING");
+    EXPECT_EQ(feedback_msg.stack.node_id, 3U);
+    EXPECT_DOUBLE_EQ(feedback_msg.elapsed_seconds, 0.5);
 }
 
 // Verify the list_trees service client can be created
-TEST_F(TreeExecutorTest, ListTreesServiceClientCanBeCreated)
-{
-  auto client = test_node_->create_client<mercury_msgs::srv::ListTrees>("autonomy/list_trees");
-  ASSERT_NE(client, nullptr);
+TEST_F(TreeExecutorTest, ListTreesServiceClientCanBeCreated) {
+    auto client = test_node_->create_client<mercury_msgs::srv::ListTrees>("autonomy/list_trees");
+    ASSERT_NE(client, nullptr);
 }
 
-TEST_F(TreeExecutorTest, TestTreeFileExists)
-{
-  ASSERT_TRUE(std::filesystem::exists(test_tree_path_));
+TEST_F(TreeExecutorTest, TestTreeFileExists) {
+    ASSERT_TRUE(std::filesystem::exists(test_tree_path_));
 }
 
-TEST_F(TreeExecutorTest, BtFactoryCanParseTree)
-{
-  // Verify BT.CPP can parse the test tree
-  BT::BehaviorTreeFactory factory;
-  ASSERT_NO_THROW(
-  {
-    BT::Tree tree = factory.createTreeFromFile(test_tree_path_.string());
-    auto status = tree.tickWhileRunning();
-    EXPECT_EQ(status, BT::NodeStatus::SUCCESS);
-  });
+TEST_F(TreeExecutorTest, BtFactoryCanParseTree) {
+    // Verify BT.CPP can parse the test tree
+    BT::BehaviorTreeFactory factory;
+    ASSERT_NO_THROW({
+        BT::Tree tree = factory.createTreeFromFile(test_tree_path_.string());
+        auto status = tree.tickWhileRunning();
+        EXPECT_EQ(status, BT::NodeStatus::SUCCESS);
+    });
 }
 
 // Test that our custom node types can be instantiated via the factory
-TEST_F(TreeExecutorTest, FactoryCanLoadAlwaysSuccess)
-{
-  BT::BehaviorTreeFactory factory;
+TEST_F(TreeExecutorTest, FactoryCanLoadAlwaysSuccess) {
+    BT::BehaviorTreeFactory factory;
 
-  std::string xml =
-    R"(
+    std::string xml =
+        R"(
     <root BTCPP_format="4">
       <BehaviorTree ID="SimpleTest">
         <AlwaysSuccess />
@@ -148,17 +129,16 @@ TEST_F(TreeExecutorTest, FactoryCanLoadAlwaysSuccess)
     </root>
   )";
 
-  BT::Tree tree = factory.createTreeFromText(xml);
-  auto status = tree.tickWhileRunning();
-  EXPECT_EQ(status, BT::NodeStatus::SUCCESS);
+    BT::Tree tree = factory.createTreeFromText(xml);
+    auto status = tree.tickWhileRunning();
+    EXPECT_EQ(status, BT::NodeStatus::SUCCESS);
 }
 
 // Verify result status codes are consistent with what tree_executor uses
-TEST_F(TreeExecutorTest, ResultStatusCodes)
-{
-  // These constants must match the values in tree_executor.cpp
-  EXPECT_EQ(0, 0);  // RESULT_SUCCESS
-  EXPECT_EQ(1, 1);  // RESULT_FAILURE
-  EXPECT_EQ(2, 2);  // RESULT_CANCELED
-  EXPECT_EQ(3, 3);  // RESULT_ERROR
+TEST_F(TreeExecutorTest, ResultStatusCodes) {
+    // These constants must match the values in tree_executor.cpp
+    EXPECT_EQ(0, 0);  // RESULT_SUCCESS
+    EXPECT_EQ(1, 1);  // RESULT_FAILURE
+    EXPECT_EQ(2, 2);  // RESULT_CANCELED
+    EXPECT_EQ(3, 3);  // RESULT_ERROR
 }

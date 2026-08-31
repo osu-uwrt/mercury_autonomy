@@ -4,5 +4,5 @@
 #pragma once
 
 #include "mercury_autonomy/autonomy_base.hpp"
-#include "mercury_autonomy/mercury_bt_node.hpp"
 #include "mercury_autonomy/autonomy_util.hpp"
+#include "mercury_autonomy/mercury_bt_node.hpp"

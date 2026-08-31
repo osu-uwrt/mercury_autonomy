@@ -12,29 +12,26 @@
 
 #include "mercury_autonomy/autonomy_lib.hpp"
 
-namespace mercury_autonomy
-{
+namespace mercury_autonomy {
 
-class ExampleCondition : public MercuryConditionNode
-{
+class ExampleCondition : public MercuryConditionNode {
 public:
-  ExampleCondition(const std::string & name, const BT::NodeConfig & config)
-  : MercuryConditionNode(name, config) {}
+    ExampleCondition(const std::string & name, const BT::NodeConfig & config)
+        : MercuryConditionNode(name, config) {}
 
-  /// Declare the ports (inputs / outputs) exposed by this node.
-  static BT::PortsList providedPorts()
-  {
-    return {
-      BT::InputPort<double>("threshold", 0.5, "Threshold value to check against"),
-    };
-  }
+    /// Declare the ports (inputs / outputs) exposed by this node.
+    static BT::PortsList providedPorts() {
+        return {
+            BT::InputPort<double>("threshold", 0.5, "Threshold value to check against"),
+        };
+    }
 
-  /// Evaluate the condition. Must return SUCCESS or FAILURE (never RUNNING).
-  BT::NodeStatus tick() override;
+    /// Evaluate the condition. Must return SUCCESS or FAILURE (never RUNNING).
+    BT::NodeStatus tick() override;
 
 protected:
-  /// Create ROS subscriptions/publishers needed by this condition.
-  void rosInit() override;
+    /// Create ROS subscriptions/publishers needed by this condition.
+    void rosInit() override;
 };
 
 }  // namespace mercury_autonomy

@@ -13,36 +13,33 @@
 
 #include "mercury_autonomy/autonomy_lib.hpp"
 
-namespace mercury_autonomy
-{
+namespace mercury_autonomy {
 
-class ExampleAction : public MercuryActionNode
-{
+class ExampleAction : public MercuryActionNode {
 public:
-  ExampleAction(const std::string & name, const BT::NodeConfig & config)
-  : MercuryActionNode(name, config) {}
+    ExampleAction(const std::string & name, const BT::NodeConfig & config)
+        : MercuryActionNode(name, config) {}
 
-  /// Declare the ports (inputs / outputs) exposed by this node.
-  static BT::PortsList providedPorts()
-  {
-    return {
-      BT::InputPort<std::string>("target", "Description of the target input"),
-      BT::OutputPort<std::string>("result", "Description of the result output"),
-    };
-  }
+    /// Declare the ports (inputs / outputs) exposed by this node.
+    static BT::PortsList providedPorts() {
+        return {
+            BT::InputPort<std::string>("target", "Description of the target input"),
+            BT::OutputPort<std::string>("result", "Description of the result output"),
+        };
+    }
 
-  /// Called once when the node transitions from IDLE to RUNNING.
-  BT::NodeStatus onStart() override;
+    /// Called once when the node transitions from IDLE to RUNNING.
+    BT::NodeStatus onStart() override;
 
-  /// Called on every subsequent tick while the node is RUNNING.
-  BT::NodeStatus onRunning() override;
+    /// Called on every subsequent tick while the node is RUNNING.
+    BT::NodeStatus onRunning() override;
 
-  /// Called when the node is halted (e.g., tree cancelled).
-  void onHalted() override;
+    /// Called when the node is halted (e.g., tree cancelled).
+    void onHalted() override;
 
 protected:
-  /// Create ROS subscriptions/publishers needed by this action.
-  void rosInit() override;
+    /// Create ROS subscriptions/publishers needed by this action.
+    void rosInit() override;
 };
 
 }  // namespace mercury_autonomy

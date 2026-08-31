@@ -13,32 +13,29 @@
 
 #include "mercury_autonomy/autonomy_lib.hpp"
 
-namespace mercury_autonomy
-{
+namespace mercury_autonomy {
 
-class ExampleDecorator : public MercuryDecoratorNode
-{
+class ExampleDecorator : public MercuryDecoratorNode {
 public:
-  ExampleDecorator(const std::string & name, const BT::NodeConfig & config)
-  : MercuryDecoratorNode(name, config) {}
+    ExampleDecorator(const std::string & name, const BT::NodeConfig & config)
+        : MercuryDecoratorNode(name, config) {}
 
-  /// Declare the ports (inputs / outputs) exposed by this node.
-  static BT::PortsList providedPorts()
-  {
-    return {
-      BT::InputPort<int>("max_attempts", 3, "Maximum number of child retries"),
-    };
-  }
+    /// Declare the ports (inputs / outputs) exposed by this node.
+    static BT::PortsList providedPorts() {
+        return {
+            BT::InputPort<int>("max_attempts", 3, "Maximum number of child retries"),
+        };
+    }
 
-  /// Tick the decorator. Must tick the child and return the result.
-  BT::NodeStatus tick() override;
+    /// Tick the decorator. Must tick the child and return the result.
+    BT::NodeStatus tick() override;
 
 protected:
-  /// Create ROS subscriptions/publishers if needed.
-  void rosInit() override;
+    /// Create ROS subscriptions/publishers if needed.
+    void rosInit() override;
 
 private:
-  int attempt_count_ = 0;
+    int attempt_count_ = 0;
 };
 
 }  // namespace mercury_autonomy

@@ -27,17 +27,18 @@
 // TF2
 #include <tf2_ros/buffer.h>
 #include <tf2_ros/transform_listener.h>
+
 #include <tf2_geometry_msgs/tf2_geometry_msgs.hpp>
 
 // Common message types
-#include <std_msgs/msg/bool.hpp>
-#include <std_msgs/msg/string.hpp>
 #include <geometry_msgs/msg/pose.hpp>
 #include <geometry_msgs/msg/transform_stamped.hpp>
 #include <geometry_msgs/msg/twist.hpp>
 #include <geometry_msgs/msg/vector3.hpp>
 #include <nav_msgs/msg/odometry.hpp>
 #include <sensor_msgs/msg/imu.hpp>
+#include <std_msgs/msg/bool.hpp>
+#include <std_msgs/msg/string.hpp>
 
 // Services
 #include <std_srvs/srv/set_bool.hpp>

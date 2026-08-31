@@ -12,28 +12,25 @@
 
 #include "mercury_autonomy/autonomy_lib.hpp"
 
-namespace mercury_autonomy
-{
+namespace mercury_autonomy {
 
-class ApproxEqualToAngle : public MercuryConditionNode
-{
+class ApproxEqualToAngle : public MercuryConditionNode {
 public:
-  ApproxEqualToAngle(const std::string & name, const BT::NodeConfig & config)
-  : MercuryConditionNode(name, config) {}
+    ApproxEqualToAngle(const std::string & name, const BT::NodeConfig & config)
+        : MercuryConditionNode(name, config) {}
 
-  static BT::PortsList providedPorts()
-  {
-    return {
-      BT::InputPort<double>("a", "First angle (radians)"),
-      BT::InputPort<double>("b", "Second angle (radians)"),
-      BT::InputPort<double>("range", "Tolerance (radians)"),
-    };
-  }
+    static BT::PortsList providedPorts() {
+        return {
+            BT::InputPort<double>("a", "First angle (radians)"),
+            BT::InputPort<double>("b", "Second angle (radians)"),
+            BT::InputPort<double>("range", "Tolerance (radians)"),
+        };
+    }
 
-  BT::NodeStatus tick() override;
+    BT::NodeStatus tick() override;
 
 protected:
-  void rosInit() override;
+    void rosInit() override;
 };
 
 }  // namespace mercury_autonomy

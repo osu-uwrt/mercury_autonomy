@@ -12,31 +12,28 @@
 
 #include "mercury_autonomy/autonomy_lib.hpp"
 
-namespace mercury_autonomy
-{
+namespace mercury_autonomy {
 
-class RetryUntilSuccessfulOrTimeout : public MercuryDecoratorNode
-{
+class RetryUntilSuccessfulOrTimeout : public MercuryDecoratorNode {
 public:
-  RetryUntilSuccessfulOrTimeout(const std::string & name, const BT::NodeConfig & config)
-  : MercuryDecoratorNode(name, config) {}
+    RetryUntilSuccessfulOrTimeout(const std::string & name, const BT::NodeConfig & config)
+        : MercuryDecoratorNode(name, config) {}
 
-  static BT::PortsList providedPorts()
-  {
-    return {
-      BT::InputPort<double>("timeout", "Maximum time in seconds"),
-    };
-  }
+    static BT::PortsList providedPorts() {
+        return {
+            BT::InputPort<double>("timeout", "Maximum time in seconds"),
+        };
+    }
 
-  BT::NodeStatus tick() override;
+    BT::NodeStatus tick() override;
 
 protected:
-  void rosInit() override;
+    void rosInit() override;
 
 private:
-  double timeout_sec_ = 0.0;
-  rclcpp::Time start_time_;
-  bool started_ = false;
+    double timeout_sec_ = 0.0;
+    rclcpp::Time start_time_;
+    bool started_ = false;
 };
 
 }  // namespace mercury_autonomy
